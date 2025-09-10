@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Pest\TypeCoverage;
 
-use Pest\TestSuite;
 use PHPStan\Analyser\Error as PHPStanError;
 
 /**
@@ -12,11 +11,6 @@ use PHPStan\Analyser\Error as PHPStanError;
  */
 final class Result
 {
-    /**
-     * Either the project supports constant types or not.
-     */
-    private static ?bool $supportsConstantTypes = null;
-
     /**
      * Creates a new result instance.
      *
@@ -30,7 +24,6 @@ final class Result
         public readonly int $propertyCoverage,
         public readonly int $paramCoverage,
         public readonly int $returnTypeCoverage,
-        public readonly int $constantsCoverage,
         public readonly int $totalCoverage,
     ) {
         //
@@ -46,8 +39,7 @@ final class Result
     {
         $filter = static fn (PHPStanError $error): bool => str_contains($error->getMessage(), 'property types')
             || str_contains($error->getMessage(), 'param types')
-            || str_contains($error->getMessage(), 'return types')
-            || (self::supportsConstantTypes() && str_contains($error->getMessage(), 'constant types'));
+            || str_contains($error->getMessage(), 'return types');
 
         $phpstanErrors = array_filter($phpstanErrors, $filter);
         $phpstanErrorsIgnored = array_filter($phpstanErrorsIgnored, $filter);
@@ -65,7 +57,6 @@ final class Result
         $propertyCoverage = 100;
         $paramCoverage = 100;
         $returnTypeCoverage = 100;
-        $constantsCoverage = 100;
 
         foreach ($phpstanErrors as $error) {
             if (str_contains($message = $error->getMessage(), 'property types')) {
@@ -77,10 +68,6 @@ final class Result
             if (str_contains($error->getMessage(), 'return types')) {
                 $returnTypeCoverage = (int) explode(' ', explode('only ', $message)[1])[2];
             }
-
-            if (str_contains($error->getMessage(), 'constant types')) {
-                $constantsCoverage = (int) explode(' ', explode('only ', $message)[1])[2];
-            }
         }
 
         return new self(
@@ -90,38 +77,7 @@ final class Result
             $propertyCoverage,
             $paramCoverage,
             $returnTypeCoverage,
-            $constantsCoverage,
-            (int) round(($propertyCoverage + $paramCoverage + $returnTypeCoverage + $constantsCoverage) / 4, mode: PHP_ROUND_HALF_DOWN),
+            (int) round(($propertyCoverage + $paramCoverage + $returnTypeCoverage) / 3, mode: PHP_ROUND_HALF_DOWN),
         );
-    }
-
-    /**
-     * Either the project supports constant types or not.
-     */
-    public static function supportsConstantTypes(): bool
-    {
-        if (self::$supportsConstantTypes !== null) {
-            return self::$supportsConstantTypes;
-        }
-
-        $rootPath = TestSuite::getInstance()->rootPath;
-
-        $fallback = version_compare(PHP_VERSION, '8.3.0', '>=');
-
-        $composerJson = json_decode((string) file_get_contents($rootPath.'/composer.json'), true);
-
-        if (! is_array($composerJson) || ! array_key_exists('require', $composerJson)) {
-            return $fallback;
-        }
-
-        if (! array_key_exists('php', $composerJson['require'])) {
-            return $fallback;
-        }
-
-        $phpVersion = ltrim($composerJson['require']['php'], '^>=~');
-
-        $isOwnPackage = ($composerJson['name'] ?? '') === 'pestphp/pest-plugin-type-coverage';
-
-        return version_compare($phpVersion, '8.3.0', '>=') || $isOwnPackage;
     }
 }

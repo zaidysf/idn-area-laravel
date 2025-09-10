@@ -10,7 +10,7 @@ use SebastianBergmann\RecursionContext\Context;
 /**
  * @internal
  */
-final readonly class Exporter
+final class Exporter
 {
     /**
      * The maximum number of items in an array to export.
@@ -21,7 +21,7 @@ final readonly class Exporter
      * Creates a new Exporter instance.
      */
     public function __construct(
-        private BaseExporter $exporter,
+        private readonly BaseExporter $exporter,
     ) {
         // ...
     }
@@ -64,9 +64,10 @@ final readonly class Exporter
                 continue;
             }
 
+            assert(is_array($data));
+
             $result[] = $context->contains($data[$key]) !== false
                 ? '*RECURSION*'
-                // @phpstan-ignore-next-line
                 : sprintf('[%s]', $this->shortenedRecursiveExport($data[$key], $context));
         }
 

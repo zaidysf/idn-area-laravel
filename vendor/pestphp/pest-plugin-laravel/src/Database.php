@@ -13,7 +13,7 @@ use Illuminate\Foundation\Testing\TestCase;
  *
  * @return TestCase
  */
-function assertDatabaseHas($table, array $data = [], ?string $connection = null)
+function assertDatabaseHas(string $table, array $data, ?string $connection = null)
 {
     return test()->assertDatabaseHas(...func_get_args());
 }
@@ -23,7 +23,7 @@ function assertDatabaseHas($table, array $data = [], ?string $connection = null)
  *
  * @return TestCase
  */
-function assertDatabaseMissing($table, array $data = [], ?string $connection = null)
+function assertDatabaseMissing(string $table, array $data, ?string $connection = null)
 {
     return test()->assertDatabaseMissing(...func_get_args());
 }
@@ -33,7 +33,7 @@ function assertDatabaseMissing($table, array $data = [], ?string $connection = n
  *
  * @return TestCase
  */
-function assertDatabaseEmpty($table, ?string $connection = null)
+function assertDatabaseEmpty(string $table, ?string $connection = null)
 {
     return test()->assertDatabaseEmpty(...func_get_args());
 }
@@ -63,7 +63,7 @@ function assertModelMissing(Model $model)
  *
  * @return TestCase
  */
-function assertDatabaseCount($table, int $count, ?string $connection = null)
+function assertDatabaseCount(string $table, int $count, ?string $connection = null)
 {
     return test()->assertDatabaseCount(...func_get_args());
 }

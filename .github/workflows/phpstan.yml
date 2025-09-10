@@ -47,4 +47,11 @@ jobs:
           composer update --prefer-dist --no-interaction
 
       - name: Run PHPStan
-        run: vendor/bin/phpstan analyse --error-format=github
+        run: |
+          if [ -f vendor/bin/phpstan ]; then
+            vendor/bin/phpstan analyse --error-format=github
+          else
+            echo "PHPStan not found, skipping static analysis"
+            ls -la vendor/bin/ || echo "vendor/bin directory not found"
+            exit 1
+          fi

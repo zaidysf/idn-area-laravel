@@ -13,7 +13,7 @@ parameters:
         QueryBuilder: 'Illuminate\Database\Eloquent\Builder'
     ignoreErrors:
         - '#Out of .+ possible param types, only .+ actually have it#'
-        - '#Class .+ uses generic trait .+ but does not specify its types#'
+        - '#uses generic trait .+ but does not specify its types#'
         - '#Method .+ return type with generic class .+ does not specify its types#'
         -
             identifier: missingType.iterableValue

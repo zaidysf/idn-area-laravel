@@ -63,7 +63,7 @@ describe('IdnAreaManager Extended Methods', function () {
 
     it('can get statistics', function () {
         $stats = $this->manager->statistics();
-        
+
         expect($stats)->toBeArray()
             ->and($stats)->toHaveKeys(['provinces', 'regencies', 'districts', 'villages'])
             ->and($stats['provinces'])->toBe(1)

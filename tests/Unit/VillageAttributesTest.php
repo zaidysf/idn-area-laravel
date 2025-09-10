@@ -131,7 +131,7 @@ describe('Village Static Methods', function () {
     it('can get villages by district static method', function () {
         $villages = Village::byDistrict('320401');
         expect($villages)->toHaveCount(2);
-        
+
         $names = $villages->pluck('name')->toArray();
         expect($names)->toContain('ARJASARI', 'BAROS');
     });

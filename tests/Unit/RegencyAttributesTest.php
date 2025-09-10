@@ -107,14 +107,14 @@ describe('Regency Scopes', function () {
     it('can scope with district count', function () {
         $results = Regency::query()->withDistrictCount()->get();
         $regency = $results->first();
-        
+
         expect($regency->districts_count)->toBe(2);
     });
 
     it('can scope with village count', function () {
         $results = Regency::query()->withVillageCount()->get();
         $regency = $results->first();
-        
+
         expect($regency->villages_count)->toBe(3);
     });
 });
@@ -128,7 +128,7 @@ describe('Regency Relationships', function () {
     it('has districts relationship', function () {
         $districts = $this->regency->districts;
         expect($districts)->toHaveCount(2);
-        
+
         $names = $districts->pluck('name')->toArray();
         expect($names)->toContain('BANYUMANIK', 'GAJAH MUNGKUR');
     });
@@ -136,7 +136,7 @@ describe('Regency Relationships', function () {
     it('has villages through districts relationship', function () {
         $villages = $this->regency->villages;
         expect($villages)->toHaveCount(3);
-        
+
         $names = $villages->pluck('name')->toArray();
         expect($names)->toContain('SRONDOL WETAN', 'SRONDOL KULON', 'SAMPANGAN');
     });

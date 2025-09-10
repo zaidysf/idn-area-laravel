@@ -100,7 +100,7 @@ describe('District Scopes', function () {
     it('can scope with village count', function () {
         $results = District::query()->withVillageCount()->get();
         $district = $results->first();
-        
+
         expect($district->villages_count)->toBe(2);
     });
 });
@@ -114,7 +114,7 @@ describe('District Relationships', function () {
     it('has villages relationship', function () {
         $villages = $this->district->villages;
         expect($villages)->toHaveCount(2);
-        
+
         $names = $villages->pluck('name')->toArray();
         expect($names)->toContain('KRAMAT PELA', 'GANDARIA UTARA');
     });

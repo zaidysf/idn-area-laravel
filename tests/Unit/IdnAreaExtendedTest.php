@@ -39,7 +39,7 @@ beforeEach(function () {
         'name' => 'KEDAUNG',
     ]);
 
-    $this->idnArea = new IdnArea();
+    $this->idnArea = new IdnArea;
 });
 
 describe('IdnArea Extended Methods', function () {
@@ -65,7 +65,7 @@ describe('IdnArea Extended Methods', function () {
 
     it('can get hierarchy', function () {
         $hierarchy = $this->idnArea->hierarchy('36', false);
-        
+
         expect($hierarchy)->toBeArray()
             ->and($hierarchy)->toHaveKeys(['code', 'name', 'province', 'regencies'])
             ->and($hierarchy['code'])->toBe('36')
@@ -84,7 +84,7 @@ describe('IdnArea Extended Methods', function () {
     it('can get multiple areas by codes', function () {
         $codes = ['36', '3671', '367101', '3671011001'];
         $results = $this->idnArea->getMultiple($codes, 'auto');
-        
+
         expect($results)->toBeInstanceOf(\Illuminate\Support\Collection::class)
             ->and($results)->toHaveCount(4);
 

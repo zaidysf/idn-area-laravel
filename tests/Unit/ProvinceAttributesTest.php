@@ -74,7 +74,7 @@ describe('Province Attributes', function () {
 
     it('checks if has regencies', function () {
         expect($this->province->hasRegencies())->toBeTrue();
-        
+
         // Test province without regencies
         $emptyProvince = Province::create([
             'code' => '99',
@@ -122,14 +122,14 @@ describe('Province Scopes', function () {
     it('can scope with regency count', function () {
         $results = Province::query()->withRegencyCount()->get();
         $province = $results->where('code', '34')->first();
-        
+
         expect($province->regencies_count)->toBe(2);
     });
 
     it('can scope with district count', function () {
         $results = Province::query()->withDistrictCount()->get();
         $province = $results->where('code', '34')->first();
-        
+
         expect($province->districts_count)->toBe(3);
     });
 });
@@ -138,7 +138,7 @@ describe('Province Relationships', function () {
     it('has regencies relationship', function () {
         $regencies = $this->province->regencies;
         expect($regencies)->toHaveCount(2);
-        
+
         $names = $regencies->pluck('name')->toArray();
         expect($names)->toContain('KULON PROGO', 'BANTUL');
     });
@@ -146,7 +146,7 @@ describe('Province Relationships', function () {
     it('has districts through regencies relationship', function () {
         $districts = $this->province->districts;
         expect($districts)->toHaveCount(3);
-        
+
         $names = $districts->pluck('name')->toArray();
         expect($names)->toContain('TEMON', 'WATES', 'SRANDAKAN');
     });
@@ -154,7 +154,7 @@ describe('Province Relationships', function () {
     it('can get villages through query builder', function () {
         $villages = $this->province->villages()->get();
         expect($villages)->toHaveCount(3);
-        
+
         $names = $villages->pluck('name')->toArray();
         expect($names)->toContain('JANGKARAN', 'KEBONREJO', 'WATES');
     });

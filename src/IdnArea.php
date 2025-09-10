@@ -134,26 +134,23 @@ final class IdnArea
      */
     public function search(string $query, string $type = 'all', bool $cached = true): Collection|array
     {
-        $result = $this->manager->search($query, $type, $cached);
-
-        // For specific types like 'provinces', wrap in expected structure
         if ($type !== 'all') {
+            // For specific types, return array structure with empty collections for other types
             return [
-                $type => $result,
+                'provinces' => $type === 'provinces' ? $this->manager->search($query, $type, $cached) : collect(),
+                'regencies' => $type === 'regencies' ? $this->manager->search($query, $type, $cached) : collect(),
+                'districts' => $type === 'districts' ? $this->manager->search($query, $type, $cached) : collect(),
+                'villages' => $type === 'villages' ? $this->manager->search($query, $type, $cached) : collect(),
             ];
         }
 
-        // For type 'all', return structured array but keep collections as collections
-        if ($result instanceof Collection && $result->has('provinces')) {
-            return [
-                'provinces' => $result['provinces'],
-                'regencies' => $result['regencies'],
-                'districts' => $result['districts'],
-                'villages' => $result['villages'],
-            ];
-        }
-
-        return $result;
+        // For type 'all', return structured array with separate keys
+        return [
+            'provinces' => $this->manager->search($query, 'provinces', $cached),
+            'regencies' => $this->manager->search($query, 'regencies', $cached),
+            'districts' => $this->manager->search($query, 'districts', $cached),
+            'villages' => $this->manager->search($query, 'villages', $cached),
+        ];
     }
 
     /**

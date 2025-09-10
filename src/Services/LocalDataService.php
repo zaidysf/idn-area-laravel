@@ -127,71 +127,25 @@ class LocalDataService implements AreaDataServiceInterface
         switch ($type) {
             case 'provinces':
                 /** @phpstan-ignore-next-line */
-                return Province::search($query)->map(function ($item) {
-                    return [
-                        'code' => $item->code,
-                        'name' => $item->name,
-                    ];
-                })->values();
+                return Province::search($query);
 
             case 'regencies':
                 /** @phpstan-ignore-next-line */
-                return Regency::search($query)->map(function ($item) {
-                    return [
-                        'code' => $item->code,
-                        'province_code' => $item->province_code,
-                        'name' => $item->name,
-                    ];
-                })->values();
+                return Regency::search($query);
 
             case 'districts':
                 /** @phpstan-ignore-next-line */
-                return District::search($query)->map(function ($item) {
-                    return [
-                        'code' => $item->code,
-                        'regency_code' => $item->regency_code,
-                        'name' => $item->name,
-                    ];
-                })->values();
+                return District::search($query);
 
             case 'villages':
                 /** @phpstan-ignore-next-line */
-                return Village::search($query)->map(function ($item) {
-                    return [
-                        'code' => $item->code,
-                        'district_code' => $item->district_code,
-                        'name' => $item->name,
-                    ];
-                })->values();
+                return Village::search($query);
 
             default: // 'all' - merge all results into flat collection
-                $provinces = Province::search($query)->map(function ($item) {
-                    return [
-                        'code' => $item->code,
-                        'name' => $item->name,
-                    ];
-                });
-                $regencies = Regency::search($query)->map(function ($item) {
-                    return [
-                        'code' => $item->code,
-                        'province_code' => $item->province_code,
-                        'name' => $item->name,
-                    ];
-                });
-                $districts = District::search($query)->map(function ($item) {
-                    return [
-                        'code' => $item->code,
-                        'regency_code' => $item->regency_code,
-                        'name' => $item->name,
-                    ];
-                });
-                $villages = Village::search($query)->map(function ($item) {
-                    return [
-                        'code' => $item->code,
-                        'district_code' => $item->district_code,
-                        'name' => $item->name,
-                    ];
-                });
+                $provinces = Province::search($query);
+                $regencies = Regency::search($query);
+                $districts = District::search($query);
+                $villages = Village::search($query);
 
                 // Flatten all results into a single collection
                 return collect()

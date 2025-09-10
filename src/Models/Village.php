@@ -58,8 +58,6 @@ class Village extends Model
 
     /**
      * Get the district that owns the village.
-     *
-     * @return BelongsTo
      */
     public function district(): BelongsTo
     {
@@ -68,8 +66,6 @@ class Village extends Model
 
     /**
      * Get the regency through district.
-     *
-     * @return HasOneThrough
      */
     public function regency(): HasOneThrough
     {

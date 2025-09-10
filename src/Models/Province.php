@@ -56,8 +56,6 @@ class Province extends Model
 
     /**
      * Get all regencies that belong to this province.
-     *
-     * @return HasMany
      */
     public function regencies(): HasMany
     {
@@ -67,8 +65,6 @@ class Province extends Model
 
     /**
      * Get all districts that belong to this province through regencies.
-     *
-     * @return HasManyThrough
      */
     public function districts(): HasManyThrough
     {

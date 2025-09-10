@@ -13,9 +13,14 @@ use zaidysf\IdnArea\Models\Village;
 
 class LocalDataService implements AreaDataServiceInterface
 {
+    /**
+     * @return Collection<int, array<string, mixed>>
+     */
     public function getAllProvinces(): Collection
     {
-        return Province::orderBy('name')->get();
+        return Province::orderBy('name')->get()->map(function ($province) {
+            return $province->toArray();
+        });
     }
 
     public function getProvince(string $code): ?\zaidysf\IdnArea\Models\Province
@@ -23,16 +28,27 @@ class LocalDataService implements AreaDataServiceInterface
         return Province::find($code);
     }
 
+    /**
+     * @return Collection<int, array<string, mixed>>
+     */
     public function getRegenciesByProvince(string $provinceCode): Collection
     {
         return Regency::where('province_code', $provinceCode)
             ->orderBy('name')
-            ->get();
+            ->get()
+            ->map(function ($regency) {
+                return $regency->toArray();
+            });
     }
 
+    /**
+     * @return Collection<int, array<string, mixed>>
+     */
     public function getAllRegencies(): Collection
     {
-        return Regency::orderBy('name')->get();
+        return Regency::orderBy('name')->get()->map(function ($regency) {
+            return $regency->toArray();
+        });
     }
 
     public function getRegency(string $code): ?\zaidysf\IdnArea\Models\Regency
@@ -40,16 +56,27 @@ class LocalDataService implements AreaDataServiceInterface
         return Regency::find($code);
     }
 
+    /**
+     * @return Collection<int, array<string, mixed>>
+     */
     public function getDistrictsByRegency(string $regencyCode): Collection
     {
         return District::where('regency_code', $regencyCode)
             ->orderBy('name')
-            ->get();
+            ->get()
+            ->map(function ($district) {
+                return $district->toArray();
+            });
     }
 
+    /**
+     * @return Collection<int, array<string, mixed>>
+     */
     public function getAllDistricts(): Collection
     {
-        return District::orderBy('name')->get();
+        return District::orderBy('name')->get()->map(function ($district) {
+            return $district->toArray();
+        });
     }
 
     public function getDistrict(string $code): ?\zaidysf\IdnArea\Models\District
@@ -57,16 +84,27 @@ class LocalDataService implements AreaDataServiceInterface
         return District::find($code);
     }
 
+    /**
+     * @return Collection<int, array<string, mixed>>
+     */
     public function getVillagesByDistrict(string $districtCode): Collection
     {
         return Village::where('district_code', $districtCode)
             ->orderBy('name')
-            ->get();
+            ->get()
+            ->map(function ($village) {
+                return $village->toArray();
+            });
     }
 
+    /**
+     * @return Collection<int, array<string, mixed>>
+     */
     public function getAllVillages(): Collection
     {
-        return Village::orderBy('name')->get();
+        return Village::orderBy('name')->get()->map(function ($village) {
+            return $village->toArray();
+        });
     }
 
     public function getVillage(string $code): ?\zaidysf\IdnArea\Models\Village
@@ -74,6 +112,9 @@ class LocalDataService implements AreaDataServiceInterface
         return Village::find($code);
     }
 
+    /**
+     * @return Collection<int, array<string, mixed>>
+     */
     public function searchByName(string $query, string $type = 'all'): Collection
     {
         switch ($type) {
@@ -131,8 +172,13 @@ class LocalDataService implements AreaDataServiceInterface
     }
 
     // Additional methods for testing compatibility
-
-    public function getProvinces($limit = null, $offset = null): array
+    
+    /**
+     * @param int|null $limit
+     * @param int|null $offset
+     * @return array<int, array<string, mixed>>
+     */
+    public function getProvinces(?int $limit = null, ?int $offset = null): array
     {
         $query = Province::orderBy('name');
 

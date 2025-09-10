@@ -7,7 +7,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
   array (
     '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php' => 
     array (
-      0 => 'b65037ed57042fa0e436d4bd8e4c2172fa39708e',
+      0 => '7f77b4c879729fdd7c3cd40cf34e25d41158e200',
       1 => 
       array (
         0 => 'zaidysf\\idnarea\\idnarea',
@@ -294,7 +294,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaServiceProvider.php' => 
     array (
-      0 => '4ad1cd2977b229a4d51a7362f0fae78d47a29fb4',
+      0 => '39062bcacd6c519462a55e243e4459aa5c9fdfd6',
       1 => 
       array (
         0 => 'zaidysf\\idnarea\\idnareaserviceprovider',
@@ -311,7 +311,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/zaid/codes/idn-area-laravel-12/src/Services/IdnAreaSeeder.php' => 
     array (
-      0 => 'c585a7abeebaf138e85b71f0cddba5b286fa5db7',
+      0 => '3feddcc568a62e76ed70758546b8dceec00ef524',
       1 => 
       array (
         0 => 'zaidysf\\idnarea\\services\\idnareaseeder',
@@ -338,7 +338,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php' => 
     array (
-      0 => 'afd86f8f03450b3df89277fffc83c9feca5d8991',
+      0 => '51f30e2d9dcb943e263cc106449811e686f6b581',
       1 => 
       array (
         0 => 'zaidysf\\idnarea\\idnareamanager',
@@ -394,7 +394,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/zaid/codes/idn-area-laravel-12/src/Contracts/AreaDataServiceInterface.php' => 
     array (
-      0 => '4a94e6e482b29de37ffdc421a074ba54e64580d8',
+      0 => 'b382c8f88b22064ca8ee5cd1b6cbfaf42269bd54',
       1 => 
       array (
         0 => 'zaidysf\\idnarea\\contracts\\areadataserviceinterface',
@@ -418,52 +418,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
       ),
     ),
-    '/Users/zaid/codes/idn-area-laravel-12/src/Exceptions/BpsApiException.php' => 
-    array (
-      0 => 'e988f39b7a2bfebfe0d05cd7ae0cdd48706cd3c6',
-      1 => 
-      array (
-        0 => 'zaidysf\\idnarea\\exceptions\\bpsapiexception',
-      ),
-      2 => 
-      array (
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaUpdateCommand.php' => 
-    array (
-      0 => '7da776ae8e4b9a74f8c70ff53b1b5e1d06260583',
-      1 => 
-      array (
-        0 => 'zaidysf\\idnarea\\commands\\idnareaupdatecommand',
-      ),
-      2 => 
-      array (
-        0 => 'zaidysf\\idnarea\\commands\\handle',
-        1 => 'zaidysf\\idnarea\\commands\\displaywelcome',
-        2 => 'zaidysf\\idnarea\\commands\\validatecsvfiles',
-        3 => 'zaidysf\\idnarea\\commands\\comparedata',
-        4 => 'zaidysf\\idnarea\\commands\\comparetype',
-        5 => 'zaidysf\\idnarea\\commands\\readcsvfile',
-        6 => 'zaidysf\\idnarea\\commands\\getdbcount',
-        7 => 'zaidysf\\idnarea\\commands\\displaycomparison',
-        8 => 'zaidysf\\idnarea\\commands\\hasupdates',
-        9 => 'zaidysf\\idnarea\\commands\\confirmupdate',
-        10 => 'zaidysf\\idnarea\\commands\\createbackup',
-        11 => 'zaidysf\\idnarea\\commands\\exporttabletocsv',
-        12 => 'zaidysf\\idnarea\\commands\\updatedata',
-        13 => 'zaidysf\\idnarea\\commands\\updatetype',
-        14 => 'zaidysf\\idnarea\\commands\\displayupdatesummary',
-      ),
-      3 => 
-      array (
-      ),
-    ),
     '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSwitchModeCommand.php' => 
     array (
-      0 => '4296210583c126d6e70ce451f68198459bf5a822',
+      0 => '54cc5b42aca9dc292bf0005ee3b17822aab8e1aa',
       1 => 
       array (
         0 => 'zaidysf\\idnarea\\commands\\idnareaswitchmodecommand',
@@ -487,40 +444,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         14 => 'zaidysf\\idnarea\\commands\\synclocaldata',
         15 => 'zaidysf\\idnarea\\commands\\seedlocaldata',
         16 => 'zaidysf\\idnarea\\commands\\getdatacounts',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSyncBpsCommand.php' => 
-    array (
-      0 => '11919ae6086d057d8517c302bc8b77727b0e8d5a',
-      1 => 
-      array (
-        0 => 'zaidysf\\idnarea\\commands\\idnareasyncbpscommand',
-      ),
-      2 => 
-      array (
-        0 => 'zaidysf\\idnarea\\commands\\handle',
-        1 => 'zaidysf\\idnarea\\commands\\displaywelcome',
-        2 => 'zaidysf\\idnarea\\commands\\verifyapiconnection',
-        3 => 'zaidysf\\idnarea\\commands\\runinitialsync',
-        4 => 'zaidysf\\idnarea\\commands\\runregularsync',
-        5 => 'zaidysf\\idnarea\\commands\\syncprovinces',
-        6 => 'zaidysf\\idnarea\\commands\\syncallregencies',
-        7 => 'zaidysf\\idnarea\\commands\\syncalldistricts',
-        8 => 'zaidysf\\idnarea\\commands\\syncallvillages',
-        9 => 'zaidysf\\idnarea\\commands\\clearexistingdata',
-        10 => 'zaidysf\\idnarea\\commands\\displaysyncsummary',
-        11 => 'zaidysf\\idnarea\\commands\\exporttocsv',
-        12 => 'zaidysf\\idnarea\\commands\\exportprovincescsv',
-        13 => 'zaidysf\\idnarea\\commands\\exportregenciescsv',
-        14 => 'zaidysf\\idnarea\\commands\\exportdistrictscsv',
-        15 => 'zaidysf\\idnarea\\commands\\exportvillagescsv',
-        16 => 'zaidysf\\idnarea\\commands\\checksyncstatus',
-        17 => 'zaidysf\\idnarea\\commands\\shouldskipsync',
-        18 => 'zaidysf\\idnarea\\commands\\updatesynctimestamp',
-        19 => 'zaidysf\\idnarea\\commands\\getlastsynctime',
+        17 => 'zaidysf\\idnarea\\commands\\promptfordatatokocredentials',
+        18 => 'zaidysf\\idnarea\\commands\\updatedatatokocredentials',
+        19 => 'zaidysf\\idnarea\\commands\\testdatatokoconnection',
       ),
       3 => 
       array (
@@ -528,7 +454,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSetupCommand.php' => 
     array (
-      0 => '788b185c674ac725b06007058a9cec71b4eb7bd7',
+      0 => '0eb69848f0930b1dacb8ea57bdf2c03093feba19',
       1 => 
       array (
         0 => 'zaidysf\\idnarea\\commands\\idnareasetupcommand',
@@ -545,52 +471,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         7 => 'zaidysf\\idnarea\\commands\\updateconfig',
         8 => 'zaidysf\\idnarea\\commands\\isalreadysetup',
         9 => 'zaidysf\\idnarea\\commands\\getcurrentmode',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php' => 
-    array (
-      0 => 'c390f5a063f86098d9c5bfbeb3bd68aeae003107',
-      1 => 
-      array (
-        0 => 'zaidysf\\idnarea\\services\\bpsapiservice',
-      ),
-      2 => 
-      array (
-        0 => 'zaidysf\\idnarea\\services\\__construct',
-        1 => 'zaidysf\\idnarea\\services\\getallprovinces',
-        2 => 'zaidysf\\idnarea\\services\\getprovince',
-        3 => 'zaidysf\\idnarea\\services\\getregenciesbyprovince',
-        4 => 'zaidysf\\idnarea\\services\\getallregencies',
-        5 => 'zaidysf\\idnarea\\services\\getregency',
-        6 => 'zaidysf\\idnarea\\services\\getdistrictsbyregency',
-        7 => 'zaidysf\\idnarea\\services\\getalldistricts',
-        8 => 'zaidysf\\idnarea\\services\\getdistrict',
-        9 => 'zaidysf\\idnarea\\services\\getvillagesbydistrict',
-        10 => 'zaidysf\\idnarea\\services\\getallvillages',
-        11 => 'zaidysf\\idnarea\\services\\getvillage',
-        12 => 'zaidysf\\idnarea\\services\\searchbyname',
-        13 => 'zaidysf\\idnarea\\services\\getlatestperiod',
-        14 => 'zaidysf\\idnarea\\services\\getperiods',
-        15 => 'zaidysf\\idnarea\\services\\isapiavailable',
-        16 => 'zaidysf\\idnarea\\services\\getprovinces',
-        17 => 'zaidysf\\idnarea\\services\\getregencies',
-        18 => 'zaidysf\\idnarea\\services\\getdistricts',
-        19 => 'zaidysf\\idnarea\\services\\getvillages',
-        20 => 'zaidysf\\idnarea\\services\\getprovincebycode',
-        21 => 'zaidysf\\idnarea\\services\\getregencybycode',
-        22 => 'zaidysf\\idnarea\\services\\getdistrictbycode',
-        23 => 'zaidysf\\idnarea\\services\\getvillagebycode',
-        24 => 'zaidysf\\idnarea\\services\\searchprovinces',
-        25 => 'zaidysf\\idnarea\\services\\searchregencies',
-        26 => 'zaidysf\\idnarea\\services\\searchdistricts',
-        27 => 'zaidysf\\idnarea\\services\\searchvillages',
-        28 => 'zaidysf\\idnarea\\services\\countprovinces',
-        29 => 'zaidysf\\idnarea\\services\\countregencies',
-        30 => 'zaidysf\\idnarea\\services\\countdistricts',
-        31 => 'zaidysf\\idnarea\\services\\countvillages',
+        10 => 'zaidysf\\idnarea\\commands\\updatedatatokocredentials',
+        11 => 'zaidysf\\idnarea\\commands\\testdatatokoconnection',
       ),
       3 => 
       array (
@@ -598,7 +480,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php' => 
     array (
-      0 => 'f317fa30667bb20367e81a1deed8d1e4d2ad88fe',
+      0 => '422937db5d78b7b8be09d95a9884de8a4a749986',
       1 => 
       array (
         0 => 'zaidysf\\idnarea\\services\\localdataservice',
@@ -633,6 +515,71 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         25 => 'zaidysf\\idnarea\\services\\countregencies',
         26 => 'zaidysf\\idnarea\\services\\countdistricts',
         27 => 'zaidysf\\idnarea\\services\\countvillages',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/zaid/codes/idn-area-laravel-12/src/Exceptions/DataTokoApiException.php' => 
+    array (
+      0 => 'dab9a14166e02a915cda3c277c87a9cdb24d3bbe',
+      1 => 
+      array (
+        0 => 'zaidysf\\idnarea\\exceptions\\datatokoapiexception',
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php' => 
+    array (
+      0 => '8f897658412620a3541017b53d6edaaa2f13262a',
+      1 => 
+      array (
+        0 => 'zaidysf\\idnarea\\services\\datatokoapiservice',
+      ),
+      2 => 
+      array (
+        0 => 'zaidysf\\idnarea\\services\\__construct',
+        1 => 'zaidysf\\idnarea\\services\\getallprovinces',
+        2 => 'zaidysf\\idnarea\\services\\getprovince',
+        3 => 'zaidysf\\idnarea\\services\\getregenciesbyprovince',
+        4 => 'zaidysf\\idnarea\\services\\getallregencies',
+        5 => 'zaidysf\\idnarea\\services\\getregency',
+        6 => 'zaidysf\\idnarea\\services\\getdistrictsbyregency',
+        7 => 'zaidysf\\idnarea\\services\\getalldistricts',
+        8 => 'zaidysf\\idnarea\\services\\getdistrict',
+        9 => 'zaidysf\\idnarea\\services\\getvillagesbydistrict',
+        10 => 'zaidysf\\idnarea\\services\\getallvillages',
+        11 => 'zaidysf\\idnarea\\services\\getvillage',
+        12 => 'zaidysf\\idnarea\\services\\search',
+        13 => 'zaidysf\\idnarea\\services\\searchbyname',
+        14 => 'zaidysf\\idnarea\\services\\makeauthenticatedrequest',
+        15 => 'zaidysf\\idnarea\\services\\authenticate',
+        16 => 'zaidysf\\idnarea\\services\\getauthtoken',
+        17 => 'zaidysf\\idnarea\\services\\storeauthtoken',
+        18 => 'zaidysf\\idnarea\\services\\clearauthtoken',
+        19 => 'zaidysf\\idnarea\\services\\gettokenfromredis',
+        20 => 'zaidysf\\idnarea\\services\\storetokeninredis',
+        21 => 'zaidysf\\idnarea\\services\\cleartokenfromredis',
+        22 => 'zaidysf\\idnarea\\services\\gettokenfromfile',
+        23 => 'zaidysf\\idnarea\\services\\storetokeninfile',
+        24 => 'zaidysf\\idnarea\\services\\cleartokenfromfile',
+        25 => 'zaidysf\\idnarea\\services\\gettokenfromcache',
+        26 => 'zaidysf\\idnarea\\services\\storetokenincache',
+        27 => 'zaidysf\\idnarea\\services\\cleartokenfromcache',
+        28 => 'zaidysf\\idnarea\\services\\transformprovinces',
+        29 => 'zaidysf\\idnarea\\services\\transformprovince',
+        30 => 'zaidysf\\idnarea\\services\\transformregencies',
+        31 => 'zaidysf\\idnarea\\services\\transformregency',
+        32 => 'zaidysf\\idnarea\\services\\transformdistricts',
+        33 => 'zaidysf\\idnarea\\services\\transformdistrict',
+        34 => 'zaidysf\\idnarea\\services\\transformvillages',
+        35 => 'zaidysf\\idnarea\\services\\transformvillage',
+        36 => 'zaidysf\\idnarea\\services\\getdefaultconfig',
       ),
       3 => 
       array (

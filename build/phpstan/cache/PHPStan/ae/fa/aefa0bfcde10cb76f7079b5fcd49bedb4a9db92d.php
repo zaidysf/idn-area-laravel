@@ -2,6 +2,6 @@
 
 // variadic-method-zaidysf\IdnArea\Services\IdnAreaSeeder-readCsv-/Users/zaid/codes/idn-area-laravel-12/src/Services/IdnAreaSeeder.php
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => '1757427661-v4',
+   'variableKey' => '1757445163-v4',
    'data' => false,
 ));

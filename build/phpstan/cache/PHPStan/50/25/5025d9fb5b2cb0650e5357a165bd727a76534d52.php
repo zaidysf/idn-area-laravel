@@ -2,6 +2,6 @@
 
 // variadic-method-zaidysf\IdnArea\Services\LocalDataService-getVillagesByDistrict-/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => '1757427207-v4',
+   'variableKey' => '1757476999-v4',
    'data' => false,
 ));

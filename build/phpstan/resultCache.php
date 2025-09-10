@@ -2268,231 +2268,14 @@ return [
     \PHPStan\Analyser\Error::__set_state(array(
        'message' => 'Method zaidysf\\IdnArea\\Commands\\IdnAreaSwitchModeCommand::getDataCounts() return type has no value type specified in iterable type array.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSwitchModeCommand.php',
-       'line' => 416,
+       'line' => 428,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSwitchModeCommand.php',
        'traitFilePath' => NULL,
        'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 416,
+       'nodeLine' => 428,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
        'identifier' => 'missingType.iterableValue',
-       'metadata' => 
-      array (
-      ),
-    )),
-  ),
-  '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSyncBpsCommand.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Property zaidysf\\IdnArea\\Commands\\IdnAreaSyncBpsCommand::$totalProcessed is never read, only written.',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSyncBpsCommand.php',
-       'line' => 27,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSyncBpsCommand.php',
-       'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/developing-extensions/always-read-written-properties',
-       'nodeLine' => 16,
-       'nodeType' => 'PHPStan\\Node\\ClassPropertiesNode',
-       'identifier' => 'property.onlyWritten',
-       'metadata' => 
-      array (
-      ),
-    )),
-    1 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Property zaidysf\\IdnArea\\Commands\\IdnAreaSyncBpsCommand::$stats type has no value type specified in iterable type array.',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSyncBpsCommand.php',
-       'line' => 28,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSyncBpsCommand.php',
-       'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 28,
-       'nodeType' => 'PHPStan\\Node\\ClassPropertyNode',
-       'identifier' => 'missingType.iterableValue',
-       'metadata' => 
-      array (
-      ),
-    )),
-  ),
-  '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaUpdateCommand.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Property zaidysf\\IdnArea\\Commands\\IdnAreaUpdateCommand::$stats type has no value type specified in iterable type array.',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaUpdateCommand.php',
-       'line' => 26,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaUpdateCommand.php',
-       'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 26,
-       'nodeType' => 'PHPStan\\Node\\ClassPropertyNode',
-       'identifier' => 'missingType.iterableValue',
-       'metadata' => 
-      array (
-      ),
-    )),
-    1 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Property zaidysf\\IdnArea\\Commands\\IdnAreaUpdateCommand::$comparison type has no value type specified in iterable type array.',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaUpdateCommand.php',
-       'line' => 27,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaUpdateCommand.php',
-       'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 27,
-       'nodeType' => 'PHPStan\\Node\\ClassPropertyNode',
-       'identifier' => 'missingType.iterableValue',
-       'metadata' => 
-      array (
-      ),
-    )),
-    2 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Commands\\IdnAreaUpdateCommand::readCsvFile() return type has no value type specified in iterable type array.',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaUpdateCommand.php',
-       'line' => 160,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaUpdateCommand.php',
-       'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 160,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.iterableValue',
-       'metadata' => 
-      array (
-      ),
-    )),
-  ),
-  '/Users/zaid/codes/idn-area-laravel-12/src/Contracts/AreaDataServiceInterface.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface::getAllProvinces() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Contracts/AreaDataServiceInterface.php',
-       'line' => 11,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Contracts/AreaDataServiceInterface.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 11,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
-       'metadata' => 
-      array (
-      ),
-    )),
-    1 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface::getAllRegencies() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Contracts/AreaDataServiceInterface.php',
-       'line' => 14,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Contracts/AreaDataServiceInterface.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 14,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
-       'metadata' => 
-      array (
-      ),
-    )),
-    2 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface::getRegenciesByProvince() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Contracts/AreaDataServiceInterface.php',
-       'line' => 16,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Contracts/AreaDataServiceInterface.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 16,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
-       'metadata' => 
-      array (
-      ),
-    )),
-    3 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface::getAllDistricts() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Contracts/AreaDataServiceInterface.php',
-       'line' => 18,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Contracts/AreaDataServiceInterface.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 18,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
-       'metadata' => 
-      array (
-      ),
-    )),
-    4 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface::getDistrictsByRegency() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Contracts/AreaDataServiceInterface.php',
-       'line' => 20,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Contracts/AreaDataServiceInterface.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 20,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
-       'metadata' => 
-      array (
-      ),
-    )),
-    5 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface::getAllVillages() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Contracts/AreaDataServiceInterface.php',
-       'line' => 22,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Contracts/AreaDataServiceInterface.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 22,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
-       'metadata' => 
-      array (
-      ),
-    )),
-    6 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface::getVillagesByDistrict() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Contracts/AreaDataServiceInterface.php',
-       'line' => 24,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Contracts/AreaDataServiceInterface.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 24,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
-       'metadata' => 
-      array (
-      ),
-    )),
-    7 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface::searchByName() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Contracts/AreaDataServiceInterface.php',
-       'line' => 26,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Contracts/AreaDataServiceInterface.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 26,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
        'metadata' => 
       array (
       ),
@@ -2518,46 +2301,46 @@ return [
     )),
     1 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\IdnArea::provinces() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
+       'message' => 'Method zaidysf\\IdnArea\\IdnArea::search() return type has no value type specified in iterable type array.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
-       'line' => 25,
+       'line' => 132,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
        'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 25,
+       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
+       'nodeLine' => 132,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
+       'identifier' => 'missingType.iterableValue',
        'metadata' => 
       array (
       ),
     )),
     2 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\IdnArea::regenciesByProvince() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
+       'message' => 'Method zaidysf\\IdnArea\\IdnArea::search() return type has no value type specified in iterable type array|Illuminate\\Support\\Collection.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
-       'line' => 41,
+       'line' => 132,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
        'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 41,
+       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
+       'nodeLine' => 132,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
+       'identifier' => 'missingType.iterableValue',
        'metadata' => 
       array (
       ),
     )),
     3 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\IdnArea::regencies() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
+       'message' => 'Method zaidysf\\IdnArea\\IdnArea::search() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
-       'line' => 49,
+       'line' => 132,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
        'traitFilePath' => NULL,
        'tip' => NULL,
-       'nodeLine' => 49,
+       'nodeLine' => 132,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
        'identifier' => 'missingType.generics',
        'metadata' => 
@@ -2566,62 +2349,62 @@ return [
     )),
     4 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\IdnArea::districtsByRegency() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
+       'message' => 'Result of && is always true.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
-       'line' => 65,
+       'line' => 144,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
        'traitFilePath' => NULL,
        'tip' => NULL,
-       'nodeLine' => 65,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
+       'nodeLine' => 144,
+       'nodeType' => 'PHPStan\\Node\\BooleanAndNode',
+       'identifier' => 'booleanAnd.alwaysTrue',
        'metadata' => 
       array (
       ),
     )),
     5 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\IdnArea::districts() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
+       'message' => 'Method zaidysf\\IdnArea\\IdnArea::getPeriods() return type has no value type specified in iterable type array.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
-       'line' => 73,
+       'line' => 176,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
        'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 73,
+       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
+       'nodeLine' => 176,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
+       'identifier' => 'missingType.iterableValue',
        'metadata' => 
       array (
       ),
     )),
     6 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\IdnArea::villagesByDistrict() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
+       'message' => 'Method zaidysf\\IdnArea\\IdnArea::statistics() return type has no value type specified in iterable type array.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
-       'line' => 89,
+       'line' => 184,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
        'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 89,
+       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
+       'nodeLine' => 184,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
+       'identifier' => 'missingType.iterableValue',
        'metadata' => 
       array (
       ),
     )),
     7 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\IdnArea::villages() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
+       'message' => 'Method zaidysf\\IdnArea\\IdnArea::islandsByRegency() return type with generic class Illuminate\\Database\\Eloquent\\Collection does not specify its types: TKey, TModel',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
-       'line' => 97,
+       'line' => 200,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
        'traitFilePath' => NULL,
        'tip' => NULL,
-       'nodeLine' => 97,
+       'nodeLine' => 200,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
        'identifier' => 'missingType.generics',
        'metadata' => 
@@ -2630,94 +2413,94 @@ return [
     )),
     8 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\IdnArea::search() return type has no value type specified in iterable type array.',
+       'message' => 'Method zaidysf\\IdnArea\\IdnArea::populatedIslands() return type with generic class Illuminate\\Database\\Eloquent\\Collection does not specify its types: TKey, TModel',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
-       'line' => 113,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
-       'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 113,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.iterableValue',
-       'metadata' => 
-      array (
-      ),
-    )),
-    9 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\IdnArea::search() return type has no value type specified in iterable type array|Illuminate\\Support\\Collection.',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
-       'line' => 113,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
-       'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 113,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.iterableValue',
-       'metadata' => 
-      array (
-      ),
-    )),
-    10 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\IdnArea::search() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
-       'line' => 113,
+       'line' => 215,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
        'traitFilePath' => NULL,
        'tip' => NULL,
-       'nodeLine' => 113,
+       'nodeLine' => 215,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
        'identifier' => 'missingType.generics',
        'metadata' => 
       array (
       ),
     )),
-    11 => 
+    9 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Result of && is always true.',
+       'message' => 'Method zaidysf\\IdnArea\\IdnArea::outermostSmallIslands() return type with generic class Illuminate\\Database\\Eloquent\\Collection does not specify its types: TKey, TModel',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
-       'line' => 125,
+       'line' => 230,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
        'traitFilePath' => NULL,
        'tip' => NULL,
-       'nodeLine' => 125,
-       'nodeType' => 'PHPStan\\Node\\BooleanAndNode',
-       'identifier' => 'booleanAnd.alwaysTrue',
+       'nodeLine' => 230,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'missingType.generics',
        'metadata' => 
       array (
       ),
     )),
-    12 => 
+    10 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\IdnArea::getPeriods() return type has no value type specified in iterable type array.',
+       'message' => 'Method zaidysf\\IdnArea\\IdnArea::hierarchy() return type has no value type specified in iterable type array.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
-       'line' => 157,
+       'line' => 245,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
        'traitFilePath' => NULL,
        'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 157,
+       'nodeLine' => 245,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
        'identifier' => 'missingType.iterableValue',
        'metadata' => 
       array (
       ),
     )),
-    13 => 
+    11 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\IdnArea::statistics() return type has no value type specified in iterable type array.',
+       'message' => 'Method zaidysf\\IdnArea\\IdnArea::getMultiple() has parameter $codes with no value type specified in iterable type array.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
-       'line' => 165,
+       'line' => 260,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
        'traitFilePath' => NULL,
        'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 165,
+       'nodeLine' => 260,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'missingType.iterableValue',
+       'metadata' => 
+      array (
+      ),
+    )),
+    12 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Method zaidysf\\IdnArea\\IdnArea::getMultiple() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
+       'line' => 260,
+       'canBeIgnored' => true,
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 260,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'missingType.generics',
+       'metadata' => 
+      array (
+      ),
+    )),
+    13 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Method zaidysf\\IdnArea\\IdnArea::buildHierarchy() return type has no value type specified in iterable type array.',
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
+       'line' => 311,
+       'canBeIgnored' => true,
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
+       'traitFilePath' => NULL,
+       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
+       'nodeLine' => 311,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
        'identifier' => 'missingType.iterableValue',
        'metadata' => 
@@ -2726,126 +2509,46 @@ return [
     )),
     14 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\IdnArea::islandsByRegency() return type with generic class Illuminate\\Database\\Eloquent\\Collection does not specify its types: TKey, TModel',
+       'message' => 'Else branch is unreachable because ternary operator condition is always true.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
-       'line' => 181,
+       'line' => 330,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
        'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 181,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
+       'tip' => 'Because the type is coming from a PHPDoc, you can turn off this check by setting <fg=cyan>treatPhpDocTypesAsCertain: false</> in your <fg=cyan>%configurationFile%</>.',
+       'nodeLine' => 330,
+       'nodeType' => 'PhpParser\\Node\\Expr\\Ternary',
+       'identifier' => 'ternary.elseUnreachable',
        'metadata' => 
       array (
       ),
     )),
     15 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\IdnArea::populatedIslands() return type with generic class Illuminate\\Database\\Eloquent\\Collection does not specify its types: TKey, TModel',
+       'message' => 'Else branch is unreachable because ternary operator condition is always true.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
-       'line' => 196,
+       'line' => 338,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
        'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 196,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
+       'tip' => 'Because the type is coming from a PHPDoc, you can turn off this check by setting <fg=cyan>treatPhpDocTypesAsCertain: false</> in your <fg=cyan>%configurationFile%</>.',
+       'nodeLine' => 338,
+       'nodeType' => 'PhpParser\\Node\\Expr\\Ternary',
+       'identifier' => 'ternary.elseUnreachable',
        'metadata' => 
       array (
       ),
     )),
     16 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\IdnArea::outermostSmallIslands() return type with generic class Illuminate\\Database\\Eloquent\\Collection does not specify its types: TKey, TModel',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
-       'line' => 211,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 211,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
-       'metadata' => 
-      array (
-      ),
-    )),
-    17 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\IdnArea::hierarchy() return type has no value type specified in iterable type array.',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
-       'line' => 226,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
-       'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 226,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.iterableValue',
-       'metadata' => 
-      array (
-      ),
-    )),
-    18 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\IdnArea::getMultiple() has parameter $codes with no value type specified in iterable type array.',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
-       'line' => 241,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
-       'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 241,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.iterableValue',
-       'metadata' => 
-      array (
-      ),
-    )),
-    19 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\IdnArea::getMultiple() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
-       'line' => 241,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 241,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
-       'metadata' => 
-      array (
-      ),
-    )),
-    20 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\IdnArea::buildHierarchy() return type has no value type specified in iterable type array.',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
-       'line' => 292,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
-       'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 292,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.iterableValue',
-       'metadata' => 
-      array (
-      ),
-    )),
-    21 => 
-    \PHPStan\Analyser\Error::__set_state(array(
        'message' => 'Else branch is unreachable because ternary operator condition is always true.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
-       'line' => 321,
+       'line' => 340,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
        'traitFilePath' => NULL,
        'tip' => NULL,
-       'nodeLine' => 321,
+       'nodeLine' => 340,
        'nodeType' => 'PhpParser\\Node\\Expr\\Ternary',
        'identifier' => 'ternary.elseUnreachable',
        'metadata' => 
@@ -2859,12 +2562,12 @@ return [
     \PHPStan\Analyser\Error::__set_state(array(
        'message' => 'Property zaidysf\\IdnArea\\IdnAreaManager::$config type has no value type specified in iterable type array.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
-       'line' => 20,
+       'line' => 21,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
        'traitFilePath' => NULL,
        'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 20,
+       'nodeLine' => 21,
        'nodeType' => 'PHPStan\\Node\\ClassPropertyNode',
        'identifier' => 'missingType.iterableValue',
        'metadata' => 
@@ -2875,12 +2578,12 @@ return [
     \PHPStan\Analyser\Error::__set_state(array(
        'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::__construct() has parameter $config with no value type specified in iterable type array.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
-       'line' => 22,
+       'line' => 23,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
        'traitFilePath' => NULL,
        'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 22,
+       'nodeLine' => 23,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
        'identifier' => 'missingType.iterableValue',
        'metadata' => 
@@ -2891,12 +2594,12 @@ return [
     \PHPStan\Analyser\Error::__set_state(array(
        'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::provinces() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
-       'line' => 31,
+       'line' => 32,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
        'traitFilePath' => NULL,
        'tip' => NULL,
-       'nodeLine' => 31,
+       'nodeLine' => 32,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
        'identifier' => 'missingType.generics',
        'metadata' => 
@@ -2907,12 +2610,12 @@ return [
     \PHPStan\Analyser\Error::__set_state(array(
        'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::regenciesByProvince() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
-       'line' => 61,
+       'line' => 62,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
        'traitFilePath' => NULL,
        'tip' => NULL,
-       'nodeLine' => 61,
+       'nodeLine' => 62,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
        'identifier' => 'missingType.generics',
        'metadata' => 
@@ -2923,12 +2626,12 @@ return [
     \PHPStan\Analyser\Error::__set_state(array(
        'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::regencies() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
-       'line' => 76,
+       'line' => 77,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
        'traitFilePath' => NULL,
        'tip' => NULL,
-       'nodeLine' => 76,
+       'nodeLine' => 77,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
        'identifier' => 'missingType.generics',
        'metadata' => 
@@ -2939,12 +2642,12 @@ return [
     \PHPStan\Analyser\Error::__set_state(array(
        'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::districtsByRegency() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
-       'line' => 106,
+       'line' => 107,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
        'traitFilePath' => NULL,
        'tip' => NULL,
-       'nodeLine' => 106,
+       'nodeLine' => 107,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
        'identifier' => 'missingType.generics',
        'metadata' => 
@@ -2955,12 +2658,12 @@ return [
     \PHPStan\Analyser\Error::__set_state(array(
        'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::districts() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
-       'line' => 121,
+       'line' => 122,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
        'traitFilePath' => NULL,
        'tip' => NULL,
-       'nodeLine' => 121,
+       'nodeLine' => 122,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
        'identifier' => 'missingType.generics',
        'metadata' => 
@@ -2971,12 +2674,12 @@ return [
     \PHPStan\Analyser\Error::__set_state(array(
        'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::villagesByDistrict() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
-       'line' => 151,
+       'line' => 152,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
        'traitFilePath' => NULL,
        'tip' => NULL,
-       'nodeLine' => 151,
+       'nodeLine' => 152,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
        'identifier' => 'missingType.generics',
        'metadata' => 
@@ -2987,12 +2690,12 @@ return [
     \PHPStan\Analyser\Error::__set_state(array(
        'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::villages() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
-       'line' => 166,
+       'line' => 167,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
        'traitFilePath' => NULL,
        'tip' => NULL,
-       'nodeLine' => 166,
+       'nodeLine' => 167,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
        'identifier' => 'missingType.generics',
        'metadata' => 
@@ -3003,12 +2706,12 @@ return [
     \PHPStan\Analyser\Error::__set_state(array(
        'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::search() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
-       'line' => 196,
+       'line' => 197,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
        'traitFilePath' => NULL,
        'tip' => NULL,
-       'nodeLine' => 196,
+       'nodeLine' => 197,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
        'identifier' => 'missingType.generics',
        'metadata' => 
@@ -3017,46 +2720,46 @@ return [
     )),
     10 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::getPeriods() return type has no value type specified in iterable type array.',
+       'message' => 'Class zaidysf\\IdnArea\\Services\\BpsApiService not found.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
-       'line' => 231,
+       'line' => 222,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
        'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 231,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.iterableValue',
+       'tip' => 'Learn more at https://phpstan.org/user-guide/discovering-symbols',
+       'nodeLine' => 222,
+       'nodeType' => 'PhpParser\\Node\\Expr\\Instanceof_',
+       'identifier' => 'class.notFound',
        'metadata' => 
       array (
       ),
     )),
     11 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::statistics() return type has no value type specified in iterable type array.',
+       'message' => 'Call to method isApiAvailable() on an unknown class zaidysf\\IdnArea\\Services\\BpsApiService.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
-       'line' => 265,
+       'line' => 223,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
        'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 265,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.iterableValue',
+       'tip' => 'Learn more at https://phpstan.org/user-guide/discovering-symbols',
+       'nodeLine' => 223,
+       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
+       'identifier' => 'class.notFound',
        'metadata' => 
       array (
       ),
     )),
     12 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::buildStatistics() return type has no value type specified in iterable type array.',
+       'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::getPeriods() return type has no value type specified in iterable type array.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
-       'line' => 342,
+       'line' => 232,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
        'traitFilePath' => NULL,
        'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 342,
+       'nodeLine' => 232,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
        'identifier' => 'missingType.iterableValue',
        'metadata' => 
@@ -3065,46 +2768,46 @@ return [
     )),
     13 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::getLargestProvinceByRegencies() return type has no value type specified in iterable type array.',
+       'message' => 'Class zaidysf\\IdnArea\\Services\\BpsApiService not found.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
-       'line' => 372,
+       'line' => 234,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
        'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 372,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.iterableValue',
+       'tip' => 'Learn more at https://phpstan.org/user-guide/discovering-symbols',
+       'nodeLine' => 234,
+       'nodeType' => 'PhpParser\\Node\\Expr\\Instanceof_',
+       'identifier' => 'class.notFound',
        'metadata' => 
       array (
       ),
     )),
     14 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::getProvinces() return type has no value type specified in iterable type array.',
+       'message' => 'Call to method getPeriods() on an unknown class zaidysf\\IdnArea\\Services\\BpsApiService.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
-       'line' => 399,
+       'line' => 235,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
        'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 399,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.iterableValue',
+       'tip' => 'Learn more at https://phpstan.org/user-guide/discovering-symbols',
+       'nodeLine' => 235,
+       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
+       'identifier' => 'class.notFound',
        'metadata' => 
       array (
       ),
     )),
     15 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::getRegencies() return type has no value type specified in iterable type array.',
+       'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::statistics() return type has no value type specified in iterable type array.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
-       'line' => 409,
+       'line' => 266,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
        'traitFilePath' => NULL,
        'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 409,
+       'nodeLine' => 266,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
        'identifier' => 'missingType.iterableValue',
        'metadata' => 
@@ -3113,14 +2816,14 @@ return [
     )),
     16 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::getDistricts() return type has no value type specified in iterable type array.',
+       'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::buildStatistics() return type has no value type specified in iterable type array.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
-       'line' => 418,
+       'line' => 343,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
        'traitFilePath' => NULL,
        'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 418,
+       'nodeLine' => 343,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
        'identifier' => 'missingType.iterableValue',
        'metadata' => 
@@ -3129,14 +2832,14 @@ return [
     )),
     17 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::getVillages() return type has no value type specified in iterable type array.',
+       'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::getLargestProvinceByRegencies() return type has no value type specified in iterable type array.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
-       'line' => 427,
+       'line' => 373,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
        'traitFilePath' => NULL,
        'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 427,
+       'nodeLine' => 373,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
        'identifier' => 'missingType.iterableValue',
        'metadata' => 
@@ -3145,14 +2848,14 @@ return [
     )),
     18 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::findProvince() return type has no value type specified in iterable type array.',
+       'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::getProvinces() return type has no value type specified in iterable type array.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
-       'line' => 436,
+       'line' => 400,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
        'traitFilePath' => NULL,
        'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 436,
+       'nodeLine' => 400,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
        'identifier' => 'missingType.iterableValue',
        'metadata' => 
@@ -3161,14 +2864,14 @@ return [
     )),
     19 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::findRegency() return type has no value type specified in iterable type array.',
+       'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::getRegencies() return type has no value type specified in iterable type array.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
-       'line' => 454,
+       'line' => 410,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
        'traitFilePath' => NULL,
        'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 454,
+       'nodeLine' => 410,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
        'identifier' => 'missingType.iterableValue',
        'metadata' => 
@@ -3177,14 +2880,14 @@ return [
     )),
     20 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::findDistrict() return type has no value type specified in iterable type array.',
+       'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::getDistricts() return type has no value type specified in iterable type array.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
-       'line' => 472,
+       'line' => 419,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
        'traitFilePath' => NULL,
        'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 472,
+       'nodeLine' => 419,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
        'identifier' => 'missingType.iterableValue',
        'metadata' => 
@@ -3193,14 +2896,14 @@ return [
     )),
     21 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::findVillage() return type has no value type specified in iterable type array.',
+       'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::getVillages() return type has no value type specified in iterable type array.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
-       'line' => 490,
+       'line' => 428,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
        'traitFilePath' => NULL,
        'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 490,
+       'nodeLine' => 428,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
        'identifier' => 'missingType.iterableValue',
        'metadata' => 
@@ -3209,14 +2912,14 @@ return [
     )),
     22 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::searchProvinces() return type has no value type specified in iterable type array.',
+       'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::findProvince() return type has no value type specified in iterable type array.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
-       'line' => 508,
+       'line' => 437,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
        'traitFilePath' => NULL,
        'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 508,
+       'nodeLine' => 437,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
        'identifier' => 'missingType.iterableValue',
        'metadata' => 
@@ -3225,14 +2928,14 @@ return [
     )),
     23 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::searchRegencies() return type has no value type specified in iterable type array.',
+       'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::findRegency() return type has no value type specified in iterable type array.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
-       'line' => 517,
+       'line' => 455,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
        'traitFilePath' => NULL,
        'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 517,
+       'nodeLine' => 455,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
        'identifier' => 'missingType.iterableValue',
        'metadata' => 
@@ -3241,14 +2944,14 @@ return [
     )),
     24 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::searchDistricts() return type has no value type specified in iterable type array.',
+       'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::findDistrict() return type has no value type specified in iterable type array.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
-       'line' => 526,
+       'line' => 473,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
        'traitFilePath' => NULL,
        'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 526,
+       'nodeLine' => 473,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
        'identifier' => 'missingType.iterableValue',
        'metadata' => 
@@ -3257,14 +2960,78 @@ return [
     )),
     25 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::searchVillages() return type has no value type specified in iterable type array.',
+       'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::findVillage() return type has no value type specified in iterable type array.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
-       'line' => 535,
+       'line' => 491,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
        'traitFilePath' => NULL,
        'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 535,
+       'nodeLine' => 491,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'missingType.iterableValue',
+       'metadata' => 
+      array (
+      ),
+    )),
+    26 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::searchProvinces() return type has no value type specified in iterable type array.',
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
+       'line' => 509,
+       'canBeIgnored' => true,
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
+       'traitFilePath' => NULL,
+       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
+       'nodeLine' => 509,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'missingType.iterableValue',
+       'metadata' => 
+      array (
+      ),
+    )),
+    27 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::searchRegencies() return type has no value type specified in iterable type array.',
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
+       'line' => 518,
+       'canBeIgnored' => true,
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
+       'traitFilePath' => NULL,
+       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
+       'nodeLine' => 518,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'missingType.iterableValue',
+       'metadata' => 
+      array (
+      ),
+    )),
+    28 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::searchDistricts() return type has no value type specified in iterable type array.',
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
+       'line' => 527,
+       'canBeIgnored' => true,
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
+       'traitFilePath' => NULL,
+       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
+       'nodeLine' => 527,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'missingType.iterableValue',
+       'metadata' => 
+      array (
+      ),
+    )),
+    29 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Method zaidysf\\IdnArea\\IdnAreaManager::searchVillages() return type has no value type specified in iterable type array.',
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
+       'line' => 536,
+       'canBeIgnored' => true,
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
+       'traitFilePath' => NULL,
+       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
+       'nodeLine' => 536,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
        'identifier' => 'missingType.iterableValue',
        'metadata' => 
@@ -3447,50 +3214,50 @@ return [
       ),
     )),
   ),
-  '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php' => 
+  '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php' => 
   array (
     0 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\BpsApiService::getAllProvinces() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'line' => 22,
+       'message' => 'Property zaidysf\\IdnArea\\Services\\DataTokoApiService::$config type has no value type specified in iterable type array.',
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'line' => 20,
        'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 22,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
+       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
+       'nodeLine' => 20,
+       'nodeType' => 'PHPStan\\Node\\ClassPropertyNode',
+       'identifier' => 'missingType.iterableValue',
        'metadata' => 
       array (
       ),
     )),
     1 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Unable to resolve the template type TKey in call to function collect',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'line' => 35,
+       'message' => 'Method zaidysf\\IdnArea\\Services\\DataTokoApiService::__construct() has parameter $config with no value type specified in iterable type array.',
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'line' => 22,
        'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-error-unable-to-resolve-template-type',
-       'nodeLine' => 35,
-       'nodeType' => 'PhpParser\\Node\\Expr\\FuncCall',
-       'identifier' => 'argument.templateType',
+       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
+       'nodeLine' => 22,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'missingType.iterableValue',
        'metadata' => 
       array (
       ),
     )),
     2 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Unable to resolve the template type TValue in call to function collect',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'line' => 35,
+       'message' => 'Unable to resolve the template type TKey in call to function collect',
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'line' => 135,
        'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'traitFilePath' => NULL,
        'tip' => 'See: https://phpstan.org/blog/solving-phpstan-error-unable-to-resolve-template-type',
-       'nodeLine' => 35,
+       'nodeLine' => 135,
        'nodeType' => 'PhpParser\\Node\\Expr\\FuncCall',
        'identifier' => 'argument.templateType',
        'metadata' => 
@@ -3499,32 +3266,32 @@ return [
     )),
     3 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\BpsApiService::getProvince() return type has no value type specified in iterable type array.',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'line' => 43,
+       'message' => 'Unable to resolve the template type TValue in call to function collect',
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'line' => 135,
        'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 43,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.iterableValue',
+       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-error-unable-to-resolve-template-type',
+       'nodeLine' => 135,
+       'nodeType' => 'PhpParser\\Node\\Expr\\FuncCall',
+       'identifier' => 'argument.templateType',
        'metadata' => 
       array (
       ),
     )),
     4 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\BpsApiService::getRegenciesByProvince() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'line' => 49,
+       'message' => 'Method zaidysf\\IdnArea\\Services\\DataTokoApiService::searchByName() should return Illuminate\\Support\\Collection<int, array<string, mixed>> but returns Illuminate\\Support\\Collection<string, Illuminate\\Support\\Collection<int, array<string, mixed>>>.',
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'line' => 150,
        'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'traitFilePath' => NULL,
        'tip' => NULL,
-       'nodeLine' => 49,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
+       'nodeLine' => 150,
+       'nodeType' => 'PhpParser\\Node\\Stmt\\Return_',
+       'identifier' => 'return.type',
        'metadata' => 
       array (
       ),
@@ -3532,13 +3299,13 @@ return [
     5 => 
     \PHPStan\Analyser\Error::__set_state(array(
        'message' => 'Unable to resolve the template type TKey in call to function collect',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'line' => 63,
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'line' => 155,
        'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'traitFilePath' => NULL,
        'tip' => 'See: https://phpstan.org/blog/solving-phpstan-error-unable-to-resolve-template-type',
-       'nodeLine' => 63,
+       'nodeLine' => 155,
        'nodeType' => 'PhpParser\\Node\\Expr\\FuncCall',
        'identifier' => 'argument.templateType',
        'metadata' => 
@@ -3548,13 +3315,13 @@ return [
     6 => 
     \PHPStan\Analyser\Error::__set_state(array(
        'message' => 'Unable to resolve the template type TValue in call to function collect',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'line' => 63,
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'line' => 155,
        'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'traitFilePath' => NULL,
        'tip' => 'See: https://phpstan.org/blog/solving-phpstan-error-unable-to-resolve-template-type',
-       'nodeLine' => 63,
+       'nodeLine' => 155,
        'nodeType' => 'PhpParser\\Node\\Expr\\FuncCall',
        'identifier' => 'argument.templateType',
        'metadata' => 
@@ -3563,30 +3330,30 @@ return [
     )),
     7 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\BpsApiService::getAllRegencies() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'line' => 72,
+       'message' => 'Method zaidysf\\IdnArea\\Services\\DataTokoApiService::makeAuthenticatedRequest() has parameter $params with no value type specified in iterable type array.',
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'line' => 172,
        'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 72,
+       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
+       'nodeLine' => 172,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
+       'identifier' => 'missingType.iterableValue',
        'metadata' => 
       array (
       ),
     )),
     8 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\BpsApiService::getRegency() return type has no value type specified in iterable type array.',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'line' => 85,
+       'message' => 'Method zaidysf\\IdnArea\\Services\\DataTokoApiService::makeAuthenticatedRequest() return type has no value type specified in iterable type array.',
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'line' => 172,
        'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'traitFilePath' => NULL,
        'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 85,
+       'nodeLine' => 172,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
        'identifier' => 'missingType.iterableValue',
        'metadata' => 
@@ -3595,16 +3362,16 @@ return [
     )),
     9 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\BpsApiService::getDistrictsByRegency() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'line' => 92,
+       'message' => 'Method zaidysf\\IdnArea\\Services\\DataTokoApiService::transformProvinces() should return Illuminate\\Support\\Collection<int, array<string, mixed>> but returns Illuminate\\Support\\Collection<(int|string), array{code: mixed, name: mixed}>.',
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'line' => 397,
        'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 92,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
+       'tip' => 'Template type TValue on class Illuminate\\Support\\Collection is not covariant. Learn more: <fg=cyan>https://phpstan.org/blog/whats-up-with-template-covariant</>',
+       'nodeLine' => 397,
+       'nodeType' => 'PhpParser\\Node\\Stmt\\Return_',
+       'identifier' => 'return.type',
        'metadata' => 
       array (
       ),
@@ -3612,13 +3379,13 @@ return [
     10 => 
     \PHPStan\Analyser\Error::__set_state(array(
        'message' => 'Unable to resolve the template type TKey in call to function collect',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'line' => 106,
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'line' => 397,
        'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'traitFilePath' => NULL,
        'tip' => 'See: https://phpstan.org/blog/solving-phpstan-error-unable-to-resolve-template-type',
-       'nodeLine' => 106,
+       'nodeLine' => 397,
        'nodeType' => 'PhpParser\\Node\\Expr\\FuncCall',
        'identifier' => 'argument.templateType',
        'metadata' => 
@@ -3628,13 +3395,13 @@ return [
     11 => 
     \PHPStan\Analyser\Error::__set_state(array(
        'message' => 'Unable to resolve the template type TValue in call to function collect',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'line' => 106,
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'line' => 397,
        'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'traitFilePath' => NULL,
        'tip' => 'See: https://phpstan.org/blog/solving-phpstan-error-unable-to-resolve-template-type',
-       'nodeLine' => 106,
+       'nodeLine' => 397,
        'nodeType' => 'PhpParser\\Node\\Expr\\FuncCall',
        'identifier' => 'argument.templateType',
        'metadata' => 
@@ -3643,78 +3410,78 @@ return [
     )),
     12 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\BpsApiService::getAllDistricts() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'line' => 115,
+       'message' => 'Method zaidysf\\IdnArea\\Services\\DataTokoApiService::transformRegencies() should return Illuminate\\Support\\Collection<int, array<string, mixed>> but returns Illuminate\\Support\\Collection<(int|string), array{code: mixed, province_code: mixed, name: mixed}>.',
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'line' => 423,
        'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 115,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
+       'tip' => 'Template type TValue on class Illuminate\\Support\\Collection is not covariant. Learn more: <fg=cyan>https://phpstan.org/blog/whats-up-with-template-covariant</>',
+       'nodeLine' => 423,
+       'nodeType' => 'PhpParser\\Node\\Stmt\\Return_',
+       'identifier' => 'return.type',
        'metadata' => 
       array (
       ),
     )),
     13 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\BpsApiService::getDistrict() return type has no value type specified in iterable type array.',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'line' => 128,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 128,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.iterableValue',
-       'metadata' => 
-      array (
-      ),
-    )),
-    14 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\BpsApiService::getVillagesByDistrict() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'line' => 135,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 135,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
-       'metadata' => 
-      array (
-      ),
-    )),
-    15 => 
-    \PHPStan\Analyser\Error::__set_state(array(
        'message' => 'Unable to resolve the template type TKey in call to function collect',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'line' => 149,
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'line' => 423,
        'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'traitFilePath' => NULL,
        'tip' => 'See: https://phpstan.org/blog/solving-phpstan-error-unable-to-resolve-template-type',
-       'nodeLine' => 149,
+       'nodeLine' => 423,
        'nodeType' => 'PhpParser\\Node\\Expr\\FuncCall',
        'identifier' => 'argument.templateType',
        'metadata' => 
       array (
       ),
     )),
-    16 => 
+    14 => 
     \PHPStan\Analyser\Error::__set_state(array(
        'message' => 'Unable to resolve the template type TValue in call to function collect',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'line' => 149,
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'line' => 423,
        'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'traitFilePath' => NULL,
        'tip' => 'See: https://phpstan.org/blog/solving-phpstan-error-unable-to-resolve-template-type',
-       'nodeLine' => 149,
+       'nodeLine' => 423,
+       'nodeType' => 'PhpParser\\Node\\Expr\\FuncCall',
+       'identifier' => 'argument.templateType',
+       'metadata' => 
+      array (
+      ),
+    )),
+    15 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Method zaidysf\\IdnArea\\Services\\DataTokoApiService::transformDistricts() should return Illuminate\\Support\\Collection<int, array<string, mixed>> but returns Illuminate\\Support\\Collection<(int|string), array{code: mixed, regency_code: mixed, name: mixed}>.',
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'line' => 451,
+       'canBeIgnored' => true,
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'traitFilePath' => NULL,
+       'tip' => 'Template type TValue on class Illuminate\\Support\\Collection is not covariant. Learn more: <fg=cyan>https://phpstan.org/blog/whats-up-with-template-covariant</>',
+       'nodeLine' => 451,
+       'nodeType' => 'PhpParser\\Node\\Stmt\\Return_',
+       'identifier' => 'return.type',
+       'metadata' => 
+      array (
+      ),
+    )),
+    16 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Unable to resolve the template type TKey in call to function collect',
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'line' => 451,
+       'canBeIgnored' => true,
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'traitFilePath' => NULL,
+       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-error-unable-to-resolve-template-type',
+       'nodeLine' => 451,
        'nodeType' => 'PhpParser\\Node\\Expr\\FuncCall',
        'identifier' => 'argument.templateType',
        'metadata' => 
@@ -3723,302 +3490,78 @@ return [
     )),
     17 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\BpsApiService::getAllVillages() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'line' => 158,
+       'message' => 'Unable to resolve the template type TValue in call to function collect',
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'line' => 451,
        'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 158,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
+       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-error-unable-to-resolve-template-type',
+       'nodeLine' => 451,
+       'nodeType' => 'PhpParser\\Node\\Expr\\FuncCall',
+       'identifier' => 'argument.templateType',
        'metadata' => 
       array (
       ),
     )),
     18 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\BpsApiService::getVillage() return type has no value type specified in iterable type array.',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'line' => 171,
+       'message' => 'Method zaidysf\\IdnArea\\Services\\DataTokoApiService::transformVillages() should return Illuminate\\Support\\Collection<int, array<string, mixed>> but returns Illuminate\\Support\\Collection<(int|string), array{code: mixed, district_code: mixed, name: mixed}>.',
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'line' => 479,
        'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 171,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.iterableValue',
+       'tip' => 'Template type TValue on class Illuminate\\Support\\Collection is not covariant. Learn more: <fg=cyan>https://phpstan.org/blog/whats-up-with-template-covariant</>',
+       'nodeLine' => 479,
+       'nodeType' => 'PhpParser\\Node\\Stmt\\Return_',
+       'identifier' => 'return.type',
        'metadata' => 
       array (
       ),
     )),
     19 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\BpsApiService::searchByName() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'line' => 178,
+       'message' => 'Unable to resolve the template type TKey in call to function collect',
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'line' => 479,
        'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 178,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
+       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-error-unable-to-resolve-template-type',
+       'nodeLine' => 479,
+       'nodeType' => 'PhpParser\\Node\\Expr\\FuncCall',
+       'identifier' => 'argument.templateType',
        'metadata' => 
       array (
       ),
     )),
     20 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Unreachable statement - code above always terminates.',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'line' => 224,
+       'message' => 'Unable to resolve the template type TValue in call to function collect',
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'line' => 479,
        'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 224,
-       'nodeType' => 'PHPStan\\Node\\UnreachableStatementNode',
-       'identifier' => 'deadCode.unreachable',
+       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-error-unable-to-resolve-template-type',
+       'nodeLine' => 479,
+       'nodeType' => 'PhpParser\\Node\\Expr\\FuncCall',
+       'identifier' => 'argument.templateType',
        'metadata' => 
       array (
       ),
     )),
     21 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\BpsApiService::getPeriods() return type has no value type specified in iterable type array.',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'line' => 236,
+       'message' => 'Method zaidysf\\IdnArea\\Services\\DataTokoApiService::getDefaultConfig() return type has no value type specified in iterable type array.',
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'line' => 501,
        'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'traitFilePath' => NULL,
        'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 236,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.iterableValue',
-       'metadata' => 
-      array (
-      ),
-    )),
-    22 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\BpsApiService::getProvinces() has parameter $limit with no type specified.',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'line' => 264,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 264,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.parameter',
-       'metadata' => 
-      array (
-      ),
-    )),
-    23 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\BpsApiService::getProvinces() has parameter $offset with no type specified.',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'line' => 264,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 264,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.parameter',
-       'metadata' => 
-      array (
-      ),
-    )),
-    24 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\BpsApiService::getProvinces() return type has no value type specified in iterable type array.',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'line' => 264,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 264,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.iterableValue',
-       'metadata' => 
-      array (
-      ),
-    )),
-    25 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\BpsApiService::getRegencies() return type has no value type specified in iterable type array.',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'line' => 288,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 288,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.iterableValue',
-       'metadata' => 
-      array (
-      ),
-    )),
-    26 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\BpsApiService::getDistricts() return type has no value type specified in iterable type array.',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'line' => 303,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 303,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.iterableValue',
-       'metadata' => 
-      array (
-      ),
-    )),
-    27 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\BpsApiService::getVillages() return type has no value type specified in iterable type array.',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'line' => 318,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 318,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.iterableValue',
-       'metadata' => 
-      array (
-      ),
-    )),
-    28 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\BpsApiService::getProvinceByCode() return type has no value type specified in iterable type array.',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'line' => 333,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 333,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.iterableValue',
-       'metadata' => 
-      array (
-      ),
-    )),
-    29 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\BpsApiService::getRegencyByCode() return type has no value type specified in iterable type array.',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'line' => 338,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 338,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.iterableValue',
-       'metadata' => 
-      array (
-      ),
-    )),
-    30 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\BpsApiService::getDistrictByCode() return type has no value type specified in iterable type array.',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'line' => 343,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 343,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.iterableValue',
-       'metadata' => 
-      array (
-      ),
-    )),
-    31 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\BpsApiService::getVillageByCode() return type has no value type specified in iterable type array.',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'line' => 348,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 348,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.iterableValue',
-       'metadata' => 
-      array (
-      ),
-    )),
-    32 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\BpsApiService::searchProvinces() return type has no value type specified in iterable type array.',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'line' => 353,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 353,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.iterableValue',
-       'metadata' => 
-      array (
-      ),
-    )),
-    33 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\BpsApiService::searchRegencies() return type has no value type specified in iterable type array.',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'line' => 358,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 358,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.iterableValue',
-       'metadata' => 
-      array (
-      ),
-    )),
-    34 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\BpsApiService::searchDistricts() return type has no value type specified in iterable type array.',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'line' => 363,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 363,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.iterableValue',
-       'metadata' => 
-      array (
-      ),
-    )),
-    35 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\BpsApiService::searchVillages() return type has no value type specified in iterable type array.',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'line' => 368,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 368,
+       'nodeLine' => 501,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
        'identifier' => 'missingType.iterableValue',
        'metadata' => 
@@ -4193,119 +3736,71 @@ return [
   array (
     0 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\LocalDataService::getAllProvinces() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
+       'message' => 'Method zaidysf\\IdnArea\\Services\\LocalDataService::getAllProvinces() should return Illuminate\\Support\\Collection<int, array<string, mixed>> but returns Illuminate\\Support\\Collection<int, array>.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'line' => 16,
+       'line' => 21,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
        'traitFilePath' => NULL,
        'tip' => NULL,
-       'nodeLine' => 16,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
+       'nodeLine' => 21,
+       'nodeType' => 'PhpParser\\Node\\Stmt\\Return_',
+       'identifier' => 'return.type',
        'metadata' => 
       array (
       ),
     )),
     1 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\LocalDataService::getRegenciesByProvince() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
+       'message' => 'Method zaidysf\\IdnArea\\Services\\LocalDataService::getRegenciesByProvince() should return Illuminate\\Support\\Collection<int, array<string, mixed>> but returns Illuminate\\Support\\Collection<int, array>.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'line' => 26,
+       'line' => 36,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
        'traitFilePath' => NULL,
        'tip' => NULL,
-       'nodeLine' => 26,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
+       'nodeLine' => 36,
+       'nodeType' => 'PhpParser\\Node\\Stmt\\Return_',
+       'identifier' => 'return.type',
        'metadata' => 
       array (
       ),
     )),
     2 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\LocalDataService::getAllRegencies() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
+       'message' => 'Method zaidysf\\IdnArea\\Services\\LocalDataService::getAllRegencies() should return Illuminate\\Support\\Collection<int, array<string, mixed>> but returns Illuminate\\Support\\Collection<int, array>.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'line' => 33,
+       'line' => 49,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
        'traitFilePath' => NULL,
        'tip' => NULL,
-       'nodeLine' => 33,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
+       'nodeLine' => 49,
+       'nodeType' => 'PhpParser\\Node\\Stmt\\Return_',
+       'identifier' => 'return.type',
        'metadata' => 
       array (
       ),
     )),
     3 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\LocalDataService::getDistrictsByRegency() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
+       'message' => 'Method zaidysf\\IdnArea\\Services\\LocalDataService::getDistrictsByRegency() should return Illuminate\\Support\\Collection<int, array<string, mixed>> but returns Illuminate\\Support\\Collection<int, array>.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'line' => 43,
+       'line' => 64,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
        'traitFilePath' => NULL,
        'tip' => NULL,
-       'nodeLine' => 43,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
+       'nodeLine' => 64,
+       'nodeType' => 'PhpParser\\Node\\Stmt\\Return_',
+       'identifier' => 'return.type',
        'metadata' => 
       array (
       ),
     )),
     4 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\LocalDataService::getAllDistricts() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'line' => 50,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 50,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
-       'metadata' => 
-      array (
-      ),
-    )),
-    5 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\LocalDataService::getVillagesByDistrict() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'line' => 60,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 60,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
-       'metadata' => 
-      array (
-      ),
-    )),
-    6 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\LocalDataService::getAllVillages() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'line' => 67,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 67,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
-       'metadata' => 
-      array (
-      ),
-    )),
-    7 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\LocalDataService::searchByName() return type with generic class Illuminate\\Support\\Collection does not specify its types: TKey, TValue',
+       'message' => 'Method zaidysf\\IdnArea\\Services\\LocalDataService::getAllDistricts() should return Illuminate\\Support\\Collection<int, array<string, mixed>> but returns Illuminate\\Support\\Collection<int, array>.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
        'line' => 77,
        'canBeIgnored' => true,
@@ -4313,54 +3808,102 @@ return [
        'traitFilePath' => NULL,
        'tip' => NULL,
        'nodeLine' => 77,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.generics',
+       'nodeType' => 'PhpParser\\Node\\Stmt\\Return_',
+       'identifier' => 'return.type',
+       'metadata' => 
+      array (
+      ),
+    )),
+    5 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Method zaidysf\\IdnArea\\Services\\LocalDataService::getVillagesByDistrict() should return Illuminate\\Support\\Collection<int, array<string, mixed>> but returns Illuminate\\Support\\Collection<int, array>.',
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
+       'line' => 92,
+       'canBeIgnored' => true,
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 92,
+       'nodeType' => 'PhpParser\\Node\\Stmt\\Return_',
+       'identifier' => 'return.type',
+       'metadata' => 
+      array (
+      ),
+    )),
+    6 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Method zaidysf\\IdnArea\\Services\\LocalDataService::getAllVillages() should return Illuminate\\Support\\Collection<int, array<string, mixed>> but returns Illuminate\\Support\\Collection<int, array>.',
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
+       'line' => 105,
+       'canBeIgnored' => true,
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 105,
+       'nodeType' => 'PhpParser\\Node\\Stmt\\Return_',
+       'identifier' => 'return.type',
+       'metadata' => 
+      array (
+      ),
+    )),
+    7 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Method zaidysf\\IdnArea\\Services\\LocalDataService::searchByName() should return Illuminate\\Support\\Collection<int, array<string, mixed>> but returns Illuminate\\Support\\Collection<string, mixed>.',
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
+       'line' => 164,
+       'canBeIgnored' => true,
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 164,
+       'nodeType' => 'PhpParser\\Node\\Stmt\\Return_',
+       'identifier' => 'return.type',
        'metadata' => 
       array (
       ),
     )),
     8 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\LocalDataService::getProvinces() has parameter $limit with no type specified.',
+       'message' => 'Method zaidysf\\IdnArea\\Services\\LocalDataService::getRegencies() return type has no value type specified in iterable type array.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'line' => 135,
+       'line' => 201,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
        'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 135,
+       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
+       'nodeLine' => 201,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.parameter',
+       'identifier' => 'missingType.iterableValue',
        'metadata' => 
       array (
       ),
     )),
     9 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\LocalDataService::getProvinces() has parameter $offset with no type specified.',
+       'message' => 'Method zaidysf\\IdnArea\\Services\\LocalDataService::getDistricts() return type has no value type specified in iterable type array.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'line' => 135,
+       'line' => 206,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
        'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 135,
+       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
+       'nodeLine' => 206,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.parameter',
+       'identifier' => 'missingType.iterableValue',
        'metadata' => 
       array (
       ),
     )),
     10 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\LocalDataService::getProvinces() return type has no value type specified in iterable type array.',
+       'message' => 'Method zaidysf\\IdnArea\\Services\\LocalDataService::getVillages() return type has no value type specified in iterable type array.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'line' => 135,
+       'line' => 211,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
        'traitFilePath' => NULL,
        'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 135,
+       'nodeLine' => 211,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
        'identifier' => 'missingType.iterableValue',
        'metadata' => 
@@ -4369,14 +3912,14 @@ return [
     )),
     11 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\LocalDataService::getRegencies() return type has no value type specified in iterable type array.',
+       'message' => 'Method zaidysf\\IdnArea\\Services\\LocalDataService::getProvinceByCode() return type has no value type specified in iterable type array.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'line' => 155,
+       'line' => 216,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
        'traitFilePath' => NULL,
        'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 155,
+       'nodeLine' => 216,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
        'identifier' => 'missingType.iterableValue',
        'metadata' => 
@@ -4385,14 +3928,14 @@ return [
     )),
     12 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\LocalDataService::getDistricts() return type has no value type specified in iterable type array.',
+       'message' => 'Method zaidysf\\IdnArea\\Services\\LocalDataService::getRegencyByCode() return type has no value type specified in iterable type array.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'line' => 160,
+       'line' => 222,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
        'traitFilePath' => NULL,
        'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 160,
+       'nodeLine' => 222,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
        'identifier' => 'missingType.iterableValue',
        'metadata' => 
@@ -4401,14 +3944,14 @@ return [
     )),
     13 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\LocalDataService::getVillages() return type has no value type specified in iterable type array.',
+       'message' => 'Method zaidysf\\IdnArea\\Services\\LocalDataService::getDistrictByCode() return type has no value type specified in iterable type array.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'line' => 165,
+       'line' => 228,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
        'traitFilePath' => NULL,
        'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 165,
+       'nodeLine' => 228,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
        'identifier' => 'missingType.iterableValue',
        'metadata' => 
@@ -4417,14 +3960,14 @@ return [
     )),
     14 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\LocalDataService::getProvinceByCode() return type has no value type specified in iterable type array.',
+       'message' => 'Method zaidysf\\IdnArea\\Services\\LocalDataService::getVillageByCode() return type has no value type specified in iterable type array.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'line' => 170,
+       'line' => 234,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
        'traitFilePath' => NULL,
        'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 170,
+       'nodeLine' => 234,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
        'identifier' => 'missingType.iterableValue',
        'metadata' => 
@@ -4433,14 +3976,14 @@ return [
     )),
     15 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\LocalDataService::getRegencyByCode() return type has no value type specified in iterable type array.',
+       'message' => 'Method zaidysf\\IdnArea\\Services\\LocalDataService::searchProvinces() return type has no value type specified in iterable type array.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'line' => 176,
+       'line' => 240,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
        'traitFilePath' => NULL,
        'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 176,
+       'nodeLine' => 240,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
        'identifier' => 'missingType.iterableValue',
        'metadata' => 
@@ -4449,14 +3992,14 @@ return [
     )),
     16 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\LocalDataService::getDistrictByCode() return type has no value type specified in iterable type array.',
+       'message' => 'Method zaidysf\\IdnArea\\Services\\LocalDataService::searchRegencies() return type has no value type specified in iterable type array.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'line' => 182,
+       'line' => 250,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
        'traitFilePath' => NULL,
        'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 182,
+       'nodeLine' => 250,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
        'identifier' => 'missingType.iterableValue',
        'metadata' => 
@@ -4465,14 +4008,14 @@ return [
     )),
     17 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\LocalDataService::getVillageByCode() return type has no value type specified in iterable type array.',
+       'message' => 'Method zaidysf\\IdnArea\\Services\\LocalDataService::searchDistricts() return type has no value type specified in iterable type array.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'line' => 188,
+       'line' => 261,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
        'traitFilePath' => NULL,
        'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 188,
+       'nodeLine' => 261,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
        'identifier' => 'missingType.iterableValue',
        'metadata' => 
@@ -4481,62 +4024,14 @@ return [
     )),
     18 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\LocalDataService::searchProvinces() return type has no value type specified in iterable type array.',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'line' => 194,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 194,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.iterableValue',
-       'metadata' => 
-      array (
-      ),
-    )),
-    19 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\LocalDataService::searchRegencies() return type has no value type specified in iterable type array.',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'line' => 204,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 204,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.iterableValue',
-       'metadata' => 
-      array (
-      ),
-    )),
-    20 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Method zaidysf\\IdnArea\\Services\\LocalDataService::searchDistricts() return type has no value type specified in iterable type array.',
-       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'line' => 215,
-       'canBeIgnored' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'traitFilePath' => NULL,
-       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 215,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'missingType.iterableValue',
-       'metadata' => 
-      array (
-      ),
-    )),
-    21 => 
-    \PHPStan\Analyser\Error::__set_state(array(
        'message' => 'Method zaidysf\\IdnArea\\Services\\LocalDataService::searchVillages() return type has no value type specified in iterable type array.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'line' => 226,
+       'line' => 272,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
        'traitFilePath' => NULL,
        'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 226,
+       'nodeLine' => 272,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
        'identifier' => 'missingType.iterableValue',
        'metadata' => 
@@ -5062,6 +4557,54 @@ return [
     \PHPStan\Collectors\CollectedData::__set_state(array(
        'data' => 
       array (
+        0 => 1,
+        1 => 
+        array (
+        ),
+      ),
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSetupCommand.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
+    )),
+    14 => 
+    \PHPStan\Collectors\CollectedData::__set_state(array(
+       'data' => 
+      array (
+        0 => 3,
+        1 => 
+        array (
+        ),
+      ),
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSetupCommand.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
+    )),
+    15 => 
+    \PHPStan\Collectors\CollectedData::__set_state(array(
+       'data' => 
+      array (
+        0 => 1,
+        1 => 
+        array (
+        ),
+      ),
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSetupCommand.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
+    )),
+    16 => 
+    \PHPStan\Collectors\CollectedData::__set_state(array(
+       'data' => 
+      array (
+        0 => 2,
+        1 => 
+        array (
+        ),
+      ),
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSetupCommand.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
+    )),
+    17 => 
+    \PHPStan\Collectors\CollectedData::__set_state(array(
+       'data' => 
+      array (
         0 => 0,
         1 => 
         array (
@@ -5524,323 +5067,12 @@ return [
     \PHPStan\Collectors\CollectedData::__set_state(array(
        'data' => 
       array (
-        0 => 0,
+        0 => 1,
         1 => 
         array (
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSwitchModeCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ConstantTypeDeclarationCollector',
-    )),
-  ),
-  '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSyncBpsCommand.php' => 
-  array (
-    0 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSyncBpsCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\DeclareCollector',
-    )),
-    1 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 5,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSyncBpsCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\PropertyTypeDeclarationCollector',
-    )),
-    2 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSyncBpsCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
-    )),
-    3 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSyncBpsCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
-    )),
-    4 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSyncBpsCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
-    )),
-    5 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSyncBpsCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
-    )),
-    6 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSyncBpsCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
-    )),
-    7 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSyncBpsCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
-    )),
-    8 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSyncBpsCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
-    )),
-    9 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSyncBpsCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
-    )),
-    10 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSyncBpsCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
-    )),
-    11 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSyncBpsCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
-    )),
-    12 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSyncBpsCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
-    )),
-    13 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSyncBpsCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
-    )),
-    14 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSyncBpsCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
-    )),
-    15 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSyncBpsCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
-    )),
-    16 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSyncBpsCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
-    )),
-    17 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSyncBpsCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
-    )),
-    18 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSyncBpsCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
-    )),
-    19 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSyncBpsCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
-    )),
-    20 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSyncBpsCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
-    )),
-    21 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSyncBpsCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
-    )),
-    22 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSyncBpsCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
-    )),
-    23 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 2,
-        1 => 
-        array (
-          0 => 410,
-          1 => 410,
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSyncBpsCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
-    )),
-    24 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSyncBpsCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
-    )),
-    25 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSyncBpsCommand.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     26 => 
@@ -5852,115 +5084,22 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSyncBpsCommand.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSwitchModeCommand.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     27 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
        'data' => 
       array (
-        0 => 0,
+        0 => 3,
         1 => 
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSyncBpsCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ConstantTypeDeclarationCollector',
-    )),
-  ),
-  '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaUpdateCommand.php' => 
-  array (
-    0 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaUpdateCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\DeclareCollector',
-    )),
-    1 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 5,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaUpdateCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\PropertyTypeDeclarationCollector',
-    )),
-    2 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaUpdateCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
-    )),
-    3 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaUpdateCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
-    )),
-    4 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaUpdateCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
-    )),
-    5 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaUpdateCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
-    )),
-    6 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaUpdateCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
-    )),
-    7 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaUpdateCommand.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSwitchModeCommand.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
-    8 => 
+    28 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
        'data' => 
       array (
@@ -5969,106 +5108,10 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaUpdateCommand.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSwitchModeCommand.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
-    9 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaUpdateCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
-    )),
-    10 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaUpdateCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
-    )),
-    11 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaUpdateCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
-    )),
-    12 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaUpdateCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
-    )),
-    13 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaUpdateCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
-    )),
-    14 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaUpdateCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
-    )),
-    15 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaUpdateCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
-    )),
-    16 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaUpdateCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
-    )),
-    17 => 
+    29 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
        'data' => 
       array (
@@ -6077,58 +5120,10 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaUpdateCommand.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSwitchModeCommand.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
-    18 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaUpdateCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
-    )),
-    19 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaUpdateCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
-    )),
-    20 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 2,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaUpdateCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
-    )),
-    21 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaUpdateCommand.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
-    )),
-    22 => 
+    30 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
        'data' => 
       array (
@@ -6137,7 +5132,7 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaUpdateCommand.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSwitchModeCommand.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ConstantTypeDeclarationCollector',
     )),
   ),
@@ -6414,12 +5409,12 @@ return [
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ConstantTypeDeclarationCollector',
     )),
   ),
-  '/Users/zaid/codes/idn-area-laravel-12/src/Exceptions/BpsApiException.php' => 
+  '/Users/zaid/codes/idn-area-laravel-12/src/Exceptions/DataTokoApiException.php' => 
   array (
     0 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
        'data' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Exceptions/BpsApiException.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Exceptions/DataTokoApiException.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\DeclareCollector',
     )),
     1 => 
@@ -6431,7 +5426,7 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Exceptions/BpsApiException.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Exceptions/DataTokoApiException.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\PropertyTypeDeclarationCollector',
     )),
     2 => 
@@ -6443,7 +5438,7 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Exceptions/BpsApiException.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Exceptions/DataTokoApiException.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ConstantTypeDeclarationCollector',
     )),
   ),
@@ -7548,7 +6543,7 @@ return [
         0 => 1,
         1 => 
         array (
-          0 => 377,
+          0 => 378,
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
@@ -9879,24 +8874,24 @@ return [
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ConstantTypeDeclarationCollector',
     )),
   ),
-  '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php' => 
+  '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php' => 
   array (
     0 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
        'data' => true,
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\DeclareCollector',
     )),
     1 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
        'data' => 
       array (
-        0 => 2,
+        0 => 4,
         1 => 
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\PropertyTypeDeclarationCollector',
     )),
     2 => 
@@ -9908,8 +8903,8 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     3 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -9918,11 +8913,10 @@ return [
         0 => 1,
         1 => 
         array (
-          0 => 35,
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     4 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -9933,7 +8927,7 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     5 => 
@@ -9945,7 +8939,7 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     6 => 
@@ -9957,7 +8951,7 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     7 => 
@@ -9969,7 +8963,7 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     8 => 
@@ -9979,11 +8973,10 @@ return [
         0 => 1,
         1 => 
         array (
-          0 => 63,
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     9 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -9994,7 +8987,7 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     10 => 
@@ -10006,8 +8999,8 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     11 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -10018,8 +9011,8 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     12 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -10030,8 +9023,8 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     13 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -10042,8 +9035,8 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     14 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -10052,11 +9045,10 @@ return [
         0 => 1,
         1 => 
         array (
-          0 => 106,
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     15 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -10067,8 +9059,8 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     16 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -10079,7 +9071,7 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     17 => 
@@ -10091,7 +9083,7 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     18 => 
@@ -10103,7 +9095,7 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     19 => 
@@ -10115,8 +9107,8 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     20 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -10125,10 +9117,9 @@ return [
         0 => 1,
         1 => 
         array (
-          0 => 149,
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     21 => 
@@ -10140,7 +9131,7 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     22 => 
@@ -10152,8 +9143,8 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     23 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -10164,22 +9155,10 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
-    )),
-    24 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 1,
-        1 => 
-        array (
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
-    25 => 
+    24 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
        'data' => 
       array (
@@ -10188,20 +9167,31 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
-    26 => 
+    25 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
        'data' => 
       array (
         0 => 1,
         1 => 
         array (
-          0 => 185,
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
+    )),
+    26 => 
+    \PHPStan\Collectors\CollectedData::__set_state(array(
+       'data' => 
+      array (
+        0 => 2,
+        1 => 
+        array (
+        ),
+      ),
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     27 => 
@@ -10211,11 +9201,10 @@ return [
         0 => 1,
         1 => 
         array (
-          0 => 190,
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     28 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -10224,11 +9213,10 @@ return [
         0 => 1,
         1 => 
         array (
-          0 => 195,
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     29 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -10237,11 +9225,10 @@ return [
         0 => 1,
         1 => 
         array (
-          0 => 200,
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     30 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -10250,10 +9237,9 @@ return [
         0 => 1,
         1 => 
         array (
-          0 => 205,
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     31 => 
@@ -10263,11 +9249,10 @@ return [
         0 => 1,
         1 => 
         array (
-          0 => 208,
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     32 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -10276,11 +9261,10 @@ return [
         0 => 1,
         1 => 
         array (
-          0 => 211,
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     33 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -10289,23 +9273,22 @@ return [
         0 => 1,
         1 => 
         array (
-          0 => 214,
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     34 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
        'data' => 
       array (
-        0 => 1,
+        0 => 2,
         1 => 
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     35 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -10316,7 +9299,7 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     36 => 
@@ -10328,7 +9311,7 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     37 => 
@@ -10340,7 +9323,7 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     38 => 
@@ -10350,11 +9333,9 @@ return [
         0 => 2,
         1 => 
         array (
-          0 => 264,
-          1 => 264,
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     39 => 
@@ -10366,7 +9347,7 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     40 => 
@@ -10378,8 +9359,8 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     41 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -10390,19 +9371,19 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     42 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
        'data' => 
       array (
-        0 => 1,
+        0 => 2,
         1 => 
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     43 => 
@@ -10414,7 +9395,7 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     44 => 
@@ -10426,8 +9407,8 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     45 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -10436,10 +9417,11 @@ return [
         0 => 1,
         1 => 
         array (
+          0 => 395,
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     46 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -10448,9 +9430,10 @@ return [
         0 => 1,
         1 => 
         array (
+          0 => 397,
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     47 => 
@@ -10462,7 +9445,7 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     48 => 
@@ -10472,9 +9455,10 @@ return [
         0 => 1,
         1 => 
         array (
+          0 => 409,
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     49 => 
@@ -10486,19 +9470,20 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     50 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
        'data' => 
       array (
-        0 => 1,
+        0 => 2,
         1 => 
         array (
+          0 => 421,
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     51 => 
@@ -10508,10 +9493,11 @@ return [
         0 => 1,
         1 => 
         array (
+          0 => 423,
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     52 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -10522,8 +9508,8 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     53 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -10532,10 +9518,11 @@ return [
         0 => 1,
         1 => 
         array (
+          0 => 436,
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     54 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -10546,20 +9533,21 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     55 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
        'data' => 
       array (
-        0 => 1,
+        0 => 2,
         1 => 
         array (
+          0 => 449,
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     56 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -10568,9 +9556,10 @@ return [
         0 => 1,
         1 => 
         array (
+          0 => 451,
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     57 => 
@@ -10582,7 +9571,7 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     58 => 
@@ -10592,9 +9581,10 @@ return [
         0 => 1,
         1 => 
         array (
+          0 => 464,
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     59 => 
@@ -10606,19 +9596,20 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     60 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
        'data' => 
       array (
-        0 => 1,
+        0 => 2,
         1 => 
         array (
+          0 => 477,
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     61 => 
@@ -10628,10 +9619,11 @@ return [
         0 => 1,
         1 => 
         array (
+          0 => 479,
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     62 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -10642,7 +9634,7 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     63 => 
@@ -10652,10 +9644,11 @@ return [
         0 => 1,
         1 => 
         array (
+          0 => 492,
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     64 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -10666,7 +9659,7 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     65 => 
@@ -10678,7 +9671,7 @@ return [
         array (
         ),
       ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ConstantTypeDeclarationCollector',
     )),
   ),
@@ -11018,10 +10011,11 @@ return [
         0 => 1,
         1 => 
         array (
+          0 => 21,
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     4 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -11033,7 +10027,7 @@ return [
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     5 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -11045,7 +10039,7 @@ return [
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     6 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -11057,7 +10051,7 @@ return [
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     7 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -11069,7 +10063,7 @@ return [
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     8 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -11078,10 +10072,11 @@ return [
         0 => 1,
         1 => 
         array (
+          0 => 39,
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     9 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -11093,7 +10088,7 @@ return [
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     10 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -11102,10 +10097,11 @@ return [
         0 => 1,
         1 => 
         array (
+          0 => 49,
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     11 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -11117,7 +10113,7 @@ return [
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     12 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -11129,7 +10125,7 @@ return [
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     13 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -11162,10 +10158,11 @@ return [
         0 => 1,
         1 => 
         array (
+          0 => 67,
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     16 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -11177,7 +10174,7 @@ return [
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     17 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -11186,10 +10183,11 @@ return [
         0 => 1,
         1 => 
         array (
+          0 => 77,
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     18 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -11231,7 +10229,7 @@ return [
     \PHPStan\Collectors\CollectedData::__set_state(array(
        'data' => 
       array (
-        0 => 2,
+        0 => 1,
         1 => 
         array (
         ),
@@ -11246,7 +10244,7 @@ return [
         0 => 1,
         1 => 
         array (
-          0 => 81,
+          0 => 95,
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
@@ -11259,11 +10257,10 @@ return [
         0 => 1,
         1 => 
         array (
-          0 => 89,
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     24 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -11272,7 +10269,7 @@ return [
         0 => 1,
         1 => 
         array (
-          0 => 98,
+          0 => 105,
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
@@ -11285,11 +10282,10 @@ return [
         0 => 1,
         1 => 
         array (
-          0 => 107,
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     26 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -11301,30 +10297,27 @@ return [
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
-    )),
-    27 => 
-    \PHPStan\Collectors\CollectedData::__set_state(array(
-       'data' => 
-      array (
-        0 => 2,
-        1 => 
-        array (
-          0 => 135,
-          1 => 135,
-        ),
-      ),
-       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
-    28 => 
+    27 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
        'data' => 
       array (
         0 => 1,
         1 => 
         array (
-          0 => 147,
+        ),
+      ),
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
+    )),
+    28 => 
+    \PHPStan\Collectors\CollectedData::__set_state(array(
+       'data' => 
+      array (
+        0 => 2,
+        1 => 
+        array (
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
@@ -11337,10 +10330,11 @@ return [
         0 => 1,
         1 => 
         array (
+          0 => 122,
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     30 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -11349,6 +10343,7 @@ return [
         0 => 1,
         1 => 
         array (
+          0 => 130,
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
@@ -11361,10 +10356,11 @@ return [
         0 => 1,
         1 => 
         array (
+          0 => 139,
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     32 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -11373,6 +10369,7 @@ return [
         0 => 1,
         1 => 
         array (
+          0 => 148,
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
@@ -11394,7 +10391,7 @@ return [
     \PHPStan\Collectors\CollectedData::__set_state(array(
        'data' => 
       array (
-        0 => 1,
+        0 => 2,
         1 => 
         array (
         ),
@@ -11409,10 +10406,11 @@ return [
         0 => 1,
         1 => 
         array (
+          0 => 193,
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     36 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -11424,7 +10422,7 @@ return [
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     37 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -11436,7 +10434,7 @@ return [
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     38 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -11448,7 +10446,7 @@ return [
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     39 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -11460,7 +10458,7 @@ return [
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     40 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -11472,7 +10470,7 @@ return [
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     41 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -11484,7 +10482,7 @@ return [
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     42 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -11496,7 +10494,7 @@ return [
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     43 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -11508,7 +10506,7 @@ return [
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     44 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -11520,7 +10518,7 @@ return [
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     45 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -11529,7 +10527,6 @@ return [
         0 => 1,
         1 => 
         array (
-          0 => 196,
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
@@ -11566,11 +10563,10 @@ return [
         0 => 1,
         1 => 
         array (
-          0 => 206,
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     49 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -11582,7 +10578,7 @@ return [
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     50 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -11594,7 +10590,7 @@ return [
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     51 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -11603,7 +10599,6 @@ return [
         0 => 1,
         1 => 
         array (
-          0 => 217,
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
@@ -11616,10 +10611,11 @@ return [
         0 => 1,
         1 => 
         array (
+          0 => 242,
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     53 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -11631,7 +10627,7 @@ return [
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
     54 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -11640,7 +10636,6 @@ return [
         0 => 1,
         1 => 
         array (
-          0 => 228,
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
@@ -11653,10 +10648,11 @@ return [
         0 => 1,
         1 => 
         array (
+          0 => 252,
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     56 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
@@ -11680,9 +10676,22 @@ return [
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
-       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
     )),
     58 => 
+    \PHPStan\Collectors\CollectedData::__set_state(array(
+       'data' => 
+      array (
+        0 => 1,
+        1 => 
+        array (
+          0 => 263,
+        ),
+      ),
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
+    )),
+    59 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
        'data' => 
       array (
@@ -11694,7 +10703,80 @@ return [
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
        'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
     )),
-    59 => 
+    60 => 
+    \PHPStan\Collectors\CollectedData::__set_state(array(
+       'data' => 
+      array (
+        0 => 1,
+        1 => 
+        array (
+        ),
+      ),
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
+    )),
+    61 => 
+    \PHPStan\Collectors\CollectedData::__set_state(array(
+       'data' => 
+      array (
+        0 => 1,
+        1 => 
+        array (
+          0 => 274,
+        ),
+      ),
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ParamTypeDeclarationCollector',
+    )),
+    62 => 
+    \PHPStan\Collectors\CollectedData::__set_state(array(
+       'data' => 
+      array (
+        0 => 1,
+        1 => 
+        array (
+        ),
+      ),
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
+    )),
+    63 => 
+    \PHPStan\Collectors\CollectedData::__set_state(array(
+       'data' => 
+      array (
+        0 => 1,
+        1 => 
+        array (
+        ),
+      ),
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
+    )),
+    64 => 
+    \PHPStan\Collectors\CollectedData::__set_state(array(
+       'data' => 
+      array (
+        0 => 1,
+        1 => 
+        array (
+        ),
+      ),
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
+    )),
+    65 => 
+    \PHPStan\Collectors\CollectedData::__set_state(array(
+       'data' => 
+      array (
+        0 => 1,
+        1 => 
+        array (
+        ),
+      ),
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
+       'collectorType' => 'TomasVotruba\\TypeCoverage\\Collectors\\ReturnTypeDeclarationCollector',
+    )),
+    66 => 
     \PHPStan\Collectors\CollectedData::__set_state(array(
        'data' => 
       array (
@@ -11727,7 +10809,7 @@ return [
   ),
   '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSetupCommand.php' => 
   array (
-    'fileHash' => '788b185c674ac725b06007058a9cec71b4eb7bd7',
+    'fileHash' => '0eb69848f0930b1dacb8ea57bdf2c03093feba19',
     'dependentFiles' => 
     array (
       0 => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaServiceProvider.php',
@@ -11743,23 +10825,7 @@ return [
   ),
   '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSwitchModeCommand.php' => 
   array (
-    'fileHash' => '4296210583c126d6e70ce451f68198459bf5a822',
-    'dependentFiles' => 
-    array (
-      0 => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaServiceProvider.php',
-    ),
-  ),
-  '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSyncBpsCommand.php' => 
-  array (
-    'fileHash' => '11919ae6086d057d8517c302bc8b77727b0e8d5a',
-    'dependentFiles' => 
-    array (
-      0 => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaServiceProvider.php',
-    ),
-  ),
-  '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaUpdateCommand.php' => 
-  array (
-    'fileHash' => '7da776ae8e4b9a74f8c70ff53b1b5e1d06260583',
+    'fileHash' => '54cc5b42aca9dc292bf0005ee3b17822aab8e1aa',
     'dependentFiles' => 
     array (
       0 => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaServiceProvider.php',
@@ -11767,22 +10833,24 @@ return [
   ),
   '/Users/zaid/codes/idn-area-laravel-12/src/Contracts/AreaDataServiceInterface.php' => 
   array (
-    'fileHash' => '4a94e6e482b29de37ffdc421a074ba54e64580d8',
+    'fileHash' => 'b382c8f88b22064ca8ee5cd1b6cbfaf42269bd54',
     'dependentFiles' => 
     array (
       0 => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSwitchModeCommand.php',
       1 => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSyncBpsCommand.php',
       2 => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
       3 => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
-      4 => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
+      4 => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
+      5 => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
     ),
   ),
-  '/Users/zaid/codes/idn-area-laravel-12/src/Exceptions/BpsApiException.php' => 
+  '/Users/zaid/codes/idn-area-laravel-12/src/Exceptions/DataTokoApiException.php' => 
   array (
-    'fileHash' => 'e988f39b7a2bfebfe0d05cd7ae0cdd48706cd3c6',
+    'fileHash' => 'dab9a14166e02a915cda3c277c87a9cdb24d3bbe',
     'dependentFiles' => 
     array (
-      0 => '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php',
+      0 => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSwitchModeCommand.php',
+      1 => '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php',
     ),
   ),
   '/Users/zaid/codes/idn-area-laravel-12/src/Facades/IdnArea.php' => 
@@ -11796,7 +10864,7 @@ return [
   ),
   '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php' => 
   array (
-    'fileHash' => 'b65037ed57042fa0e436d4bd8e4c2172fa39708e',
+    'fileHash' => '7f77b4c879729fdd7c3cd40cf34e25d41158e200',
     'dependentFiles' => 
     array (
       0 => '/Users/zaid/codes/idn-area-laravel-12/src/Facades/IdnArea.php',
@@ -11805,7 +10873,7 @@ return [
   ),
   '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php' => 
   array (
-    'fileHash' => 'afd86f8f03450b3df89277fffc83c9feca5d8991',
+    'fileHash' => '51f30e2d9dcb943e263cc106449811e686f6b581',
     'dependentFiles' => 
     array (
       0 => '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php',
@@ -11814,7 +10882,7 @@ return [
   ),
   '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaServiceProvider.php' => 
   array (
-    'fileHash' => '4ad1cd2977b229a4d51a7362f0fae78d47a29fb4',
+    'fileHash' => '39062bcacd6c519462a55e243e4459aa5c9fdfd6',
     'dependentFiles' => 
     array (
     ),
@@ -11918,19 +10986,18 @@ return [
       12 => '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php',
     ),
   ),
-  '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php' => 
+  '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php' => 
   array (
-    'fileHash' => 'c390f5a063f86098d9c5bfbeb3bd68aeae003107',
+    'fileHash' => '8f897658412620a3541017b53d6edaaa2f13262a',
     'dependentFiles' => 
     array (
       0 => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSwitchModeCommand.php',
-      1 => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSyncBpsCommand.php',
-      2 => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
+      1 => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
     ),
   ),
   '/Users/zaid/codes/idn-area-laravel-12/src/Services/IdnAreaSeeder.php' => 
   array (
-    'fileHash' => 'c585a7abeebaf138e85b71f0cddba5b286fa5db7',
+    'fileHash' => '3feddcc568a62e76ed70758546b8dceec00ef524',
     'dependentFiles' => 
     array (
       0 => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaCommand.php',
@@ -11939,7 +11006,7 @@ return [
   ),
   '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php' => 
   array (
-    'fileHash' => 'f317fa30667bb20367e81a1deed8d1e4d2ad88fe',
+    'fileHash' => '422937db5d78b7b8be09d95a9884de8a4a749986',
     'dependentFiles' => 
     array (
       0 => '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php',
@@ -12327,158 +11394,6 @@ return [
       ),
     )),
   ),
-  '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSyncBpsCommand.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'zaidysf\\IdnArea\\Commands\\IdnAreaSyncBpsCommand',
-       'phpDoc' => NULL,
-       'abstract' => false,
-       'final' => false,
-       'extends' => 'Illuminate\\Console\\Command',
-       'implements' => 
-      array (
-      ),
-       'usedTraits' => 
-      array (
-      ),
-       'traitUseAdaptations' => 
-      array (
-      ),
-       'statements' => 
-      array (
-        0 => 
-        \PHPStan\Dependency\ExportedNode\ExportedPropertiesNode::__set_state(array(
-           'names' => 
-          array (
-            0 => 'signature',
-          ),
-           'phpDoc' => NULL,
-           'type' => NULL,
-           'public' => true,
-           'private' => false,
-           'static' => false,
-           'readonly' => false,
-           'attributes' => 
-          array (
-          ),
-        )),
-        1 => 
-        \PHPStan\Dependency\ExportedNode\ExportedPropertiesNode::__set_state(array(
-           'names' => 
-          array (
-            0 => 'description',
-          ),
-           'phpDoc' => NULL,
-           'type' => NULL,
-           'public' => true,
-           'private' => false,
-           'static' => false,
-           'readonly' => false,
-           'attributes' => 
-          array (
-          ),
-        )),
-        2 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'handle',
-           'phpDoc' => NULL,
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'int',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaUpdateCommand.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'zaidysf\\IdnArea\\Commands\\IdnAreaUpdateCommand',
-       'phpDoc' => NULL,
-       'abstract' => false,
-       'final' => false,
-       'extends' => 'Illuminate\\Console\\Command',
-       'implements' => 
-      array (
-      ),
-       'usedTraits' => 
-      array (
-      ),
-       'traitUseAdaptations' => 
-      array (
-      ),
-       'statements' => 
-      array (
-        0 => 
-        \PHPStan\Dependency\ExportedNode\ExportedPropertiesNode::__set_state(array(
-           'names' => 
-          array (
-            0 => 'signature',
-          ),
-           'phpDoc' => NULL,
-           'type' => NULL,
-           'public' => true,
-           'private' => false,
-           'static' => false,
-           'readonly' => false,
-           'attributes' => 
-          array (
-          ),
-        )),
-        1 => 
-        \PHPStan\Dependency\ExportedNode\ExportedPropertiesNode::__set_state(array(
-           'names' => 
-          array (
-            0 => 'description',
-          ),
-           'phpDoc' => NULL,
-           'type' => NULL,
-           'public' => true,
-           'private' => false,
-           'static' => false,
-           'readonly' => false,
-           'attributes' => 
-          array (
-          ),
-        )),
-        2 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'handle',
-           'phpDoc' => NULL,
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'int',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
   '/Users/zaid/codes/idn-area-laravel-12/src/Contracts/AreaDataServiceInterface.php' => 
   array (
     0 => 
@@ -12493,7 +11408,20 @@ return [
         0 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'getAllProvinces',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return Collection<int, array<string, mixed>>
+     */',
+             'namespace' => 'zaidysf\\IdnArea\\Contracts',
+             'uses' => 
+            array (
+              'collection' => 'Illuminate\\Support\\Collection',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -12511,7 +11439,20 @@ return [
         1 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'getProvince',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return array<string, mixed>|null
+     */',
+             'namespace' => 'zaidysf\\IdnArea\\Contracts',
+             'uses' => 
+            array (
+              'collection' => 'Illuminate\\Support\\Collection',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -12540,7 +11481,20 @@ return [
         2 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'getAllRegencies',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return Collection<int, array<string, mixed>>
+     */',
+             'namespace' => 'zaidysf\\IdnArea\\Contracts',
+             'uses' => 
+            array (
+              'collection' => 'Illuminate\\Support\\Collection',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -12558,7 +11512,20 @@ return [
         3 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'getRegency',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return array<string, mixed>|null
+     */',
+             'namespace' => 'zaidysf\\IdnArea\\Contracts',
+             'uses' => 
+            array (
+              'collection' => 'Illuminate\\Support\\Collection',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -12587,7 +11554,20 @@ return [
         4 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'getRegenciesByProvince',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return Collection<int, array<string, mixed>>
+     */',
+             'namespace' => 'zaidysf\\IdnArea\\Contracts',
+             'uses' => 
+            array (
+              'collection' => 'Illuminate\\Support\\Collection',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -12616,7 +11596,20 @@ return [
         5 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'getAllDistricts',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return Collection<int, array<string, mixed>>
+     */',
+             'namespace' => 'zaidysf\\IdnArea\\Contracts',
+             'uses' => 
+            array (
+              'collection' => 'Illuminate\\Support\\Collection',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -12634,7 +11627,20 @@ return [
         6 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'getDistrict',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return array<string, mixed>|null
+     */',
+             'namespace' => 'zaidysf\\IdnArea\\Contracts',
+             'uses' => 
+            array (
+              'collection' => 'Illuminate\\Support\\Collection',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -12663,7 +11669,20 @@ return [
         7 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'getDistrictsByRegency',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return Collection<int, array<string, mixed>>
+     */',
+             'namespace' => 'zaidysf\\IdnArea\\Contracts',
+             'uses' => 
+            array (
+              'collection' => 'Illuminate\\Support\\Collection',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -12692,7 +11711,20 @@ return [
         8 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'getAllVillages',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return Collection<int, array<string, mixed>>
+     */',
+             'namespace' => 'zaidysf\\IdnArea\\Contracts',
+             'uses' => 
+            array (
+              'collection' => 'Illuminate\\Support\\Collection',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -12710,7 +11742,20 @@ return [
         9 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'getVillage',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return array<string, mixed>|null
+     */',
+             'namespace' => 'zaidysf\\IdnArea\\Contracts',
+             'uses' => 
+            array (
+              'collection' => 'Illuminate\\Support\\Collection',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -12739,7 +11784,20 @@ return [
         10 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'getVillagesByDistrict',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return Collection<int, array<string, mixed>>
+     */',
+             'namespace' => 'zaidysf\\IdnArea\\Contracts',
+             'uses' => 
+            array (
+              'collection' => 'Illuminate\\Support\\Collection',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -12768,7 +11826,20 @@ return [
         11 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'searchByName',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return Collection<int, array<string, mixed>>
+     */',
+             'namespace' => 'zaidysf\\IdnArea\\Contracts',
+             'uses' => 
+            array (
+              'collection' => 'Illuminate\\Support\\Collection',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -12808,12 +11879,25 @@ return [
       ),
     )),
   ),
-  '/Users/zaid/codes/idn-area-laravel-12/src/Exceptions/BpsApiException.php' => 
+  '/Users/zaid/codes/idn-area-laravel-12/src/Exceptions/DataTokoApiException.php' => 
   array (
     0 => 
     \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'zaidysf\\IdnArea\\Exceptions\\BpsApiException',
-       'phpDoc' => NULL,
+       'name' => 'zaidysf\\IdnArea\\Exceptions\\DataTokoApiException',
+       'phpDoc' => 
+      \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+         'phpDocString' => '/**
+ * Exception thrown when DataToko API operations fail
+ */',
+         'namespace' => 'zaidysf\\IdnArea\\Exceptions',
+         'uses' => 
+        array (
+          'exception' => 'Exception',
+        ),
+         'constUses' => 
+        array (
+        ),
+      )),
        'abstract' => false,
        'final' => true,
        'extends' => 'Exception',
@@ -12985,6 +12069,7 @@ return [
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
      * Get all provinces with optional caching.
+     * @return Collection<int, array<string, mixed>>
      */',
              'namespace' => 'zaidysf\\IdnArea',
              'uses' => 
@@ -13079,7 +12164,7 @@ return [
            'phpDoc' => 
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
-     * Get regencies by province code.
+     * @return Collection<int, array<string, mixed>>
      */',
              'namespace' => 'zaidysf\\IdnArea',
              'uses' => 
@@ -13132,7 +12217,7 @@ return [
            'phpDoc' => 
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
-     * Get all regencies.
+     * @return Collection<int, array<string, mixed>>
      */',
              'namespace' => 'zaidysf\\IdnArea',
              'uses' => 
@@ -13227,7 +12312,7 @@ return [
            'phpDoc' => 
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
-     * Get districts by regency code.
+     * @return Collection<int, array<string, mixed>>
      */',
              'namespace' => 'zaidysf\\IdnArea',
              'uses' => 
@@ -13280,7 +12365,7 @@ return [
            'phpDoc' => 
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
-     * Get all districts.
+     * @return Collection<int, array<string, mixed>>
      */',
              'namespace' => 'zaidysf\\IdnArea',
              'uses' => 
@@ -13375,7 +12460,7 @@ return [
            'phpDoc' => 
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
-     * Get villages by district code.
+     * @return Collection<int, array<string, mixed>>
      */',
              'namespace' => 'zaidysf\\IdnArea',
              'uses' => 
@@ -13428,7 +12513,7 @@ return [
            'phpDoc' => 
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
-     * Get all villages.
+     * @return Collection<int, array<string, mixed>>
      */',
              'namespace' => 'zaidysf\\IdnArea',
              'uses' => 
@@ -14015,6 +13100,7 @@ return [
           'areadataserviceinterface' => 'zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface',
           'bpsapiservice' => 'zaidysf\\IdnArea\\Services\\BpsApiService',
           'localdataservice' => 'zaidysf\\IdnArea\\Services\\LocalDataService',
+          'datatokoapiservice' => 'zaidysf\\IdnArea\\Services\\DataTokoApiService',
         ),
          'constUses' => 
         array (
@@ -14079,6 +13165,7 @@ return [
               'areadataserviceinterface' => 'zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface',
               'bpsapiservice' => 'zaidysf\\IdnArea\\Services\\BpsApiService',
               'localdataservice' => 'zaidysf\\IdnArea\\Services\\LocalDataService',
+              'datatokoapiservice' => 'zaidysf\\IdnArea\\Services\\DataTokoApiService',
             ),
              'constUses' => 
             array (
@@ -14125,6 +13212,7 @@ return [
               'areadataserviceinterface' => 'zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface',
               'bpsapiservice' => 'zaidysf\\IdnArea\\Services\\BpsApiService',
               'localdataservice' => 'zaidysf\\IdnArea\\Services\\LocalDataService',
+              'datatokoapiservice' => 'zaidysf\\IdnArea\\Services\\DataTokoApiService',
             ),
              'constUses' => 
             array (
@@ -14182,6 +13270,7 @@ return [
               'areadataserviceinterface' => 'zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface',
               'bpsapiservice' => 'zaidysf\\IdnArea\\Services\\BpsApiService',
               'localdataservice' => 'zaidysf\\IdnArea\\Services\\LocalDataService',
+              'datatokoapiservice' => 'zaidysf\\IdnArea\\Services\\DataTokoApiService',
             ),
              'constUses' => 
             array (
@@ -14239,6 +13328,7 @@ return [
               'areadataserviceinterface' => 'zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface',
               'bpsapiservice' => 'zaidysf\\IdnArea\\Services\\BpsApiService',
               'localdataservice' => 'zaidysf\\IdnArea\\Services\\LocalDataService',
+              'datatokoapiservice' => 'zaidysf\\IdnArea\\Services\\DataTokoApiService',
             ),
              'constUses' => 
             array (
@@ -14285,6 +13375,7 @@ return [
               'areadataserviceinterface' => 'zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface',
               'bpsapiservice' => 'zaidysf\\IdnArea\\Services\\BpsApiService',
               'localdataservice' => 'zaidysf\\IdnArea\\Services\\LocalDataService',
+              'datatokoapiservice' => 'zaidysf\\IdnArea\\Services\\DataTokoApiService',
             ),
              'constUses' => 
             array (
@@ -14342,6 +13433,7 @@ return [
               'areadataserviceinterface' => 'zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface',
               'bpsapiservice' => 'zaidysf\\IdnArea\\Services\\BpsApiService',
               'localdataservice' => 'zaidysf\\IdnArea\\Services\\LocalDataService',
+              'datatokoapiservice' => 'zaidysf\\IdnArea\\Services\\DataTokoApiService',
             ),
              'constUses' => 
             array (
@@ -14399,6 +13491,7 @@ return [
               'areadataserviceinterface' => 'zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface',
               'bpsapiservice' => 'zaidysf\\IdnArea\\Services\\BpsApiService',
               'localdataservice' => 'zaidysf\\IdnArea\\Services\\LocalDataService',
+              'datatokoapiservice' => 'zaidysf\\IdnArea\\Services\\DataTokoApiService',
             ),
              'constUses' => 
             array (
@@ -14445,6 +13538,7 @@ return [
               'areadataserviceinterface' => 'zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface',
               'bpsapiservice' => 'zaidysf\\IdnArea\\Services\\BpsApiService',
               'localdataservice' => 'zaidysf\\IdnArea\\Services\\LocalDataService',
+              'datatokoapiservice' => 'zaidysf\\IdnArea\\Services\\DataTokoApiService',
             ),
              'constUses' => 
             array (
@@ -14502,6 +13596,7 @@ return [
               'areadataserviceinterface' => 'zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface',
               'bpsapiservice' => 'zaidysf\\IdnArea\\Services\\BpsApiService',
               'localdataservice' => 'zaidysf\\IdnArea\\Services\\LocalDataService',
+              'datatokoapiservice' => 'zaidysf\\IdnArea\\Services\\DataTokoApiService',
             ),
              'constUses' => 
             array (
@@ -14559,6 +13654,7 @@ return [
               'areadataserviceinterface' => 'zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface',
               'bpsapiservice' => 'zaidysf\\IdnArea\\Services\\BpsApiService',
               'localdataservice' => 'zaidysf\\IdnArea\\Services\\LocalDataService',
+              'datatokoapiservice' => 'zaidysf\\IdnArea\\Services\\DataTokoApiService',
             ),
              'constUses' => 
             array (
@@ -14605,6 +13701,7 @@ return [
               'areadataserviceinterface' => 'zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface',
               'bpsapiservice' => 'zaidysf\\IdnArea\\Services\\BpsApiService',
               'localdataservice' => 'zaidysf\\IdnArea\\Services\\LocalDataService',
+              'datatokoapiservice' => 'zaidysf\\IdnArea\\Services\\DataTokoApiService',
             ),
              'constUses' => 
             array (
@@ -14662,6 +13759,7 @@ return [
               'areadataserviceinterface' => 'zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface',
               'bpsapiservice' => 'zaidysf\\IdnArea\\Services\\BpsApiService',
               'localdataservice' => 'zaidysf\\IdnArea\\Services\\LocalDataService',
+              'datatokoapiservice' => 'zaidysf\\IdnArea\\Services\\DataTokoApiService',
             ),
              'constUses' => 
             array (
@@ -14730,6 +13828,7 @@ return [
               'areadataserviceinterface' => 'zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface',
               'bpsapiservice' => 'zaidysf\\IdnArea\\Services\\BpsApiService',
               'localdataservice' => 'zaidysf\\IdnArea\\Services\\LocalDataService',
+              'datatokoapiservice' => 'zaidysf\\IdnArea\\Services\\DataTokoApiService',
             ),
              'constUses' => 
             array (
@@ -14765,6 +13864,7 @@ return [
               'areadataserviceinterface' => 'zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface',
               'bpsapiservice' => 'zaidysf\\IdnArea\\Services\\BpsApiService',
               'localdataservice' => 'zaidysf\\IdnArea\\Services\\LocalDataService',
+              'datatokoapiservice' => 'zaidysf\\IdnArea\\Services\\DataTokoApiService',
             ),
              'constUses' => 
             array (
@@ -14800,6 +13900,7 @@ return [
               'areadataserviceinterface' => 'zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface',
               'bpsapiservice' => 'zaidysf\\IdnArea\\Services\\BpsApiService',
               'localdataservice' => 'zaidysf\\IdnArea\\Services\\LocalDataService',
+              'datatokoapiservice' => 'zaidysf\\IdnArea\\Services\\DataTokoApiService',
             ),
              'constUses' => 
             array (
@@ -14835,6 +13936,7 @@ return [
               'areadataserviceinterface' => 'zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface',
               'bpsapiservice' => 'zaidysf\\IdnArea\\Services\\BpsApiService',
               'localdataservice' => 'zaidysf\\IdnArea\\Services\\LocalDataService',
+              'datatokoapiservice' => 'zaidysf\\IdnArea\\Services\\DataTokoApiService',
             ),
              'constUses' => 
             array (
@@ -14870,6 +13972,7 @@ return [
               'areadataserviceinterface' => 'zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface',
               'bpsapiservice' => 'zaidysf\\IdnArea\\Services\\BpsApiService',
               'localdataservice' => 'zaidysf\\IdnArea\\Services\\LocalDataService',
+              'datatokoapiservice' => 'zaidysf\\IdnArea\\Services\\DataTokoApiService',
             ),
              'constUses' => 
             array (
@@ -20238,14 +19341,14 @@ return [
       ),
     )),
   ),
-  '/Users/zaid/codes/idn-area-laravel-12/src/Services/BpsApiService.php' => 
+  '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php' => 
   array (
     0 => 
     \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'zaidysf\\IdnArea\\Services\\BpsApiService',
+       'name' => 'zaidysf\\IdnArea\\Services\\DataTokoApiService',
        'phpDoc' => NULL,
        'abstract' => false,
-       'final' => false,
+       'final' => true,
        'extends' => NULL,
        'implements' => 
       array (
@@ -20272,6 +19375,17 @@ return [
            'returnType' => NULL,
            'parameters' => 
           array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'config',
+               'type' => 'array',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => true,
+               'attributes' => 
+              array (
+              ),
+            )),
           ),
            'attributes' => 
           array (
@@ -20280,7 +19394,26 @@ return [
         1 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'getAllProvinces',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return Collection<int, array<string, mixed>>
+     */',
+             'namespace' => 'zaidysf\\IdnArea\\Services',
+             'uses' => 
+            array (
+              'collection' => 'Illuminate\\Support\\Collection',
+              'http' => 'Illuminate\\Support\\Facades\\Http',
+              'cache' => 'Illuminate\\Support\\Facades\\Cache',
+              'redis' => 'Illuminate\\Support\\Facades\\Redis',
+              'file' => 'Illuminate\\Support\\Facades\\File',
+              'areadataserviceinterface' => 'zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface',
+              'datatokoapiexception' => 'zaidysf\\IdnArea\\Exceptions\\DataTokoApiException',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -20327,7 +19460,26 @@ return [
         3 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'getRegenciesByProvince',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return Collection<int, array<string, mixed>>
+     */',
+             'namespace' => 'zaidysf\\IdnArea\\Services',
+             'uses' => 
+            array (
+              'collection' => 'Illuminate\\Support\\Collection',
+              'http' => 'Illuminate\\Support\\Facades\\Http',
+              'cache' => 'Illuminate\\Support\\Facades\\Cache',
+              'redis' => 'Illuminate\\Support\\Facades\\Redis',
+              'file' => 'Illuminate\\Support\\Facades\\File',
+              'areadataserviceinterface' => 'zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface',
+              'datatokoapiexception' => 'zaidysf\\IdnArea\\Exceptions\\DataTokoApiException',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -20356,7 +19508,26 @@ return [
         4 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'getAllRegencies',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return Collection<int, array<string, mixed>>
+     */',
+             'namespace' => 'zaidysf\\IdnArea\\Services',
+             'uses' => 
+            array (
+              'collection' => 'Illuminate\\Support\\Collection',
+              'http' => 'Illuminate\\Support\\Facades\\Http',
+              'cache' => 'Illuminate\\Support\\Facades\\Cache',
+              'redis' => 'Illuminate\\Support\\Facades\\Redis',
+              'file' => 'Illuminate\\Support\\Facades\\File',
+              'areadataserviceinterface' => 'zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface',
+              'datatokoapiexception' => 'zaidysf\\IdnArea\\Exceptions\\DataTokoApiException',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -20403,7 +19574,26 @@ return [
         6 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'getDistrictsByRegency',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return Collection<int, array<string, mixed>>
+     */',
+             'namespace' => 'zaidysf\\IdnArea\\Services',
+             'uses' => 
+            array (
+              'collection' => 'Illuminate\\Support\\Collection',
+              'http' => 'Illuminate\\Support\\Facades\\Http',
+              'cache' => 'Illuminate\\Support\\Facades\\Cache',
+              'redis' => 'Illuminate\\Support\\Facades\\Redis',
+              'file' => 'Illuminate\\Support\\Facades\\File',
+              'areadataserviceinterface' => 'zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface',
+              'datatokoapiexception' => 'zaidysf\\IdnArea\\Exceptions\\DataTokoApiException',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -20432,7 +19622,26 @@ return [
         7 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'getAllDistricts',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return Collection<int, array<string, mixed>>
+     */',
+             'namespace' => 'zaidysf\\IdnArea\\Services',
+             'uses' => 
+            array (
+              'collection' => 'Illuminate\\Support\\Collection',
+              'http' => 'Illuminate\\Support\\Facades\\Http',
+              'cache' => 'Illuminate\\Support\\Facades\\Cache',
+              'redis' => 'Illuminate\\Support\\Facades\\Redis',
+              'file' => 'Illuminate\\Support\\Facades\\File',
+              'areadataserviceinterface' => 'zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface',
+              'datatokoapiexception' => 'zaidysf\\IdnArea\\Exceptions\\DataTokoApiException',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -20479,7 +19688,26 @@ return [
         9 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'getVillagesByDistrict',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return Collection<int, array<string, mixed>>
+     */',
+             'namespace' => 'zaidysf\\IdnArea\\Services',
+             'uses' => 
+            array (
+              'collection' => 'Illuminate\\Support\\Collection',
+              'http' => 'Illuminate\\Support\\Facades\\Http',
+              'cache' => 'Illuminate\\Support\\Facades\\Cache',
+              'redis' => 'Illuminate\\Support\\Facades\\Redis',
+              'file' => 'Illuminate\\Support\\Facades\\File',
+              'areadataserviceinterface' => 'zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface',
+              'datatokoapiexception' => 'zaidysf\\IdnArea\\Exceptions\\DataTokoApiException',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -20508,7 +19736,26 @@ return [
         10 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'getAllVillages',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return Collection<int, array<string, mixed>>
+     */',
+             'namespace' => 'zaidysf\\IdnArea\\Services',
+             'uses' => 
+            array (
+              'collection' => 'Illuminate\\Support\\Collection',
+              'http' => 'Illuminate\\Support\\Facades\\Http',
+              'cache' => 'Illuminate\\Support\\Facades\\Cache',
+              'redis' => 'Illuminate\\Support\\Facades\\Redis',
+              'file' => 'Illuminate\\Support\\Facades\\File',
+              'areadataserviceinterface' => 'zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface',
+              'datatokoapiexception' => 'zaidysf\\IdnArea\\Exceptions\\DataTokoApiException',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -20554,8 +19801,75 @@ return [
         )),
         12 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'search',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return Collection<string, mixed>
+     */',
+             'namespace' => 'zaidysf\\IdnArea\\Services',
+             'uses' => 
+            array (
+              'collection' => 'Illuminate\\Support\\Collection',
+              'http' => 'Illuminate\\Support\\Facades\\Http',
+              'cache' => 'Illuminate\\Support\\Facades\\Cache',
+              'redis' => 'Illuminate\\Support\\Facades\\Redis',
+              'file' => 'Illuminate\\Support\\Facades\\File',
+              'areadataserviceinterface' => 'zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface',
+              'datatokoapiexception' => 'zaidysf\\IdnArea\\Exceptions\\DataTokoApiException',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'Illuminate\\Support\\Collection',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'query',
+               'type' => 'string',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        13 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'searchByName',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return Collection<int, array<string, mixed>>
+     */',
+             'namespace' => 'zaidysf\\IdnArea\\Services',
+             'uses' => 
+            array (
+              'collection' => 'Illuminate\\Support\\Collection',
+              'http' => 'Illuminate\\Support\\Facades\\Http',
+              'cache' => 'Illuminate\\Support\\Facades\\Cache',
+              'redis' => 'Illuminate\\Support\\Facades\\Redis',
+              'file' => 'Illuminate\\Support\\Facades\\File',
+              'areadataserviceinterface' => 'zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface',
+              'datatokoapiexception' => 'zaidysf\\IdnArea\\Exceptions\\DataTokoApiException',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -20587,473 +19901,6 @@ return [
               array (
               ),
             )),
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        13 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'getPeriods',
-           'phpDoc' => NULL,
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'array',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        14 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'isApiAvailable',
-           'phpDoc' => NULL,
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'bool',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        15 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'getProvinces',
-           'phpDoc' => NULL,
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'array',
-           'parameters' => 
-          array (
-            0 => 
-            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'limit',
-               'type' => NULL,
-               'byRef' => false,
-               'variadic' => false,
-               'hasDefault' => true,
-               'attributes' => 
-              array (
-              ),
-            )),
-            1 => 
-            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'offset',
-               'type' => NULL,
-               'byRef' => false,
-               'variadic' => false,
-               'hasDefault' => true,
-               'attributes' => 
-              array (
-              ),
-            )),
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        16 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'getRegencies',
-           'phpDoc' => NULL,
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'array',
-           'parameters' => 
-          array (
-            0 => 
-            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'provinceCode',
-               'type' => 'string',
-               'byRef' => false,
-               'variadic' => false,
-               'hasDefault' => false,
-               'attributes' => 
-              array (
-              ),
-            )),
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        17 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'getDistricts',
-           'phpDoc' => NULL,
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'array',
-           'parameters' => 
-          array (
-            0 => 
-            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'regencyCode',
-               'type' => 'string',
-               'byRef' => false,
-               'variadic' => false,
-               'hasDefault' => false,
-               'attributes' => 
-              array (
-              ),
-            )),
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        18 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'getVillages',
-           'phpDoc' => NULL,
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'array',
-           'parameters' => 
-          array (
-            0 => 
-            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'districtCode',
-               'type' => 'string',
-               'byRef' => false,
-               'variadic' => false,
-               'hasDefault' => false,
-               'attributes' => 
-              array (
-              ),
-            )),
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        19 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'getProvinceByCode',
-           'phpDoc' => NULL,
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => '?array',
-           'parameters' => 
-          array (
-            0 => 
-            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'code',
-               'type' => 'string',
-               'byRef' => false,
-               'variadic' => false,
-               'hasDefault' => false,
-               'attributes' => 
-              array (
-              ),
-            )),
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        20 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'getRegencyByCode',
-           'phpDoc' => NULL,
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => '?array',
-           'parameters' => 
-          array (
-            0 => 
-            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'code',
-               'type' => 'string',
-               'byRef' => false,
-               'variadic' => false,
-               'hasDefault' => false,
-               'attributes' => 
-              array (
-              ),
-            )),
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        21 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'getDistrictByCode',
-           'phpDoc' => NULL,
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => '?array',
-           'parameters' => 
-          array (
-            0 => 
-            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'code',
-               'type' => 'string',
-               'byRef' => false,
-               'variadic' => false,
-               'hasDefault' => false,
-               'attributes' => 
-              array (
-              ),
-            )),
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        22 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'getVillageByCode',
-           'phpDoc' => NULL,
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => '?array',
-           'parameters' => 
-          array (
-            0 => 
-            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'code',
-               'type' => 'string',
-               'byRef' => false,
-               'variadic' => false,
-               'hasDefault' => false,
-               'attributes' => 
-              array (
-              ),
-            )),
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        23 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'searchProvinces',
-           'phpDoc' => NULL,
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'array',
-           'parameters' => 
-          array (
-            0 => 
-            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'term',
-               'type' => 'string',
-               'byRef' => false,
-               'variadic' => false,
-               'hasDefault' => false,
-               'attributes' => 
-              array (
-              ),
-            )),
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        24 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'searchRegencies',
-           'phpDoc' => NULL,
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'array',
-           'parameters' => 
-          array (
-            0 => 
-            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'term',
-               'type' => 'string',
-               'byRef' => false,
-               'variadic' => false,
-               'hasDefault' => false,
-               'attributes' => 
-              array (
-              ),
-            )),
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        25 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'searchDistricts',
-           'phpDoc' => NULL,
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'array',
-           'parameters' => 
-          array (
-            0 => 
-            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'term',
-               'type' => 'string',
-               'byRef' => false,
-               'variadic' => false,
-               'hasDefault' => false,
-               'attributes' => 
-              array (
-              ),
-            )),
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        26 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'searchVillages',
-           'phpDoc' => NULL,
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'array',
-           'parameters' => 
-          array (
-            0 => 
-            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'term',
-               'type' => 'string',
-               'byRef' => false,
-               'variadic' => false,
-               'hasDefault' => false,
-               'attributes' => 
-              array (
-              ),
-            )),
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        27 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'countProvinces',
-           'phpDoc' => NULL,
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'int',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        28 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'countRegencies',
-           'phpDoc' => NULL,
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'int',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        29 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'countDistricts',
-           'phpDoc' => NULL,
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'int',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        30 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'countVillages',
-           'phpDoc' => NULL,
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'int',
-           'parameters' => 
-          array (
           ),
            'attributes' => 
           array (
@@ -21519,7 +20366,25 @@ return [
         0 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'getAllProvinces',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return Collection<int, array<string, mixed>>
+     */',
+             'namespace' => 'zaidysf\\IdnArea\\Services',
+             'uses' => 
+            array (
+              'collection' => 'Illuminate\\Support\\Collection',
+              'areadataserviceinterface' => 'zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface',
+              'province' => 'zaidysf\\IdnArea\\Models\\Province',
+              'regency' => 'zaidysf\\IdnArea\\Models\\Regency',
+              'district' => 'zaidysf\\IdnArea\\Models\\District',
+              'village' => 'zaidysf\\IdnArea\\Models\\Village',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -21566,7 +20431,25 @@ return [
         2 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'getRegenciesByProvince',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return Collection<int, array<string, mixed>>
+     */',
+             'namespace' => 'zaidysf\\IdnArea\\Services',
+             'uses' => 
+            array (
+              'collection' => 'Illuminate\\Support\\Collection',
+              'areadataserviceinterface' => 'zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface',
+              'province' => 'zaidysf\\IdnArea\\Models\\Province',
+              'regency' => 'zaidysf\\IdnArea\\Models\\Regency',
+              'district' => 'zaidysf\\IdnArea\\Models\\District',
+              'village' => 'zaidysf\\IdnArea\\Models\\Village',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -21595,7 +20478,25 @@ return [
         3 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'getAllRegencies',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return Collection<int, array<string, mixed>>
+     */',
+             'namespace' => 'zaidysf\\IdnArea\\Services',
+             'uses' => 
+            array (
+              'collection' => 'Illuminate\\Support\\Collection',
+              'areadataserviceinterface' => 'zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface',
+              'province' => 'zaidysf\\IdnArea\\Models\\Province',
+              'regency' => 'zaidysf\\IdnArea\\Models\\Regency',
+              'district' => 'zaidysf\\IdnArea\\Models\\District',
+              'village' => 'zaidysf\\IdnArea\\Models\\Village',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -21642,7 +20543,25 @@ return [
         5 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'getDistrictsByRegency',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return Collection<int, array<string, mixed>>
+     */',
+             'namespace' => 'zaidysf\\IdnArea\\Services',
+             'uses' => 
+            array (
+              'collection' => 'Illuminate\\Support\\Collection',
+              'areadataserviceinterface' => 'zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface',
+              'province' => 'zaidysf\\IdnArea\\Models\\Province',
+              'regency' => 'zaidysf\\IdnArea\\Models\\Regency',
+              'district' => 'zaidysf\\IdnArea\\Models\\District',
+              'village' => 'zaidysf\\IdnArea\\Models\\Village',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -21671,7 +20590,25 @@ return [
         6 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'getAllDistricts',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return Collection<int, array<string, mixed>>
+     */',
+             'namespace' => 'zaidysf\\IdnArea\\Services',
+             'uses' => 
+            array (
+              'collection' => 'Illuminate\\Support\\Collection',
+              'areadataserviceinterface' => 'zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface',
+              'province' => 'zaidysf\\IdnArea\\Models\\Province',
+              'regency' => 'zaidysf\\IdnArea\\Models\\Regency',
+              'district' => 'zaidysf\\IdnArea\\Models\\District',
+              'village' => 'zaidysf\\IdnArea\\Models\\Village',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -21718,7 +20655,25 @@ return [
         8 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'getVillagesByDistrict',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return Collection<int, array<string, mixed>>
+     */',
+             'namespace' => 'zaidysf\\IdnArea\\Services',
+             'uses' => 
+            array (
+              'collection' => 'Illuminate\\Support\\Collection',
+              'areadataserviceinterface' => 'zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface',
+              'province' => 'zaidysf\\IdnArea\\Models\\Province',
+              'regency' => 'zaidysf\\IdnArea\\Models\\Regency',
+              'district' => 'zaidysf\\IdnArea\\Models\\District',
+              'village' => 'zaidysf\\IdnArea\\Models\\Village',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -21747,7 +20702,25 @@ return [
         9 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'getAllVillages',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return Collection<int, array<string, mixed>>
+     */',
+             'namespace' => 'zaidysf\\IdnArea\\Services',
+             'uses' => 
+            array (
+              'collection' => 'Illuminate\\Support\\Collection',
+              'areadataserviceinterface' => 'zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface',
+              'province' => 'zaidysf\\IdnArea\\Models\\Province',
+              'regency' => 'zaidysf\\IdnArea\\Models\\Regency',
+              'district' => 'zaidysf\\IdnArea\\Models\\District',
+              'village' => 'zaidysf\\IdnArea\\Models\\Village',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -21794,7 +20767,25 @@ return [
         11 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'searchByName',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return Collection<int, array<string, mixed>>
+     */',
+             'namespace' => 'zaidysf\\IdnArea\\Services',
+             'uses' => 
+            array (
+              'collection' => 'Illuminate\\Support\\Collection',
+              'areadataserviceinterface' => 'zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface',
+              'province' => 'zaidysf\\IdnArea\\Models\\Province',
+              'regency' => 'zaidysf\\IdnArea\\Models\\Regency',
+              'district' => 'zaidysf\\IdnArea\\Models\\District',
+              'village' => 'zaidysf\\IdnArea\\Models\\Village',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -21834,7 +20825,27 @@ return [
         12 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'getProvinces',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @param int|null $limit
+     * @param int|null $offset
+     * @return array<int, array<string, mixed>>
+     */',
+             'namespace' => 'zaidysf\\IdnArea\\Services',
+             'uses' => 
+            array (
+              'collection' => 'Illuminate\\Support\\Collection',
+              'areadataserviceinterface' => 'zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface',
+              'province' => 'zaidysf\\IdnArea\\Models\\Province',
+              'regency' => 'zaidysf\\IdnArea\\Models\\Regency',
+              'district' => 'zaidysf\\IdnArea\\Models\\District',
+              'village' => 'zaidysf\\IdnArea\\Models\\Village',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -21847,7 +20858,7 @@ return [
             0 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
                'name' => 'limit',
-               'type' => NULL,
+               'type' => '?int',
                'byRef' => false,
                'variadic' => false,
                'hasDefault' => true,
@@ -21858,7 +20869,7 @@ return [
             1 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
                'name' => 'offset',
-               'type' => NULL,
+               'type' => '?int',
                'byRef' => false,
                'variadic' => false,
                'hasDefault' => true,

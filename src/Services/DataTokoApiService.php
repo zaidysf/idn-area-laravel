@@ -34,6 +34,9 @@ final class DataTokoApiService implements AreaDataServiceInterface
         }
     }
 
+    /**
+     * @return Collection<int, array<string, mixed>>
+     */
     public function getAllProvinces(): Collection
     {
         $response = $this->makeAuthenticatedRequest('/api/indonesia/provinces');
@@ -48,6 +51,9 @@ final class DataTokoApiService implements AreaDataServiceInterface
         return $response ? $this->transformProvince($response) : null;
     }
 
+    /**
+     * @return Collection<int, array<string, mixed>>
+     */
     public function getRegenciesByProvince(string $provinceCode): Collection
     {
         $response = $this->makeAuthenticatedRequest("/api/indonesia/provinces/{$provinceCode}/regencies");
@@ -55,6 +61,9 @@ final class DataTokoApiService implements AreaDataServiceInterface
         return $this->transformRegencies($response, $provinceCode);
     }
 
+    /**
+     * @return Collection<int, array<string, mixed>>
+     */
     public function getAllRegencies(): Collection
     {
         $response = $this->makeAuthenticatedRequest('/api/indonesia/regencies');
@@ -69,6 +78,9 @@ final class DataTokoApiService implements AreaDataServiceInterface
         return $response ? $this->transformRegency($response) : null;
     }
 
+    /**
+     * @return Collection<int, array<string, mixed>>
+     */
     public function getDistrictsByRegency(string $regencyCode): Collection
     {
         $response = $this->makeAuthenticatedRequest("/api/indonesia/regencies/{$regencyCode}/districts");
@@ -76,6 +88,9 @@ final class DataTokoApiService implements AreaDataServiceInterface
         return $this->transformDistricts($response, $regencyCode);
     }
 
+    /**
+     * @return Collection<int, array<string, mixed>>
+     */
     public function getAllDistricts(): Collection
     {
         $response = $this->makeAuthenticatedRequest('/api/indonesia/districts');
@@ -90,6 +105,9 @@ final class DataTokoApiService implements AreaDataServiceInterface
         return $response ? $this->transformDistrict($response) : null;
     }
 
+    /**
+     * @return Collection<int, array<string, mixed>>
+     */
     public function getVillagesByDistrict(string $districtCode): Collection
     {
         $response = $this->makeAuthenticatedRequest("/api/indonesia/districts/{$districtCode}/villages");
@@ -97,6 +115,9 @@ final class DataTokoApiService implements AreaDataServiceInterface
         return $this->transformVillages($response, $districtCode);
     }
 
+    /**
+     * @return Collection<int, array<string, mixed>>
+     */
     public function getAllVillages(): Collection
     {
         $response = $this->makeAuthenticatedRequest('/api/indonesia/villages');
@@ -111,6 +132,9 @@ final class DataTokoApiService implements AreaDataServiceInterface
         return $response ? $this->transformVillage($response) : null;
     }
 
+    /**
+     * @return Collection<string, mixed>
+     */
     public function search(string $query): Collection
     {
         $response = $this->makeAuthenticatedRequest('/api/indonesia/search', [
@@ -126,6 +150,9 @@ final class DataTokoApiService implements AreaDataServiceInterface
         ]);
     }
 
+    /**
+     * @return Collection<int, array<string, mixed>>
+     */
     public function searchByName(string $query, string $type = 'all'): Collection
     {
         $response = $this->makeAuthenticatedRequest('/api/indonesia/search', [
@@ -383,6 +410,10 @@ final class DataTokoApiService implements AreaDataServiceInterface
     }
 
     // Data transformation methods
+    /**
+     * @param mixed $data
+     * @return Collection<int, array<string, mixed>>
+     */
     private function transformProvinces($data): Collection
     {
         return collect($data)->map(function ($item) {
@@ -393,6 +424,10 @@ final class DataTokoApiService implements AreaDataServiceInterface
         });
     }
 
+    /**
+     * @param mixed $data
+     * @return array<string, mixed>
+     */
     private function transformProvince($data): array
     {
         return [
@@ -401,6 +436,10 @@ final class DataTokoApiService implements AreaDataServiceInterface
         ];
     }
 
+    /**
+     * @param mixed $data
+     * @return Collection<int, array<string, mixed>>
+     */
     private function transformRegencies($data, ?string $provinceCode = null): Collection
     {
         return collect($data)->map(function ($item) use ($provinceCode) {
@@ -412,6 +451,10 @@ final class DataTokoApiService implements AreaDataServiceInterface
         });
     }
 
+    /**
+     * @param mixed $data
+     * @return array<string, mixed>
+     */
     private function transformRegency($data): array
     {
         return [
@@ -421,6 +464,10 @@ final class DataTokoApiService implements AreaDataServiceInterface
         ];
     }
 
+    /**
+     * @param mixed $data
+     * @return Collection<int, array<string, mixed>>
+     */
     private function transformDistricts($data, ?string $regencyCode = null): Collection
     {
         return collect($data)->map(function ($item) use ($regencyCode) {
@@ -432,6 +479,10 @@ final class DataTokoApiService implements AreaDataServiceInterface
         });
     }
 
+    /**
+     * @param mixed $data
+     * @return array<string, mixed>
+     */
     private function transformDistrict($data): array
     {
         return [
@@ -441,6 +492,10 @@ final class DataTokoApiService implements AreaDataServiceInterface
         ];
     }
 
+    /**
+     * @param mixed $data
+     * @return Collection<int, array<string, mixed>>
+     */
     private function transformVillages($data, ?string $districtCode = null): Collection
     {
         return collect($data)->map(function ($item) use ($districtCode) {
@@ -452,6 +507,10 @@ final class DataTokoApiService implements AreaDataServiceInterface
         });
     }
 
+    /**
+     * @param mixed $data
+     * @return array<string, mixed>
+     */
     private function transformVillage($data): array
     {
         return [

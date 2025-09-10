@@ -21,6 +21,7 @@ final class IdnArea
 
     /**
      * Get all provinces with optional caching.
+     * @return Collection<int, array<string, mixed>>
      */
     public function provinces(bool $cached = true): Collection
     {
@@ -38,6 +39,9 @@ final class IdnArea
     /**
      * Get regencies by province code.
      */
+    /**
+     * @return Collection<int, array<string, mixed>>
+     */
     public function regenciesByProvince(string $provinceCode, bool $cached = true): Collection
     {
         return $this->manager->regenciesByProvince($provinceCode, $cached);
@@ -45,6 +49,9 @@ final class IdnArea
 
     /**
      * Get all regencies.
+     */
+    /**
+     * @return Collection<int, array<string, mixed>>
      */
     public function regencies(bool $cached = true): Collection
     {
@@ -62,6 +69,9 @@ final class IdnArea
     /**
      * Get districts by regency code.
      */
+    /**
+     * @return Collection<int, array<string, mixed>>
+     */
     public function districtsByRegency(string $regencyCode, bool $cached = true): Collection
     {
         return $this->manager->districtsByRegency($regencyCode, $cached);
@@ -69,6 +79,9 @@ final class IdnArea
 
     /**
      * Get all districts.
+     */
+    /**
+     * @return Collection<int, array<string, mixed>>
      */
     public function districts(bool $cached = true): Collection
     {
@@ -86,6 +99,9 @@ final class IdnArea
     /**
      * Get villages by district code.
      */
+    /**
+     * @return Collection<int, array<string, mixed>>
+     */
     public function villagesByDistrict(string $districtCode, bool $cached = true): Collection
     {
         return $this->manager->villagesByDistrict($districtCode, $cached);
@@ -93,6 +109,9 @@ final class IdnArea
 
     /**
      * Get all villages.
+     */
+    /**
+     * @return Collection<int, array<string, mixed>>
      */
     public function villages(bool $cached = true): Collection
     {

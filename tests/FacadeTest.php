@@ -37,7 +37,7 @@ describe('IdnArea Facade', function () {
         $regencies = IdnArea::regenciesByProvince('31');
 
         expect($regencies)->toHaveCount(1);
-        expect($regencies->first()->name)->toBe('KOTA ADMINISTRASI JAKARTA PUSAT');
+        expect($regencies->first()['name'])->toBe('KOTA ADMINISTRASI JAKARTA PUSAT');
     });
 
     it('can search areas via facade', function () {

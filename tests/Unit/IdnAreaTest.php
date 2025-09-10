@@ -45,8 +45,8 @@ it('can get regencies by province', function () {
     $regencies = IdnArea::regenciesByProvince('32', false);
 
     expect($regencies)->toHaveCount(1);
-    expect($regencies->first()->code)->toBe($regency->code);
-    expect($regencies->first()->name)->toBe($regency->name);
+    expect($regencies->first()['code'])->toBe($regency->code);
+    expect($regencies->first()['name'])->toBe($regency->name);
 });
 
 it('can get districts by regency', function () {
@@ -59,8 +59,8 @@ it('can get districts by regency', function () {
     $districts = IdnArea::districtsByRegency($regency->code, 0, false);
 
     expect($districts)->toHaveCount(1);
-    expect($districts->first()->code)->toBe($district->code);
-    expect($districts->first()->name)->toBe($district->name);
+    expect($districts->first()['code'])->toBe($district->code);
+    expect($districts->first()['name'])->toBe($district->name);
 });
 
 it('can get all districts by regency', function () {
@@ -84,8 +84,8 @@ it('can get villages by district', function () {
     $villages = IdnArea::villagesByDistrict($district->code, 100, false);
 
     expect($villages)->toHaveCount(1);
-    expect($villages->first()->code)->toBe($village->code);
-    expect($villages->first()->name)->toBe($village->name);
+    expect($villages->first()['code'])->toBe($village->code);
+    expect($villages->first()['name'])->toBe($village->name);
 });
 
 it('can get islands by regency', function () {

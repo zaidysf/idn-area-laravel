@@ -2,6 +2,6 @@
 
 // variadic-method-zaidysf\IdnArea\Models\Regency-scopeInProvince-/Users/zaid/codes/idn-area-laravel-12/src/Models/Regency.php
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => '1757427503-v4',
+   'variableKey' => '1757477999-v4',
    'data' => false,
 ));

@@ -158,7 +158,6 @@ class LocalDataService implements AreaDataServiceInterface
                 $regencies = Regency::search($query);
                 $districts = District::search($query);
                 $villages = Village::search($query);
-                $islands = \zaidysf\IdnArea\Models\Island::search($query)->get();
 
                 // Return structured array instead of merged collection
                 return collect([
@@ -166,7 +165,6 @@ class LocalDataService implements AreaDataServiceInterface
                     'regencies' => $regencies,
                     'districts' => $districts,
                     'villages' => $villages,
-                    'islands' => $islands,
                 ]);
         }
     }

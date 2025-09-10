@@ -8,7 +8,6 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use zaidysf\IdnArea\Models\District;
-use zaidysf\IdnArea\Models\Island;
 use zaidysf\IdnArea\Models\Province;
 use zaidysf\IdnArea\Models\Regency;
 use zaidysf\IdnArea\Models\Village;
@@ -22,7 +21,6 @@ class IdnAreaCommand extends Command
         {--backup : Backup existing data before seeding}
         {--chunk-size=500 : Number of records to process at once}
         {--skip-cache-clear : Skip clearing cache after seeding}
-        {--only= : Seed only specific types (provinces,regencies,districts,villages,islands)}
         {--exclude= : Exclude specific types from seeding}';
 
     public $description = 'Enhanced seeder for Indonesian area data with modern Laravel features';
@@ -156,15 +154,12 @@ class IdnAreaCommand extends Command
         $regencies = Regency::count();
         $districts = District::count();
         $villages = Village::count();
-        $islands = Island::count();
 
         return [
             'provinces' => $provinces,
             'regencies' => $regencies,
             'districts' => $districts,
             'villages' => $villages,
-            'islands' => $islands,
-            'has_any' => $provinces + $regencies + $districts + $villages + $islands > 0,
         ];
     }
 
@@ -181,7 +176,6 @@ class IdnAreaCommand extends Command
                 ['Regencies', number_format($data['regencies'])],
                 ['Districts', number_format($data['districts'])],
                 ['Villages', number_format($data['villages'])],
-                ['Islands', number_format($data['islands'])],
             ]
         );
 
@@ -198,7 +192,6 @@ class IdnAreaCommand extends Command
             'idn_regencies' => "idn_regencies_backup_{$timestamp}",
             'idn_districts' => "idn_districts_backup_{$timestamp}",
             'idn_villages' => "idn_villages_backup_{$timestamp}",
-            'idn_islands' => "idn_islands_backup_{$timestamp}",
         ];
 
         $this->withProgressBar($backupTables, function (string $backupTable, string $originalTable): void {
@@ -236,12 +229,6 @@ class IdnAreaCommand extends Command
         $orphanedVillages = Village::whereDoesntHave('district')->count();
         if ($orphanedVillages > 0) {
             $issues[] = "Found {$orphanedVillages} villages without districts";
-        }
-
-        $orphanedIslands = Island::whereNotNull('regency_code')
-            ->whereDoesntHave('regency')->count();
-        if ($orphanedIslands > 0) {
-            $issues[] = "Found {$orphanedIslands} islands with invalid regency codes";
         }
 
         if (empty($issues)) {

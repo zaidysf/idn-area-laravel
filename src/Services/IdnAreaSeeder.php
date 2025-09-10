@@ -7,7 +7,6 @@ namespace zaidysf\IdnArea\Services;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Schema;
 use zaidysf\IdnArea\Models\District;
-use zaidysf\IdnArea\Models\Island;
 use zaidysf\IdnArea\Models\Province;
 use zaidysf\IdnArea\Models\Regency;
 use zaidysf\IdnArea\Models\Village;
@@ -64,11 +63,6 @@ class IdnAreaSeeder
                 $results['villages'] = $result;
             }
 
-            if ($this->shouldSeed('islands', $only, $exclude)) {
-                $result = $this->seedIslands($command);
-                $results['islands'] = $result;
-            }
-
             $totalTime = round(microtime(true) - $startTime, 2);
             $results['total_duration'] = $totalTime.'s';
 
@@ -84,7 +78,7 @@ class IdnAreaSeeder
 
     protected function checkTables(): void
     {
-        $tables = ['idn_provinces', 'idn_regencies', 'idn_districts', 'idn_villages', 'idn_islands'];
+        $tables = ['idn_provinces', 'idn_regencies', 'idn_districts', 'idn_villages'];
 
         foreach ($tables as $table) {
             if (! Schema::hasTable($table)) {
@@ -98,8 +92,7 @@ class IdnAreaSeeder
         return Province::count() > 0 ||
                Regency::count() > 0 ||
                District::count() > 0 ||
-               Village::count() > 0 ||
-               Island::count() > 0;
+               Village::count() > 0;
     }
 
     protected function shouldSeed(string $type, array $only, array $exclude): bool
@@ -126,7 +119,6 @@ class IdnAreaSeeder
         District::query()->delete();
         Regency::query()->delete();
         Province::query()->delete();
-        Island::query()->delete();
 
         if ($command) {
             $command->info('Existing data cleared successfully');
@@ -295,48 +287,6 @@ class IdnAreaSeeder
 
         return [
             'count' => $count,
-            'duration' => $duration,
-        ];
-    }
-
-    protected function seedIslands(?Command $command = null): array
-    {
-        $startTime = microtime(true);
-
-        if ($command) {
-            $command->info('Seeding islands...');
-        }
-
-        $csvFile = $this->dataPath.'islands.csv';
-        $data = $this->readCsv($csvFile);
-
-        $islands = [];
-        foreach ($data as $row) {
-            $islands[] = [
-                'code' => $row['code'] ?? null,
-                'coordinate' => $row['coordinate'] ?? null,
-                'name' => $row['name'],
-                'is_outermost_small' => $this->parseBool($row['is_outermost_small'] ?? false),
-                'is_populated' => $this->parseBool($row['is_populated'] ?? false),
-                'regency_code' => $row['regency_code'] ?? null,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ];
-        }
-
-        // Insert in chunks to avoid memory issues
-        foreach (array_chunk($islands, 100) as $chunk) {
-            Island::insert($chunk);
-        }
-
-        $duration = round(microtime(true) - $startTime, 2).'s';
-
-        if ($command) {
-            $command->info('Seeded '.count($islands).' islands');
-        }
-
-        return [
-            'count' => count($islands),
             'duration' => $duration,
         ];
     }

@@ -152,6 +152,8 @@ class Village extends Model
 
     /**
      * Get villages by district code (static method).
+     *
+     * @return \Illuminate\Database\Eloquent\Collection<int, static>
      */
     public static function byDistrict(string $districtCode)
     {
@@ -160,6 +162,8 @@ class Village extends Model
 
     /**
      * Search villages by name (static method).
+     *
+     * @return \Illuminate\Database\Eloquent\Collection<int, static>
      */
     public static function search(string $term)
     {

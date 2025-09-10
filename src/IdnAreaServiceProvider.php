@@ -31,7 +31,6 @@ class IdnAreaServiceProvider extends PackageServiceProvider
                 'create_idn_regencies_table',
                 'create_idn_districts_table',
                 'create_idn_villages_table',
-                'create_idn_islands_table',
             ])
             ->hasCommands([
                 IdnAreaSetupCommand::class,

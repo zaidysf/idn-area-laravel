@@ -99,17 +99,6 @@ class Regency extends Model
     }
 
     /**
-     * Get all islands that belong to this regency.
-     *
-     * @return HasMany<Island, $this>
-     */
-    public function islands(): HasMany
-    {
-        return $this->hasMany(Island::class, 'regency_code', 'code')
-            ->orderBy('name');
-    }
-
-    /**
      * Scope to search regencies by name.
      *
      * @param  Builder<Regency>  $query
@@ -179,6 +168,8 @@ class Regency extends Model
 
     /**
      * Get regencies by province code (static method).
+     *
+     * @return \Illuminate\Database\Eloquent\Collection<int, static>
      */
     public static function byProvince(string $provinceCode)
     {
@@ -187,6 +178,8 @@ class Regency extends Model
 
     /**
      * Search regencies by name (static method).
+     *
+     * @return \Illuminate\Database\Eloquent\Collection<int, static>
      */
     public static function search(string $term)
     {

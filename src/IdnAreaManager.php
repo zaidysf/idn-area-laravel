@@ -7,7 +7,6 @@ namespace zaidysf\IdnArea;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
 use zaidysf\IdnArea\Contracts\AreaDataServiceInterface;
-use zaidysf\IdnArea\Services\BpsApiService;
 use zaidysf\IdnArea\Services\DataTokoApiService;
 use zaidysf\IdnArea\Services\LocalDataService;
 
@@ -29,6 +28,8 @@ final class IdnAreaManager
 
     /**
      * Get all provinces with optional caching.
+     *
+     * @return Collection<int, array<string, mixed>>
      */
     public function provinces(bool $cached = true): Collection
     {
@@ -61,6 +62,8 @@ final class IdnAreaManager
 
     /**
      * Get regencies by province code.
+     *
+     * @return Collection<int, array<string, mixed>>
      */
     public function regenciesByProvince(string $provinceCode, bool $cached = true): Collection
     {
@@ -77,6 +80,8 @@ final class IdnAreaManager
 
     /**
      * Get all regencies.
+     *
+     * @return Collection<int, array<string, mixed>>
      */
     public function regencies(bool $cached = true): Collection
     {
@@ -109,6 +114,8 @@ final class IdnAreaManager
 
     /**
      * Get districts by regency code.
+     *
+     * @return Collection<int, array<string, mixed>>
      */
     public function districtsByRegency(string $regencyCode, bool $cached = true): Collection
     {
@@ -125,6 +132,8 @@ final class IdnAreaManager
 
     /**
      * Get all districts.
+     *
+     * @return Collection<int, array<string, mixed>>
      */
     public function districts(bool $cached = true): Collection
     {
@@ -157,6 +166,8 @@ final class IdnAreaManager
 
     /**
      * Get villages by district code.
+     *
+     * @return Collection<int, array<string, mixed>>
      */
     public function villagesByDistrict(string $districtCode, bool $cached = true): Collection
     {
@@ -173,6 +184,8 @@ final class IdnAreaManager
 
     /**
      * Get all villages.
+     *
+     * @return Collection<int, array<string, mixed>>
      */
     public function villages(bool $cached = true): Collection
     {
@@ -205,6 +218,8 @@ final class IdnAreaManager
 
     /**
      * Search by name across all area types.
+     *
+     * @return Collection<int, array<string, mixed>>
      */
     public function search(string $query, string $type = 'all', bool $cached = true): Collection
     {
@@ -228,27 +243,23 @@ final class IdnAreaManager
     }
 
     /**
-     * Check if BPS API is available (for API mode).
+     * Check if DataToko API is available (for API mode).
      */
     public function isApiAvailable(): bool
     {
-        if ($this->isApiMode() && $this->dataService instanceof BpsApiService) {
-            return $this->dataService->isApiAvailable();
+        if ($this->isApiMode() && $this->dataService instanceof DataTokoApiService) {
+            return true; // DataToko API availability is checked during authentication
         }
 
         return false;
     }
 
     /**
-     * Get available periods from BPS API (for API mode).
+     * Get available periods from DataToko API (for API mode).
      */
     public function getPeriods(): array
     {
-        if ($this->isApiMode() && $this->dataService instanceof BpsApiService) {
-            return $this->dataService->getPeriods();
-        }
-
-        return [];
+        return []; // DataToko API doesn't provide periods concept
     }
 
     /**
@@ -361,11 +372,6 @@ final class IdnAreaManager
         $districts = $this->districts(false);
         $villages = $this->villages(false);
 
-        // Get island statistics
-        $islands = \zaidysf\IdnArea\Models\Island::all();
-        $populatedIslands = \zaidysf\IdnArea\Models\Island::populated()->get();
-        $outermostSmallIslands = \zaidysf\IdnArea\Models\Island::outermostSmall()->get();
-
         return [
             'mode' => $this->getMode(),
             'api_available' => $this->isApiAvailable(),
@@ -373,9 +379,6 @@ final class IdnAreaManager
             'regencies' => $regencies->count(),
             'districts' => $districts->count(),
             'villages' => $villages->count(),
-            'islands' => $islands->count(),
-            'populated_islands' => $populatedIslands->count(),
-            'outermost_small_islands' => $outermostSmallIslands->count(),
             'largest_province_by_regencies' => $this->getLargestProvinceByRegencies(),
             'generated_by' => 'zaidysf Indonesian Area Data Package',
         ];

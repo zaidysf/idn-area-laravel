@@ -8,6 +8,7 @@ parameters:
     tmpDir: build/phpstan
     checkOctaneCompatibility: true
     checkModelProperties: true
+    treatPhpDocTypesAsCertain: false
     typeAliases:
         QueryBuilder: 'Illuminate\Database\Eloquent\Builder'
     ignoreErrors:

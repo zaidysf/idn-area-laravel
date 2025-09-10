@@ -146,7 +146,6 @@ final class DataTokoApiService implements AreaDataServiceInterface
             'regencies' => $this->transformRegencies($response['regencies'] ?? []),
             'districts' => $this->transformDistricts($response['districts'] ?? []),
             'villages' => $this->transformVillages($response['villages'] ?? []),
-            'islands' => collect($response['islands'] ?? []),
         ]);
     }
 
@@ -166,7 +165,6 @@ final class DataTokoApiService implements AreaDataServiceInterface
                 'regencies' => $this->transformRegencies($response['regencies'] ?? []),
                 'districts' => $this->transformDistricts($response['districts'] ?? []),
                 'villages' => $this->transformVillages($response['villages'] ?? []),
-                'islands' => collect($response['islands'] ?? []),
             ]);
         }
 

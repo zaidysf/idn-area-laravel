@@ -169,6 +169,8 @@ class District extends Model
 
     /**
      * Get districts by regency code (static method).
+     *
+     * @return \Illuminate\Database\Eloquent\Collection<int, static>
      */
     public static function byRegency(string $regencyCode)
     {
@@ -177,6 +179,8 @@ class District extends Model
 
     /**
      * Search districts by name (static method).
+     *
+     * @return \Illuminate\Database\Eloquent\Collection<int, static>
      */
     public static function search(string $term)
     {

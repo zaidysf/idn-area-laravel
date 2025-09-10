@@ -2,6 +2,6 @@
 
 // variadic-method-zaidysf\IdnArea\Commands\IdnAreaCommand-clearCache-/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaCommand.php
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => '1757398258-v4',
+   'variableKey' => '1757478025-v4',
    'data' => false,
 ));

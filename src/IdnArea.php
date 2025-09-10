@@ -129,6 +129,8 @@ final class IdnArea
 
     /**
      * Search across all area types by name.
+     *
+     * @return Collection<int, array<string, mixed>>|array<string, mixed>
      */
     public function search(string $query, string $type = 'all', bool $cached = true): Collection|array
     {
@@ -148,7 +150,6 @@ final class IdnArea
                 'regencies' => $result['regencies'],
                 'districts' => $result['districts'],
                 'villages' => $result['villages'],
-                'islands' => $result['islands'] ?? collect(),
             ];
         }
 
@@ -196,54 +197,6 @@ final class IdnArea
     }
 
     /**
-     * Get islands by regency code.
-     */
-    public function islandsByRegency(string $regencyCode, bool $cached = true): \Illuminate\Database\Eloquent\Collection
-    {
-        if ($cached && config('idn-area.cache.enabled', true)) {
-            $cacheKey = "idn_area.islands.regency.{$regencyCode}";
-
-            return \Illuminate\Support\Facades\Cache::remember($cacheKey, config('idn-area.cache.ttl', 3600), function () use ($regencyCode) {
-                return \zaidysf\IdnArea\Models\Island::inRegency($regencyCode)->get();
-            });
-        }
-
-        return \zaidysf\IdnArea\Models\Island::inRegency($regencyCode)->get();
-    }
-
-    /**
-     * Get all populated islands.
-     */
-    public function populatedIslands(bool $cached = true): \Illuminate\Database\Eloquent\Collection
-    {
-        if ($cached && config('idn-area.cache.enabled', true)) {
-            $cacheKey = 'idn_area.islands.populated';
-
-            return \Illuminate\Support\Facades\Cache::remember($cacheKey, config('idn-area.cache.ttl', 3600), function () {
-                return \zaidysf\IdnArea\Models\Island::populated()->get();
-            });
-        }
-
-        return \zaidysf\IdnArea\Models\Island::populated()->get();
-    }
-
-    /**
-     * Get all outermost small islands.
-     */
-    public function outermostSmallIslands(bool $cached = true): \Illuminate\Database\Eloquent\Collection
-    {
-        if ($cached && config('idn-area.cache.enabled', true)) {
-            $cacheKey = 'idn_area.islands.outermost_small';
-
-            return \Illuminate\Support\Facades\Cache::remember($cacheKey, config('idn-area.cache.ttl', 3600), function () {
-                return \zaidysf\IdnArea\Models\Island::outermostSmall()->get();
-            });
-        }
-
-        return \zaidysf\IdnArea\Models\Island::outermostSmall()->get();
-    }
-
-    /**
      * Get area hierarchy (province with all its children).
      */
     public function hierarchy(string $provinceCode, bool $cached = true): array
@@ -261,6 +214,9 @@ final class IdnArea
 
     /**
      * Get multiple areas by codes.
+     *
+     * @param  array<int, string>  $codes
+     * @return \Illuminate\Support\Collection<int, array<string, mixed>>
      */
     public function getMultiple(array $codes, string $type = 'auto'): \Illuminate\Support\Collection
     {

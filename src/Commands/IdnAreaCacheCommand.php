@@ -95,8 +95,6 @@ class IdnAreaCacheCommand extends Command
         $operations = [
             'Loading all provinces' => fn () => IdnArea::provinces(true),
             'Loading statistics' => fn () => IdnArea::statistics(true),
-            'Loading outermost small islands' => fn () => IdnArea::outermostSmallIslands(true),
-            'Loading populated islands' => fn () => IdnArea::populatedIslands(true),
         ];
 
         // Add province hierarchies for major provinces
@@ -186,8 +184,6 @@ class IdnAreaCacheCommand extends Command
         $sampleKeys = [
             'idn_area.provinces' => 'All provinces',
             'idn_area.statistics' => 'General statistics',
-            'idn_area.outermost_small_islands' => 'Outermost small islands',
-            'idn_area.populated_islands' => 'Populated islands',
         ];
 
         foreach ($sampleKeys as $key => $description) {

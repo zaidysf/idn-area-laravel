@@ -97,18 +97,6 @@ class Province extends Model
     }
 
     /**
-     * Get all islands that belong to this province through regencies.
-     *
-     * @return Builder<Island>
-     */
-    public function islands(): Builder
-    {
-        return Island::whereHas('regency', function ($query) {
-            $query->where('province_code', $this->code);
-        })->orderBy('name');
-    }
-
-    /**
      * Scope to search provinces by name.
      *
      * @param  Builder<Province>  $query
@@ -159,6 +147,8 @@ class Province extends Model
 
     /**
      * Search provinces by name (static method).
+     *
+     * @return \Illuminate\Database\Eloquent\Collection<int, static>
      */
     public static function search(string $term)
     {

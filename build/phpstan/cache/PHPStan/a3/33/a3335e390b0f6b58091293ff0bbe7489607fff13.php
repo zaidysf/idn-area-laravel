@@ -2,6 +2,6 @@
 
 // variadic-method-zaidysf\IdnArea\Commands\IdnAreaSwitchModeCommand-updateEnvFile-/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaSwitchModeCommand.php
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => '1757433112-v4',
+   'variableKey' => '1757477250-v4',
    'data' => false,
 ));

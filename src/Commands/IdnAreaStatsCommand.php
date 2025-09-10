@@ -65,9 +65,6 @@ class IdnAreaStatsCommand extends Command
             ['Regencies/Cities', number_format($stats['regencies'])],
             ['Districts', number_format($stats['districts'])],
             ['Villages', number_format($stats['villages'])],
-            ['Islands (Total)', number_format($stats['islands'])],
-            ['Populated Islands', number_format($stats['populated_islands'])],
-            ['Outermost Small Islands', number_format($stats['outermost_small_islands'])],
         ];
 
         if (isset($stats['average_districts_per_regency'])) {
@@ -110,7 +107,6 @@ class IdnAreaStatsCommand extends Command
         $regencyCount = $province->regencies()->count();
         $districtCount = $province->districts()->count();
         $villageCount = $province->villages()->count();
-        $islandCount = $province->islands()->count();
 
         $this->table(
             ['Metric', 'Count'],
@@ -118,7 +114,6 @@ class IdnAreaStatsCommand extends Command
                 ['Regencies/Cities', number_format($regencyCount)],
                 ['Districts', number_format($districtCount)],
                 ['Villages', number_format($villageCount)],
-                ['Islands', number_format($islandCount)],
             ]
         );
 
@@ -158,8 +153,6 @@ class IdnAreaStatsCommand extends Command
         // Data quality analysis
         $this->showDataQualityAnalysis();
 
-        // Island analysis
-        $this->showIslandAnalysis();
     }
 
     private function showDistributionAnalysis(): void
@@ -201,18 +194,6 @@ class IdnAreaStatsCommand extends Command
             $issues[] = "{$emptyRegencies} regencies with empty names";
         }
 
-        // Islands without coordinates
-        $islandsWithoutCoords = DB::table('idn_islands')
-            ->whereNull('coordinate')
-            ->orWhere('coordinate', '')
-            ->count();
-
-        $totalIslands = DB::table('idn_islands')->count();
-        $coordPercentage = $totalIslands > 0 ?
-            round((($totalIslands - $islandsWithoutCoords) / $totalIslands) * 100, 1) : 0;
-
-        $this->line("   • Islands with coordinates: {$coordPercentage}% ({$totalIslands} total)");
-
         if (! empty($issues)) {
             $this->line('   ⚠️  Issues found:');
             foreach ($issues as $issue) {
@@ -220,48 +201,6 @@ class IdnAreaStatsCommand extends Command
             }
         } else {
             $this->line('   ✅ No data quality issues detected');
-        }
-
-        $this->newLine();
-    }
-
-    private function showIslandAnalysis(): void
-    {
-        $this->comment('🏝️  Island Analysis:');
-
-        $totalIslands = DB::table('idn_islands')->count();
-        $populatedIslands = DB::table('idn_islands')->where('is_populated', true)->count();
-        $outermostSmallIslands = DB::table('idn_islands')->where('is_outermost_small', true)->count();
-        $islandsWithRegency = DB::table('idn_islands')->whereNotNull('regency_code')->count();
-
-        $populatedPercentage = $totalIslands > 0 ?
-            round(($populatedIslands / $totalIslands) * 100, 1) : 0;
-
-        $outermostPercentage = $totalIslands > 0 ?
-            round(($outermostSmallIslands / $totalIslands) * 100, 1) : 0;
-
-        $regencyAssignedPercentage = $totalIslands > 0 ?
-            round(($islandsWithRegency / $totalIslands) * 100, 1) : 0;
-
-        $this->line("   • Populated: {$populatedPercentage}% ({$populatedIslands} of {$totalIslands})");
-        $this->line("   • Outermost Small: {$outermostPercentage}% ({$outermostSmallIslands} of {$totalIslands})");
-        $this->line("   • Assigned to Regency: {$regencyAssignedPercentage}% ({$islandsWithRegency} of {$totalIslands})");
-
-        // Top provinces by island count
-        $topProvincesByIslands = DB::table('idn_provinces')
-            ->join('idn_regencies', 'idn_provinces.code', '=', 'idn_regencies.province_code')
-            ->join('idn_islands', 'idn_regencies.code', '=', 'idn_islands.regency_code')
-            ->select('idn_provinces.name', DB::raw('COUNT(idn_islands.id) as island_count'))
-            ->groupBy('idn_provinces.code', 'idn_provinces.name')
-            ->orderBy('island_count', 'desc')
-            ->limit(5)
-            ->get();
-
-        if ($topProvincesByIslands->isNotEmpty()) {
-            $this->line('   Top 5 Provinces by Island Count:');
-            foreach ($topProvincesByIslands as $item) {
-                $this->line("     • {$item->name}: {$item->island_count} islands");
-            }
         }
 
         $this->newLine();

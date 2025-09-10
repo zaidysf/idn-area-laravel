@@ -7,7 +7,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
   array (
     '/Users/zaid/codes/idn-area-laravel-12/vendor/phpunit/php-code-coverage/src/CodeCoverage.php' => 
     array (
-      0 => 'c27f420b867660f15ee3d52280cb74905062b2a6',
+      0 => '517af711c4e0a5fbac2e0691aae701a857838fda',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\codecoverage',
@@ -370,7 +370,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/zaid/codes/idn-area-laravel-12/vendor/phpunit/php-code-coverage/src/Version.php' => 
     array (
-      0 => '0a5e7ab67980eebea4f0ec522f47605ca35be67e',
+      0 => 'da06223426fc25c6f61fe5f40cadeca05ea46998',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\version',
@@ -1254,7 +1254,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/zaid/codes/idn-area-laravel-12/vendor/phpunit/php-code-coverage/src/Data/RawCodeCoverageData.php' => 
     array (
-      0 => 'abfafb4924d78317578a45129821aa5068d70b86',
+      0 => 'f9fe3081aaa809d96aa4d25a80a25c2d51b80d37',
       1 => 
       array (
         0 => 'sebastianbergmann\\codecoverage\\data\\rawcodecoveragedata',

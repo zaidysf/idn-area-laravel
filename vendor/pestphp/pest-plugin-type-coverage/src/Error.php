@@ -18,8 +18,6 @@ final class Error
 
     public const TYPE_RETURN_TYPE = 'RETURN_TYPE';
 
-    public const TYPE_CONSTANT = 'CONSTANT';
-
     /**
      * Creates a new error instance.
      */
@@ -43,7 +41,6 @@ final class Error
                 str_contains($error->getMessage(), 'property types') => self::TYPE_PROPERTY,
                 str_contains($error->getMessage(), 'param types') => self::TYPE_PARAM,
                 str_contains($error->getMessage(), 'return types') => self::TYPE_RETURN_TYPE,
-                str_contains($error->getMessage(), 'constant types') => self::TYPE_CONSTANT,
                 default => throw ShouldNotHappen::fromMessage('Unknown error type: '.$error->getMessage()),
             },
         );
@@ -58,7 +55,6 @@ final class Error
             self::TYPE_PROPERTY => 'pr',
             self::TYPE_PARAM => 'pa',
             self::TYPE_RETURN_TYPE => 'rt',
-            self::TYPE_CONSTANT => 'co',
             default => throw ShouldNotHappen::fromMessage('Unknown error type: '.$this->type),
         };
     }

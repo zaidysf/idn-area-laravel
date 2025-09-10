@@ -7,12 +7,28 @@ namespace Pest\TypeCoverage;
 use PhpParser\Node;
 use PHPStan\Analyser\Analyser;
 use PHPStan\Analyser\FileAnalyser;
+use PHPStan\Analyser\LocalIgnoresProcessor;
 use PHPStan\Analyser\NodeScopeResolver;
+use PHPStan\Analyser\RuleErrorTransformer;
 use PHPStan\Collectors\Collector;
 use PHPStan\Collectors\Registry;
+use PHPStan\Dependency\DependencyResolver;
 use PHPStan\DependencyInjection\Container;
+use PHPStan\DependencyInjection\Reflection\ClassReflectionExtensionRegistryProvider;
+use PHPStan\DependencyInjection\Type\DynamicThrowTypeExtensionProvider;
+use PHPStan\DependencyInjection\Type\ParameterClosureTypeExtensionProvider;
+use PHPStan\DependencyInjection\Type\ParameterOutTypeExtensionProvider;
+use PHPStan\File\FileHelper;
+use PHPStan\Php\PhpVersion;
+use PHPStan\PhpDoc\PhpDocInheritanceResolver;
+use PHPStan\PhpDoc\StubPhpDocProvider;
+use PHPStan\Reflection\InitializerExprTypeResolver;
+use PHPStan\Reflection\ReflectionProvider;
+use PHPStan\Reflection\SignatureMap\SignatureMapProvider;
 use PHPStan\Rules\DirectRegistry;
+use PHPStan\Rules\Properties\ReadWritePropertiesExtensionProvider;
 use PHPStan\Rules\Rule;
+use PHPStan\Type\FileTypeMapper;
 
 /**
  * @internal
@@ -27,12 +43,54 @@ final class PHPStanAnalyser
      */
     public static function make(Container $container, array $rules, array $collectors): Analyser
     {
-        return new Analyser(
-            fileAnalyser: $container->getByType(FileAnalyser::class),
-            ruleRegistry: new DirectRegistry($rules),
-            collectorRegistry: new Registry($collectors),
-            nodeScopeResolver: $container->getByType(NodeScopeResolver::class),
-            internalErrorsCountLimit: 9_999_999_999_999
+        $ruleRegistry = new DirectRegistry($rules);
+        $collectorRegistry = new Registry($collectors);
+
+        $reflectionProvider = $container->getByType(ReflectionProvider::class);
+        $typeSpecifier = $container->getService('typeSpecifier');
+
+        $scopeFactory = TestCaseForTypeCoverage::createScopeFactory($reflectionProvider, $typeSpecifier); // @phpstan-ignore-line
+
+        $nodeScopeResolver = new NodeScopeResolver(
+            $reflectionProvider,
+            $container->getByType(InitializerExprTypeResolver::class),
+            $container->getService('betterReflectionReflector'), // @phpstan-ignore-line
+            $container->getByType(ClassReflectionExtensionRegistryProvider::class),
+            $container->getByType(ParameterOutTypeExtensionProvider::class),
+            $container->getService('defaultAnalysisParser'), // @phpstan-ignore-line
+            $container->getByType(FileTypeMapper::class),
+            $container->getByType(StubPhpDocProvider::class),
+            $container->getByType(PhpVersion::class),
+            $container->getByType(SignatureMapProvider::class),
+            $container->getByType(PhpDocInheritanceResolver::class),
+            $container->getByType(FileHelper::class),
+            $typeSpecifier, // @phpstan-ignore-line
+            $container->getByType(DynamicThrowTypeExtensionProvider::class),
+            $container->getByType(ReadWritePropertiesExtensionProvider::class),
+            $container->getByType(ParameterClosureTypeExtensionProvider::class),
+            $scopeFactory,
+            false,
+            true,
+            [],
+            [],
+            [],
+            true,
+            true,
+            false,
+            true,
+            false,
+            false,
         );
+
+        $fileAnalyser = new FileAnalyser(
+            $scopeFactory,
+            $nodeScopeResolver,
+            $container->getService('defaultAnalysisParser'), // @phpstan-ignore-line
+            $container->getByType(DependencyResolver::class),
+            new RuleErrorTransformer,
+            $container->getByType(LocalIgnoresProcessor::class),
+        );
+
+        return new Analyser($fileAnalyser, $ruleRegistry, $collectorRegistry, $nodeScopeResolver, 9_999_999_999_999);
     }
 }

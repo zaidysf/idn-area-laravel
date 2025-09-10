@@ -16,7 +16,7 @@ final class JsonLogger implements Logger
      *
      * @param  array<int, array<string, mixed>>  $logs
      */
-    public function __construct(
+    public function __construct(// @phpstan-ignore-line
         private readonly string $outputPath,
         private readonly float $coverageMin,
         private array $logs = [],

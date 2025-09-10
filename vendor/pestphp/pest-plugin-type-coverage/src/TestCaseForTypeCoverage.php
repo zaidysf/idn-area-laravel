@@ -16,11 +16,9 @@ use PHPStan\Rules\DirectRegistry;
 use PHPStan\Rules\Rule;
 use PHPStan\Rules\RuleError;
 use PHPStan\Testing\RuleTestCase;
-use TomasVotruba\TypeCoverage\Collectors\ConstantTypeDeclarationCollector;
 use TomasVotruba\TypeCoverage\Collectors\ParamTypeDeclarationCollector;
 use TomasVotruba\TypeCoverage\Collectors\PropertyTypeDeclarationCollector;
 use TomasVotruba\TypeCoverage\Collectors\ReturnTypeDeclarationCollector;
-use TomasVotruba\TypeCoverage\Rules\ConstantTypeCoverageRule;
 use TomasVotruba\TypeCoverage\Rules\ParamTypeCoverageRule;
 use TomasVotruba\TypeCoverage\Rules\PropertyTypeCoverageRule;
 use TomasVotruba\TypeCoverage\Rules\ReturnTypeCoverageRule;
@@ -50,7 +48,7 @@ final class TestCaseForTypeCoverage extends RuleTestCase
     /**
      * An example test.
      */
-    public function test_dummy(): void
+    public function testDummy(): void
     {
         //
     }
@@ -81,7 +79,6 @@ final class TestCaseForTypeCoverage extends RuleTestCase
             self::getContainer()->getByType(ParamTypeDeclarationCollector::class),
             self::getContainer()->getByType(PropertyTypeDeclarationCollector::class),
             self::getContainer()->getByType(ReturnTypeDeclarationCollector::class),
-            self::getContainer()->getByType(ConstantTypeDeclarationCollector::class),
         ];
     }
 
@@ -96,7 +93,6 @@ final class TestCaseForTypeCoverage extends RuleTestCase
             TestCaseForTypeCoverage::getContainer()->getByType(ParamTypeCoverageRule::class),
             TestCaseForTypeCoverage::getContainer()->getByType(PropertyTypeCoverageRule::class),
             TestCaseForTypeCoverage::getContainer()->getByType(ReturnTypeCoverageRule::class),
-            TestCaseForTypeCoverage::getContainer()->getByType(ConstantTypeCoverageRule::class),
         ];
     }
 
@@ -110,7 +106,7 @@ final class TestCaseForTypeCoverage extends RuleTestCase
         }
 
         $actualErrors = $analyserResult->getUnorderedErrors();
-        $ruleErrorTransformer = self::getContainer()->getByType(RuleErrorTransformer::class);
+        $ruleErrorTransformer = new RuleErrorTransformer;
         if ($analyserResult->getCollectedData() !== []) {
             $ruleRegistry = new DirectRegistry($this->getRules());
             $nodeType = CollectedDataNode::class;
@@ -121,12 +117,12 @@ final class TestCaseForTypeCoverage extends RuleTestCase
                 $ruleErrors = $rule->processNode($node, $scope);
                 foreach ($ruleErrors as $ruleError) {
                     if ($this->ignored($ruleError)) {
-                        $this->ignoredErrors[] = $ruleErrorTransformer->transform($ruleError, $scope, [], $node);
+                        $this->ignoredErrors[] = $ruleErrorTransformer->transform($ruleError, $scope, $nodeType, $node->getLine());
 
                         continue;
                     }
 
-                    $actualErrors[] = $ruleErrorTransformer->transform($ruleError, $scope, [], $node);
+                    $actualErrors[] = $ruleErrorTransformer->transform($ruleError, $scope, $nodeType, $node->getLine());
                 }
             }
         }

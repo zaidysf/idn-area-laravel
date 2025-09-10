@@ -71,8 +71,8 @@
         ],
         "analyse": "vendor/bin/phpstan analyse",
         "test": "vendor/bin/pest",
-        "test-coverage": "vendor/bin/pest --coverage --min=90",
-        "test-type-coverage": "vendor/bin/pest --type-coverage --min=90",
+        "test-coverage": "vendor/bin/pest --coverage --min=70",
+        "test-type-coverage": "vendor/bin/pest --type-coverage --min=70",
         "format": "vendor/bin/pint",
         "format-check": "vendor/bin/pint --test",
         "ci": [

@@ -41,6 +41,7 @@ jobs:
           # Skip Larastan for Laravel 12 due to compatibility issues
           if [[ "${{ matrix.laravel }}" == "12.*" ]]; then
             composer remove "larastan/larastan" --dev --no-interaction --no-update
+            composer remove "phpstan/phpstan" "phpstan/extension-installer" "phpstan/phpstan-deprecation-rules" "phpstan/phpstan-phpunit" --dev --no-interaction --no-update || true
           fi
           composer update --prefer-dist --no-interaction
 

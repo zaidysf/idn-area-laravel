@@ -8,8 +8,8 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
 use zaidysf\IdnArea\Contracts\AreaDataServiceInterface;
 use zaidysf\IdnArea\Services\BpsApiService;
-use zaidysf\IdnArea\Services\LocalDataService;
 use zaidysf\IdnArea\Services\DataTokoApiService;
+use zaidysf\IdnArea\Services\LocalDataService;
 
 /**
  * Indonesian Area Data Manager - Dual mode system by zaidysf
@@ -18,6 +18,7 @@ use zaidysf\IdnArea\Services\DataTokoApiService;
 final class IdnAreaManager
 {
     private AreaDataServiceInterface $dataService;
+
     private array $config;
 
     public function __construct(array $config = [])
@@ -33,6 +34,7 @@ final class IdnAreaManager
     {
         if ($cached && $this->isCacheEnabled() && $this->isLocalMode()) {
             $cacheKey = 'idn_area.provinces';
+
             return Cache::remember($cacheKey, $this->getCacheTtl(), function () {
                 return $this->dataService->getAllProvinces();
             });
@@ -48,6 +50,7 @@ final class IdnAreaManager
     {
         if ($cached && $this->isCacheEnabled() && $this->isLocalMode()) {
             $cacheKey = "idn_area.province.{$code}";
+
             return Cache::remember($cacheKey, $this->getCacheTtl(), function () use ($code) {
                 return $this->dataService->getProvince($code);
             });
@@ -63,6 +66,7 @@ final class IdnAreaManager
     {
         if ($cached && $this->isCacheEnabled() && $this->isLocalMode()) {
             $cacheKey = "idn_area.regencies.province.{$provinceCode}";
+
             return Cache::remember($cacheKey, $this->getCacheTtl(), function () use ($provinceCode) {
                 return $this->dataService->getRegenciesByProvince($provinceCode);
             });
@@ -78,6 +82,7 @@ final class IdnAreaManager
     {
         if ($cached && $this->isCacheEnabled() && $this->isLocalMode()) {
             $cacheKey = 'idn_area.regencies';
+
             return Cache::remember($cacheKey, $this->getCacheTtl(), function () {
                 return $this->dataService->getAllRegencies();
             });
@@ -93,6 +98,7 @@ final class IdnAreaManager
     {
         if ($cached && $this->isCacheEnabled() && $this->isLocalMode()) {
             $cacheKey = "idn_area.regency.{$code}";
+
             return Cache::remember($cacheKey, $this->getCacheTtl(), function () use ($code) {
                 return $this->dataService->getRegency($code);
             });
@@ -108,6 +114,7 @@ final class IdnAreaManager
     {
         if ($cached && $this->isCacheEnabled() && $this->isLocalMode()) {
             $cacheKey = "idn_area.districts.regency.{$regencyCode}";
+
             return Cache::remember($cacheKey, $this->getCacheTtl(), function () use ($regencyCode) {
                 return $this->dataService->getDistrictsByRegency($regencyCode);
             });
@@ -123,6 +130,7 @@ final class IdnAreaManager
     {
         if ($cached && $this->isCacheEnabled() && $this->isLocalMode()) {
             $cacheKey = 'idn_area.districts';
+
             return Cache::remember($cacheKey, $this->getCacheTtl(), function () {
                 return $this->dataService->getAllDistricts();
             });
@@ -138,6 +146,7 @@ final class IdnAreaManager
     {
         if ($cached && $this->isCacheEnabled() && $this->isLocalMode()) {
             $cacheKey = "idn_area.district.{$code}";
+
             return Cache::remember($cacheKey, $this->getCacheTtl(), function () use ($code) {
                 return $this->dataService->getDistrict($code);
             });
@@ -153,6 +162,7 @@ final class IdnAreaManager
     {
         if ($cached && $this->isCacheEnabled() && $this->isLocalMode()) {
             $cacheKey = "idn_area.villages.district.{$districtCode}";
+
             return Cache::remember($cacheKey, $this->getCacheTtl(), function () use ($districtCode) {
                 return $this->dataService->getVillagesByDistrict($districtCode);
             });
@@ -168,6 +178,7 @@ final class IdnAreaManager
     {
         if ($cached && $this->isCacheEnabled() && $this->isLocalMode()) {
             $cacheKey = 'idn_area.villages';
+
             return Cache::remember($cacheKey, $this->getCacheTtl(), function () {
                 return $this->dataService->getAllVillages();
             });
@@ -183,6 +194,7 @@ final class IdnAreaManager
     {
         if ($cached && $this->isCacheEnabled() && $this->isLocalMode()) {
             $cacheKey = "idn_area.village.{$code}";
+
             return Cache::remember($cacheKey, $this->getCacheTtl(), function () use ($code) {
                 return $this->dataService->getVillage($code);
             });
@@ -197,7 +209,8 @@ final class IdnAreaManager
     public function search(string $query, string $type = 'all', bool $cached = true): Collection
     {
         if ($cached && $this->isCacheEnabled() && $this->isLocalMode()) {
-            $cacheKey = "idn_area.search.{$type}." . md5($query);
+            $cacheKey = "idn_area.search.{$type}.".md5($query);
+
             return Cache::remember($cacheKey, $this->getSearchCacheTtl(), function () use ($query, $type) {
                 return $this->dataService->searchByName($query, $type);
             });
@@ -267,6 +280,7 @@ final class IdnAreaManager
     {
         if ($cached && $this->isCacheEnabled() && $this->isLocalMode()) {
             $cacheKey = 'idn_area.statistics';
+
             return Cache::remember($cacheKey, $this->getStatsCacheTtl(), function () {
                 return $this->buildStatistics();
             });
@@ -284,8 +298,8 @@ final class IdnAreaManager
 
         return match ($mode) {
             'api' => new DataTokoApiService($this->config),
-            'local' => new LocalDataService(),
-            default => new LocalDataService(),
+            'local' => new LocalDataService,
+            default => new LocalDataService,
         };
     }
 
@@ -346,7 +360,7 @@ final class IdnAreaManager
         $regencies = $this->regencies(false);
         $districts = $this->districts(false);
         $villages = $this->villages(false);
-        
+
         // Get island statistics
         $islands = \zaidysf\IdnArea\Models\Island::all();
         $populatedIslands = \zaidysf\IdnArea\Models\Island::populated()->get();
@@ -374,20 +388,20 @@ final class IdnAreaManager
     {
         $regencies = $this->regencies(false);
         $grouped = $regencies->groupBy('province_code');
-        
-        $largest = $grouped->sortByDesc(fn($items) => $items->count())->first();
-        
-        if (!$largest) {
+
+        $largest = $grouped->sortByDesc(fn ($items) => $items->count())->first();
+
+        if (! $largest) {
             return null;
         }
 
         $provinceCode = $largest->first()['province_code'] ?? null;
-        if (!$provinceCode) {
+        if (! $provinceCode) {
             return null;
         }
 
         $province = $this->province($provinceCode, false);
-        
+
         return $province ? [
             'code' => $provinceCode,
             'name' => $province['name'],
@@ -437,72 +451,72 @@ final class IdnAreaManager
     public function findProvince(string $code): ?array
     {
         $province = $this->province($code, false);
-        if (!$province) {
+        if (! $province) {
             return null;
         }
-        
+
         // Convert model to array if needed
         if (is_array($province)) {
             return $province;
         }
-        
+
         return [
             'code' => $province->code,
-            'name' => $province->name
+            'name' => $province->name,
         ];
     }
 
     public function findRegency(string $code): ?array
     {
         $regency = $this->regency($code, false);
-        if (!$regency) {
+        if (! $regency) {
             return null;
         }
-        
+
         if (is_array($regency)) {
             return $regency;
         }
-        
+
         return [
             'code' => $regency->code,
             'province_code' => $regency->province_code,
-            'name' => $regency->name
+            'name' => $regency->name,
         ];
     }
 
     public function findDistrict(string $code): ?array
     {
         $district = $this->district($code, false);
-        if (!$district) {
+        if (! $district) {
             return null;
         }
-        
+
         if (is_array($district)) {
             return $district;
         }
-        
+
         return [
             'code' => $district->code,
             'regency_code' => $district->regency_code,
-            'name' => $district->name
+            'name' => $district->name,
         ];
     }
 
     public function findVillage(string $code): ?array
     {
         $village = $this->village($code, false);
-        if (!$village) {
+        if (! $village) {
             return null;
         }
-        
+
         if (is_array($village)) {
             return $village;
         }
-        
+
         return [
             'code' => $village->code,
             'district_code' => $village->district_code,
-            'name' => $village->name
+            'name' => $village->name,
         ];
     }
 
@@ -558,7 +572,7 @@ final class IdnAreaManager
             if ($this->isApiMode()) {
                 return $this->isApiAvailable();
             }
-            
+
             // For local mode, check if we have data
             return $this->dataService instanceof LocalDataService;
         } catch (\Exception $e) {

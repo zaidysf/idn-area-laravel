@@ -26,31 +26,33 @@ class IdnAreaSetupCommand extends Command
     {
         $this->displayWelcome();
 
-        if ($this->isAlreadySetup() && !$this->option('force')) {
+        if ($this->isAlreadySetup() && ! $this->option('force')) {
             $this->info('✅ Package is already configured!');
-            $this->line('Current mode: ' . $this->getCurrentMode());
+            $this->line('Current mode: '.$this->getCurrentMode());
             $this->line('Use --force to reconfigure or run: php artisan idn-area:switch-mode');
+
             return self::SUCCESS;
         }
 
         // Get mode from parameter or interactive choice
         $mode = $this->option('mode') ?? $this->chooseMode();
-        
+
         // Validate mode parameter
-        if ($this->option('mode') && !in_array($mode, ['local', 'api'])) {
+        if ($this->option('mode') && ! in_array($mode, ['local', 'api'])) {
             $this->error("Invalid mode: {$mode}. Must be 'local' or 'api'.");
+
             return self::FAILURE;
         }
-        
+
         $this->info("🚀 Setting up Indonesian Area Data in {$mode} mode...");
         $this->newLine();
 
         try {
             // Publish migrations first
             $this->publishMigrations();
-            
+
             // Run migrations unless skipped
-            if (!$this->option('skip-migration')) {
+            if (! $this->option('skip-migration')) {
                 $this->runMigrations();
             } else {
                 $this->warn('⚠️  Skipping database migrations');
@@ -62,7 +64,8 @@ class IdnAreaSetupCommand extends Command
                 return $this->setupApiMode();
             }
         } catch (\Exception $e) {
-            $this->error('Setup failed: ' . $e->getMessage());
+            $this->error('Setup failed: '.$e->getMessage());
+
             return self::FAILURE;
         }
     }
@@ -82,20 +85,20 @@ class IdnAreaSetupCommand extends Command
     private function chooseMode(): string
     {
         // Return default for non-interactive mode
-        if ($this->option('force') && !$this->input->isInteractive()) {
+        if ($this->option('force') && ! $this->input->isInteractive()) {
             return 'local'; // Default to local mode for automated setups
         }
-        
+
         $this->info('📋 Please choose your data source mode:');
         $this->newLine();
-        
+
         $this->line('🏠 <info>[1] Local Data Mode (Recommended)</info>');
         $this->line('   • Fast and reliable');
-        $this->line('   • Works offline'); 
+        $this->line('   • Works offline');
         $this->line('   • Uses pre-synced data from official BPS API');
         $this->line('   • Updated via sync commands');
         $this->newLine();
-        
+
         $this->line('🌐 <info>[2] API Mode (Real-time)</info>');
         $this->line('   • Always latest data');
         $this->line('   • Direct from DataToko API (data.toko.center)');
@@ -106,7 +109,7 @@ class IdnAreaSetupCommand extends Command
 
         $choice = $this->choice('Which mode do you prefer?', [
             'Local Data Mode (Recommended)',
-            'API Mode (Real-time)'
+            'API Mode (Real-time)',
         ], 'Local Data Mode (Recommended)');
 
         return $choice === 'Local Data Mode (Recommended)' ? 'local' : 'api';
@@ -118,7 +121,7 @@ class IdnAreaSetupCommand extends Command
         try {
             $this->call('vendor:publish', [
                 '--tag' => 'idn-area-migrations',
-                '--force' => true
+                '--force' => true,
             ]);
             $this->line('✅ Migrations published');
         } catch (\Exception $e) {
@@ -126,7 +129,7 @@ class IdnAreaSetupCommand extends Command
             if (app()->environment('testing')) {
                 $this->line('⚠️  Migration publishing skipped in testing environment');
             } else {
-                $this->warn('⚠️  Could not publish migrations: ' . $e->getMessage());
+                $this->warn('⚠️  Could not publish migrations: '.$e->getMessage());
                 $this->line('Continuing with setup...');
             }
         }
@@ -142,7 +145,7 @@ class IdnAreaSetupCommand extends Command
             if (app()->environment('testing')) {
                 $this->line('⚠️  Migration run skipped in testing environment');
             } else {
-                $this->warn('⚠️  Could not run migrations: ' . $e->getMessage());
+                $this->warn('⚠️  Could not run migrations: '.$e->getMessage());
                 $this->line('You may need to run migrations manually: php artisan migrate');
             }
         }
@@ -153,20 +156,21 @@ class IdnAreaSetupCommand extends Command
         // Update config
         $this->updateConfig('local');
 
-        if (!$this->option('skip-seeding')) {
+        if (! $this->option('skip-seeding')) {
             $this->info('🌱 Seeding data from pre-bundled CSV files...');
             $this->newLine();
 
             try {
                 // Use CSV seeder for local mode (much faster)
                 $exitCode = $this->call('idn-area:seed', ['--force' => true]);
-                
+
                 if ($exitCode !== 0) {
                     if (app()->environment('testing')) {
                         $this->warn('⚠️  Data seeding skipped in testing environment');
                     } else {
                         $this->error('Failed to seed data from CSV files');
                         $this->line('💡 If CSV files are missing, contact the package maintainer');
+
                         return self::FAILURE;
                     }
                 }
@@ -174,7 +178,8 @@ class IdnAreaSetupCommand extends Command
                 if (app()->environment('testing')) {
                     $this->warn('⚠️  Data seeding skipped in testing environment');
                 } else {
-                    $this->error('Seeding failed: ' . $e->getMessage());
+                    $this->error('Seeding failed: '.$e->getMessage());
+
                     return self::FAILURE;
                 }
             }
@@ -186,14 +191,14 @@ class IdnAreaSetupCommand extends Command
         $this->info('✅ <bg=green;fg=white> LOCAL MODE SETUP COMPLETE </bg=green;fg=white>');
         $this->newLine();
         $this->line('🎉 Your package is ready to use!');
-        
-        if (!$this->option('skip-seeding')) {
+
+        if (! $this->option('skip-seeding')) {
             $this->line('📝 Data seeded from pre-bundled CSV files');
             $this->line('💡 Package maintainer updates CSV files from official sources');
         } else {
             $this->line('📝 Run "php artisan idn-area:seed --force" to seed from CSV files');
         }
-        
+
         return self::SUCCESS;
     }
 
@@ -209,6 +214,7 @@ class IdnAreaSetupCommand extends Command
         }
         if (empty($accessKey)) {
             $this->error('Access key is required for API mode');
+
             return self::FAILURE;
         }
 
@@ -218,6 +224,7 @@ class IdnAreaSetupCommand extends Command
         }
         if (empty($secretKey)) {
             $this->error('Secret key is required for API mode');
+
             return self::FAILURE;
         }
 
@@ -233,8 +240,9 @@ class IdnAreaSetupCommand extends Command
             );
         } else {
             // Validate the provided token storage option
-            if (!in_array($tokenStorage, ['cache', 'redis', 'file'])) {
+            if (! in_array($tokenStorage, ['cache', 'redis', 'file'])) {
                 $this->error('Invalid token storage method. Must be: cache, redis, or file');
+
                 return self::FAILURE;
             }
         }
@@ -242,20 +250,21 @@ class IdnAreaSetupCommand extends Command
         // Update config and environment
         $this->updateConfig('api');
         $this->updateDataTokoCredentials($accessKey, $secretKey, $tokenStorage);
-        
+
         // Test API connectivity unless skipped
-        if (!$this->option('skip-connectivity')) {
+        if (! $this->option('skip-connectivity')) {
             $this->info('🔍 Testing DataToko API connectivity...');
-            
+
             try {
                 $this->testDataTokoConnection($accessKey, $secretKey);
                 $this->line('✅ DataToko API connection successful');
             } catch (\Exception $e) {
-                $this->warn('⚠️  Could not connect to DataToko API: ' . $e->getMessage());
+                $this->warn('⚠️  Could not connect to DataToko API: '.$e->getMessage());
                 $this->warn('You can still proceed, but API calls may fail.');
-                
-                if (!$this->confirm('Continue with API mode setup?')) {
+
+                if (! $this->confirm('Continue with API mode setup?')) {
                     $this->line('Setup cancelled. Run the command again to choose a different mode.');
+
                     return self::FAILURE;
                 }
             }
@@ -269,16 +278,16 @@ class IdnAreaSetupCommand extends Command
         $this->line('🎉 Your package is ready to use!');
         $this->line('⚡ Real-time data from DataToko API (data.toko.center)');
         $this->line('🔐 Credentials stored securely');
-        $this->line('📦 Token storage: ' . $tokenStorage);
+        $this->line('📦 Token storage: '.$tokenStorage);
         $this->line('⚠️  Remember: API calls may be slower and have limits');
-        
+
         return self::SUCCESS;
     }
 
     private function updateConfig(string $mode): void
     {
         $configPath = config_path('idn-area.php');
-        
+
         if (File::exists($configPath)) {
             $config = File::get($configPath);
             $config = preg_replace(
@@ -306,7 +315,7 @@ class IdnAreaSetupCommand extends Command
 
     private function isAlreadySetup(): bool
     {
-        return config('idn-area.setup_completed', false) || 
+        return config('idn-area.setup_completed', false) ||
                File::exists(database_path('migrations/create_idn_provinces_table.php'));
     }
 
@@ -320,15 +329,15 @@ class IdnAreaSetupCommand extends Command
         $envPath = base_path('.env');
         if (File::exists($envPath)) {
             $env = File::get($envPath);
-            
+
             // Update or add DataToko credentials
             $updates = [
                 'IDN_AREA_ACCESS_KEY' => $accessKey,
                 'IDN_AREA_SECRET_KEY' => $secretKey,
                 'IDN_AREA_TOKEN_STORAGE' => $tokenStorage,
-                'IDN_AREA_DATATOKO_URL' => 'https://data.toko.center'
+                'IDN_AREA_DATATOKO_URL' => 'https://data.toko.center',
             ];
-            
+
             foreach ($updates as $key => $value) {
                 if (str_contains($env, "{$key}=")) {
                     $env = preg_replace("/{$key}=.*/", "{$key}={$value}", $env);
@@ -336,7 +345,7 @@ class IdnAreaSetupCommand extends Command
                     $env .= "\n{$key}={$value}";
                 }
             }
-            
+
             File::put($envPath, $env);
             $this->line('✅ DataToko credentials saved to .env file');
         }
@@ -346,38 +355,38 @@ class IdnAreaSetupCommand extends Command
     {
         $timestamp = time();
         $nonce = bin2hex(random_bytes(16));
-        
+
         // Create HMAC signature
-        $message = $accessKey . $timestamp . $nonce;
+        $message = $accessKey.$timestamp.$nonce;
         $signature = hash_hmac('sha256', $message, $secretKey);
-        
+
         $postData = json_encode([
             'access_key' => $accessKey,
             'timestamp' => $timestamp,
             'nonce' => $nonce,
-            'signature' => $signature
+            'signature' => $signature,
         ]);
-        
+
         $context = stream_context_create([
             'http' => [
                 'method' => 'POST',
                 'header' => [
                     'Content-Type: application/json',
-                    'Accept: application/json'
+                    'Accept: application/json',
                 ],
                 'content' => $postData,
-                'timeout' => 30
-            ]
+                'timeout' => 30,
+            ],
         ]);
-        
+
         $response = file_get_contents('https://data.toko.center/api/auth/login', false, $context);
-        
-        if (!$response) {
+
+        if (! $response) {
             throw new \Exception('No response from DataToko API');
         }
-        
+
         $data = json_decode($response, true);
-        if (!isset($data['data']['token']) && !isset($data['token'])) {
+        if (! isset($data['data']['token']) && ! isset($data['token'])) {
             throw new \Exception('Invalid response format or authentication failed');
         }
     }

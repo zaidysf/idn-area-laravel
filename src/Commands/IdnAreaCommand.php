@@ -299,7 +299,7 @@ class IdnAreaCommand extends Command
                         if (is_string($data)) {
                             return [ucfirst($type), 'N/A', $data];
                         }
-                        
+
                         return [
                             ucfirst($type),
                             number_format($data['count'] ?? 0),

@@ -109,7 +109,6 @@ class Regency extends Model
             ->orderBy('name');
     }
 
-
     /**
      * Scope to search regencies by name.
      *
@@ -153,7 +152,6 @@ class Regency extends Model
     {
         return $query->withCount('villages');
     }
-
 
     /**
      * Get the route key for the model.
@@ -211,7 +209,6 @@ class Regency extends Model
         return $this->districts()->exists();
     }
 
-
     /**
      * Check if this is a city (kota) or regency (kabupaten).
      * Cities typically have codes ending with 71-99
@@ -231,5 +228,4 @@ class Regency extends Model
     {
         return $this->villages()->count();
     }
-
 }

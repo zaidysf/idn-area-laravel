@@ -5,18 +5,21 @@ declare(strict_types=1);
 namespace zaidysf\IdnArea\Services;
 
 use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Redis;
 use zaidysf\IdnArea\Contracts\AreaDataServiceInterface;
 use zaidysf\IdnArea\Exceptions\DataTokoApiException;
 
 final class DataTokoApiService implements AreaDataServiceInterface
 {
     private string $baseUrl;
+
     private string $accessKey;
+
     private string $secretKey;
+
     private array $config;
 
     public function __construct(array $config = [])
@@ -34,73 +37,84 @@ final class DataTokoApiService implements AreaDataServiceInterface
     public function getAllProvinces(): Collection
     {
         $response = $this->makeAuthenticatedRequest('/api/indonesia/provinces');
+
         return $this->transformProvinces($response);
     }
 
     public function getProvince(string $code): ?array
     {
         $response = $this->makeAuthenticatedRequest("/api/indonesia/provinces/{$code}");
+
         return $response ? $this->transformProvince($response) : null;
     }
 
     public function getRegenciesByProvince(string $provinceCode): Collection
     {
         $response = $this->makeAuthenticatedRequest("/api/indonesia/provinces/{$provinceCode}/regencies");
+
         return $this->transformRegencies($response, $provinceCode);
     }
 
     public function getAllRegencies(): Collection
     {
         $response = $this->makeAuthenticatedRequest('/api/indonesia/regencies');
+
         return $this->transformRegencies($response);
     }
 
     public function getRegency(string $code): ?array
     {
         $response = $this->makeAuthenticatedRequest("/api/indonesia/regencies/{$code}");
+
         return $response ? $this->transformRegency($response) : null;
     }
 
     public function getDistrictsByRegency(string $regencyCode): Collection
     {
         $response = $this->makeAuthenticatedRequest("/api/indonesia/regencies/{$regencyCode}/districts");
+
         return $this->transformDistricts($response, $regencyCode);
     }
 
     public function getAllDistricts(): Collection
     {
         $response = $this->makeAuthenticatedRequest('/api/indonesia/districts');
+
         return $this->transformDistricts($response);
     }
 
     public function getDistrict(string $code): ?array
     {
         $response = $this->makeAuthenticatedRequest("/api/indonesia/districts/{$code}");
+
         return $response ? $this->transformDistrict($response) : null;
     }
 
     public function getVillagesByDistrict(string $districtCode): Collection
     {
         $response = $this->makeAuthenticatedRequest("/api/indonesia/districts/{$districtCode}/villages");
+
         return $this->transformVillages($response, $districtCode);
     }
 
     public function getAllVillages(): Collection
     {
         $response = $this->makeAuthenticatedRequest('/api/indonesia/villages');
+
         return $this->transformVillages($response);
     }
 
     public function getVillage(string $code): ?array
     {
         $response = $this->makeAuthenticatedRequest("/api/indonesia/villages/{$code}");
+
         return $response ? $this->transformVillage($response) : null;
     }
 
     public function search(string $query): Collection
     {
         $response = $this->makeAuthenticatedRequest('/api/indonesia/search', [
-            'query' => $query
+            'query' => $query,
         ]);
 
         return collect([
@@ -108,7 +122,7 @@ final class DataTokoApiService implements AreaDataServiceInterface
             'regencies' => $this->transformRegencies($response['regencies'] ?? []),
             'districts' => $this->transformDistricts($response['districts'] ?? []),
             'villages' => $this->transformVillages($response['villages'] ?? []),
-            'islands' => collect($response['islands'] ?? [])
+            'islands' => collect($response['islands'] ?? []),
         ]);
     }
 
@@ -116,7 +130,7 @@ final class DataTokoApiService implements AreaDataServiceInterface
     {
         $response = $this->makeAuthenticatedRequest('/api/indonesia/search', [
             'query' => $query,
-            'type' => $type
+            'type' => $type,
         ]);
 
         if ($type === 'all') {
@@ -125,7 +139,7 @@ final class DataTokoApiService implements AreaDataServiceInterface
                 'regencies' => $this->transformRegencies($response['regencies'] ?? []),
                 'districts' => $this->transformDistricts($response['districts'] ?? []),
                 'villages' => $this->transformVillages($response['villages'] ?? []),
-                'islands' => collect($response['islands'] ?? [])
+                'islands' => collect($response['islands'] ?? []),
             ]);
         }
 
@@ -145,42 +159,43 @@ final class DataTokoApiService implements AreaDataServiceInterface
     private function makeAuthenticatedRequest(string $endpoint, array $params = []): ?array
     {
         $token = $this->getAuthToken();
-        
-        if (!$token) {
+
+        if (! $token) {
             $token = $this->authenticate();
         }
 
-        $url = rtrim($this->baseUrl, '/') . '/' . ltrim($endpoint, '/');
-        
+        $url = rtrim($this->baseUrl, '/').'/'.ltrim($endpoint, '/');
+
         $response = Http::withHeaders([
-            'Authorization' => 'Bearer ' . $token,
+            'Authorization' => 'Bearer '.$token,
             'Accept' => 'application/json',
-            'Content-Type' => 'application/json'
+            'Content-Type' => 'application/json',
         ])
-        ->timeout($this->config['datatoko_api']['timeout'] ?? 30)
-        ->get($url, $params);
+            ->timeout($this->config['datatoko_api']['timeout'] ?? 30)
+            ->get($url, $params);
 
         // If unauthorized, try to re-authenticate once
         if ($response->status() === 401) {
             $this->clearAuthToken();
             $token = $this->authenticate();
-            
+
             $response = Http::withHeaders([
-                'Authorization' => 'Bearer ' . $token,
+                'Authorization' => 'Bearer '.$token,
                 'Accept' => 'application/json',
-                'Content-Type' => 'application/json'
+                'Content-Type' => 'application/json',
             ])
-            ->timeout($this->config['datatoko_api']['timeout'] ?? 30)
-            ->get($url, $params);
+                ->timeout($this->config['datatoko_api']['timeout'] ?? 30)
+                ->get($url, $params);
         }
 
-        if (!$response->successful()) {
+        if (! $response->successful()) {
             throw new DataTokoApiException(
                 "DataToko API request failed: {$response->status()} - {$response->body()}"
             );
         }
 
         $data = $response->json();
+
         return $data['data'] ?? $data;
     }
 
@@ -191,20 +206,20 @@ final class DataTokoApiService implements AreaDataServiceInterface
     {
         $timestamp = time();
         $nonce = bin2hex(random_bytes(16));
-        
+
         // Create HMAC signature
-        $message = $this->accessKey . $timestamp . $nonce;
+        $message = $this->accessKey.$timestamp.$nonce;
         $signature = hash_hmac('sha256', $message, $this->secretKey);
 
         $response = Http::timeout($this->config['datatoko_api']['timeout'] ?? 30)
-            ->post($this->baseUrl . '/api/auth/login', [
+            ->post($this->baseUrl.'/api/auth/login', [
                 'access_key' => $this->accessKey,
                 'timestamp' => $timestamp,
                 'nonce' => $nonce,
-                'signature' => $signature
+                'signature' => $signature,
             ]);
 
-        if (!$response->successful()) {
+        if (! $response->successful()) {
             throw new DataTokoApiException(
                 "DataToko authentication failed: {$response->status()} - {$response->body()}"
             );
@@ -213,11 +228,12 @@ final class DataTokoApiService implements AreaDataServiceInterface
         $data = $response->json();
         $token = $data['data']['token'] ?? $data['token'] ?? null;
 
-        if (!$token) {
+        if (! $token) {
             throw new DataTokoApiException('No authentication token received from DataToko API');
         }
 
         $this->storeAuthToken($token);
+
         return $token;
     }
 
@@ -272,14 +288,17 @@ final class DataTokoApiService implements AreaDataServiceInterface
     {
         try {
             $data = Redis::get($this->config['token_storage']['redis_key']);
-            if (!$data) return null;
-            
+            if (! $data) {
+                return null;
+            }
+
             $tokenData = json_decode($data, true);
             if (time() > $tokenData['expires_at']) {
                 $this->clearTokenFromRedis();
+
                 return null;
             }
-            
+
             return $tokenData['token'];
         } catch (\Exception) {
             return null;
@@ -290,7 +309,7 @@ final class DataTokoApiService implements AreaDataServiceInterface
     {
         $data = json_encode([
             'token' => $token,
-            'expires_at' => time() + $ttl
+            'expires_at' => time() + $ttl,
         ]);
         Redis::setex($this->config['token_storage']['redis_key'], $ttl, $data);
     }
@@ -305,14 +324,17 @@ final class DataTokoApiService implements AreaDataServiceInterface
     {
         try {
             $filePath = base_path($this->config['token_storage']['file_path']);
-            if (!File::exists($filePath)) return null;
-            
+            if (! File::exists($filePath)) {
+                return null;
+            }
+
             $data = json_decode(File::get($filePath), true);
             if (time() > $data['expires_at']) {
                 File::delete($filePath);
+
                 return null;
             }
-            
+
             return $data['token'];
         } catch (\Exception) {
             return null;
@@ -323,16 +345,16 @@ final class DataTokoApiService implements AreaDataServiceInterface
     {
         $filePath = base_path($this->config['token_storage']['file_path']);
         $dir = dirname($filePath);
-        
-        if (!File::exists($dir)) {
+
+        if (! File::exists($dir)) {
             File::makeDirectory($dir, 0755, true);
         }
-        
+
         $data = json_encode([
             'token' => $token,
-            'expires_at' => time() + $ttl
+            'expires_at' => time() + $ttl,
         ]);
-        
+
         File::put($filePath, $data);
     }
 
@@ -366,7 +388,7 @@ final class DataTokoApiService implements AreaDataServiceInterface
         return collect($data)->map(function ($item) {
             return [
                 'code' => $item['code'] ?? $item['id'],
-                'name' => $item['name'] ?? $item['nama']
+                'name' => $item['name'] ?? $item['nama'],
             ];
         });
     }
@@ -375,17 +397,17 @@ final class DataTokoApiService implements AreaDataServiceInterface
     {
         return [
             'code' => $data['code'] ?? $data['id'],
-            'name' => $data['name'] ?? $data['nama']
+            'name' => $data['name'] ?? $data['nama'],
         ];
     }
 
-    private function transformRegencies($data, string $provinceCode = null): Collection
+    private function transformRegencies($data, ?string $provinceCode = null): Collection
     {
         return collect($data)->map(function ($item) use ($provinceCode) {
             return [
                 'code' => $item['code'] ?? $item['id'],
                 'province_code' => $provinceCode ?? $item['province_code'] ?? $item['province_id'],
-                'name' => $item['name'] ?? $item['nama']
+                'name' => $item['name'] ?? $item['nama'],
             ];
         });
     }
@@ -395,17 +417,17 @@ final class DataTokoApiService implements AreaDataServiceInterface
         return [
             'code' => $data['code'] ?? $data['id'],
             'province_code' => $data['province_code'] ?? $data['province_id'],
-            'name' => $data['name'] ?? $data['nama']
+            'name' => $data['name'] ?? $data['nama'],
         ];
     }
 
-    private function transformDistricts($data, string $regencyCode = null): Collection
+    private function transformDistricts($data, ?string $regencyCode = null): Collection
     {
         return collect($data)->map(function ($item) use ($regencyCode) {
             return [
                 'code' => $item['code'] ?? $item['id'],
                 'regency_code' => $regencyCode ?? $item['regency_code'] ?? $item['regency_id'],
-                'name' => $item['name'] ?? $item['nama']
+                'name' => $item['name'] ?? $item['nama'],
             ];
         });
     }
@@ -415,17 +437,17 @@ final class DataTokoApiService implements AreaDataServiceInterface
         return [
             'code' => $data['code'] ?? $data['id'],
             'regency_code' => $data['regency_code'] ?? $data['regency_id'],
-            'name' => $data['name'] ?? $data['nama']
+            'name' => $data['name'] ?? $data['nama'],
         ];
     }
 
-    private function transformVillages($data, string $districtCode = null): Collection
+    private function transformVillages($data, ?string $districtCode = null): Collection
     {
         return collect($data)->map(function ($item) use ($districtCode) {
             return [
                 'code' => $item['code'] ?? $item['id'],
                 'district_code' => $districtCode ?? $item['district_code'] ?? $item['district_id'],
-                'name' => $item['name'] ?? $item['nama']
+                'name' => $item['name'] ?? $item['nama'],
             ];
         });
     }
@@ -435,7 +457,7 @@ final class DataTokoApiService implements AreaDataServiceInterface
         return [
             'code' => $data['code'] ?? $data['id'],
             'district_code' => $data['district_code'] ?? $data['district_id'],
-            'name' => $data['name'] ?? $data['nama']
+            'name' => $data['name'] ?? $data['nama'],
         ];
     }
 

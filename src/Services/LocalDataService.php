@@ -6,9 +6,9 @@ namespace zaidysf\IdnArea\Services;
 
 use Illuminate\Support\Collection;
 use zaidysf\IdnArea\Contracts\AreaDataServiceInterface;
+use zaidysf\IdnArea\Models\District;
 use zaidysf\IdnArea\Models\Province;
 use zaidysf\IdnArea\Models\Regency;
-use zaidysf\IdnArea\Models\District;
 use zaidysf\IdnArea\Models\Village;
 
 class LocalDataService implements AreaDataServiceInterface
@@ -81,7 +81,7 @@ class LocalDataService implements AreaDataServiceInterface
                 return Province::search($query)->map(function ($item) {
                     return [
                         'code' => $item->code,
-                        'name' => $item->name
+                        'name' => $item->name,
                     ];
                 });
 
@@ -90,7 +90,7 @@ class LocalDataService implements AreaDataServiceInterface
                     return [
                         'code' => $item->code,
                         'province_code' => $item->province_code,
-                        'name' => $item->name
+                        'name' => $item->name,
                     ];
                 });
 
@@ -99,7 +99,7 @@ class LocalDataService implements AreaDataServiceInterface
                     return [
                         'code' => $item->code,
                         'regency_code' => $item->regency_code,
-                        'name' => $item->name
+                        'name' => $item->name,
                     ];
                 });
 
@@ -108,7 +108,7 @@ class LocalDataService implements AreaDataServiceInterface
                     return [
                         'code' => $item->code,
                         'district_code' => $item->district_code,
-                        'name' => $item->name
+                        'name' => $item->name,
                     ];
                 });
 
@@ -125,29 +125,29 @@ class LocalDataService implements AreaDataServiceInterface
                     'regencies' => $regencies,
                     'districts' => $districts,
                     'villages' => $villages,
-                    'islands' => $islands
+                    'islands' => $islands,
                 ]);
         }
     }
 
     // Additional methods for testing compatibility
-    
+
     public function getProvinces($limit = null, $offset = null): array
     {
         $query = Province::orderBy('name');
-        
+
         if ($limit) {
             $query->limit($limit);
         }
-        
+
         if ($offset) {
             $query->offset($offset);
         }
-        
+
         return $query->get()->map(function ($province) {
             return [
                 'code' => $province->code,
-                'name' => $province->name
+                'name' => $province->name,
             ];
         })->toArray();
     }
@@ -170,24 +170,28 @@ class LocalDataService implements AreaDataServiceInterface
     public function getProvinceByCode(string $code): ?array
     {
         $province = $this->getProvince($code);
+
         return $province ? ['code' => $province->code, 'name' => $province->name] : null;
     }
 
     public function getRegencyByCode(string $code): ?array
     {
         $regency = $this->getRegency($code);
+
         return $regency ? ['code' => $regency->code, 'province_code' => $regency->province_code, 'name' => $regency->name] : null;
     }
 
     public function getDistrictByCode(string $code): ?array
     {
         $district = $this->getDistrict($code);
+
         return $district ? ['code' => $district->code, 'regency_code' => $district->regency_code, 'name' => $district->name] : null;
     }
 
     public function getVillageByCode(string $code): ?array
     {
         $village = $this->getVillage($code);
+
         return $village ? ['code' => $village->code, 'district_code' => $village->district_code, 'name' => $village->name] : null;
     }
 
@@ -196,7 +200,7 @@ class LocalDataService implements AreaDataServiceInterface
         return Province::search($term)->map(function ($item) {
             return [
                 'code' => $item->code,
-                'name' => $item->name
+                'name' => $item->name,
             ];
         })->toArray();
     }
@@ -207,7 +211,7 @@ class LocalDataService implements AreaDataServiceInterface
             return [
                 'code' => $item->code,
                 'province_code' => $item->province_code,
-                'name' => $item->name
+                'name' => $item->name,
             ];
         })->toArray();
     }
@@ -218,7 +222,7 @@ class LocalDataService implements AreaDataServiceInterface
             return [
                 'code' => $item->code,
                 'regency_code' => $item->regency_code,
-                'name' => $item->name
+                'name' => $item->name,
             ];
         })->toArray();
     }
@@ -229,7 +233,7 @@ class LocalDataService implements AreaDataServiceInterface
             return [
                 'code' => $item->code,
                 'district_code' => $item->district_code,
-                'name' => $item->name
+                'name' => $item->name,
             ];
         })->toArray();
     }

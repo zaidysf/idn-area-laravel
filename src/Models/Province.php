@@ -108,7 +108,6 @@ class Province extends Model
         })->orderBy('name');
     }
 
-
     /**
      * Scope to search provinces by name.
      *

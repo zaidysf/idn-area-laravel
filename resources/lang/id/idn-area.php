@@ -12,17 +12,17 @@ return [
     'villages' => 'Desa/Kelurahan',
     'island' => 'Pulau',
     'islands' => 'Pulau',
-    
+
     // Village types
     'desa' => 'Desa',
     'kelurahan' => 'Kelurahan',
-    
+
     // Actions
     'select' => 'Pilih',
     'choose' => 'Pilih',
     'search' => 'Cari',
     'filter' => 'Saring',
-    
+
     // Messages
     'no_data_found' => 'Data tidak ditemukan',
     'loading' => 'Memuat...',
@@ -30,7 +30,7 @@ return [
     'select_regency' => 'Pilih kabupaten/kota',
     'select_district' => 'Pilih kecamatan',
     'select_village' => 'Pilih desa/kelurahan',
-    
+
     // Stats
     'total_provinces' => 'Total Provinsi',
     'total_regencies' => 'Total Kabupaten/Kota',

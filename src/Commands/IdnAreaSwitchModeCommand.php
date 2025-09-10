@@ -5,16 +5,15 @@ declare(strict_types=1);
 namespace zaidysf\IdnArea\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Schema;
+use zaidysf\IdnArea\Exceptions\DataTokoApiException;
+use zaidysf\IdnArea\Models\District;
 use zaidysf\IdnArea\Models\Province;
 use zaidysf\IdnArea\Models\Regency;
-use zaidysf\IdnArea\Models\District;
 use zaidysf\IdnArea\Models\Village;
-use zaidysf\IdnArea\Services\BpsApiService;
 use zaidysf\IdnArea\Services\DataTokoApiService;
-use zaidysf\IdnArea\Exceptions\DataTokoApiException;
 
 class IdnAreaSwitchModeCommand extends Command
 {
@@ -41,35 +40,38 @@ class IdnAreaSwitchModeCommand extends Command
 
         $targetMode = $this->argument('mode');
 
-        if (!$targetMode) {
+        if (! $targetMode) {
             $targetMode = $this->chooseMode($currentMode);
         }
 
-        if (!in_array($targetMode, ['api', 'local'])) {
+        if (! in_array($targetMode, ['api', 'local'])) {
             $this->error("Invalid mode: {$targetMode}. Must be 'api' or 'local'.");
+
             return self::FAILURE;
         }
 
         if ($targetMode === $currentMode) {
             $this->info("✅ Already in {$targetMode} mode.");
+
             return self::SUCCESS;
         }
 
-        if (!$this->option('force')) {
-            if (!$this->confirmSwitch($currentMode, $targetMode)) {
+        if (! $this->option('force')) {
+            if (! $this->confirmSwitch($currentMode, $targetMode)) {
                 $this->line('Mode switch cancelled.');
+
                 return self::SUCCESS;
             }
         }
 
         try {
             // Step 1: Validate prerequisites
-            if (!$this->option('skip-validation')) {
+            if (! $this->option('skip-validation')) {
                 $this->validatePrerequisites($targetMode);
             }
 
             // Step 2: Run migrations if needed
-            if (!$this->option('skip-migration')) {
+            if (! $this->option('skip-migration')) {
                 $this->ensureMigrations();
             }
 
@@ -77,18 +79,19 @@ class IdnAreaSwitchModeCommand extends Command
             $this->switchToMode($targetMode);
 
             // Step 4: Handle local mode data requirements
-            if ($targetMode === 'local' && !$this->option('skip-seeding')) {
+            if ($targetMode === 'local' && ! $this->option('skip-seeding')) {
                 $this->handleLocalModeData();
             }
-            
+
             $this->newLine();
-            $this->info("✅ <bg=green;fg=white> MODE SWITCH SUCCESSFUL </bg=green;fg=white>");
+            $this->info('✅ <bg=green;fg=white> MODE SWITCH SUCCESSFUL </bg=green;fg=white>');
             $this->line("🎉 Switched to {$targetMode} mode successfully!");
 
             return self::SUCCESS;
 
         } catch (\Exception $e) {
-            $this->error("Failed to switch mode: " . $e->getMessage());
+            $this->error('Failed to switch mode: '.$e->getMessage());
+
             return self::FAILURE;
         }
     }
@@ -115,7 +118,7 @@ class IdnAreaSwitchModeCommand extends Command
             $this->line('   • ⚠️  Slower performance');
             $this->line('   • ⚠️  Depends on internet connectivity');
             $this->newLine();
-            
+
             $this->line('🏠 <comment>[2] Local Mode (Current)</comment>');
             $this->line('   • Fast and reliable');
             $this->line('   • Works offline');
@@ -128,7 +131,7 @@ class IdnAreaSwitchModeCommand extends Command
             $this->line('   • ⚠️  Slower performance');
             $this->line('   • ⚠️  Depends on internet connectivity');
             $this->newLine();
-            
+
             $this->line('🏠 <info>[2] Local Mode (Recommended)</info>');
             $this->line('   • Fast and reliable');
             $this->line('   • Works offline');
@@ -139,7 +142,7 @@ class IdnAreaSwitchModeCommand extends Command
 
         $choice = $this->choice('Which mode would you like to switch to?', [
             1 => 'API Mode (Real-time)',
-            2 => 'Local Mode (Recommended)'
+            2 => 'Local Mode (Recommended)',
         ], $currentMode === 'local' ? 2 : 1);
 
         return $choice === 'API Mode (Real-time)' ? 'api' : 'local';
@@ -163,8 +166,8 @@ class IdnAreaSwitchModeCommand extends Command
             $this->line('   • Faster response times');
             $this->line('   • Works offline');
             $this->line('   • Requires periodic data sync');
-            
-            if (!$this->hasLocalData()) {
+
+            if (! $this->hasLocalData()) {
                 $this->newLine();
                 $this->warn('⚠️  You will need to sync data after switching:');
                 $this->line('   php artisan idn-area:sync-bps --initial');
@@ -172,6 +175,7 @@ class IdnAreaSwitchModeCommand extends Command
         }
 
         $this->newLine();
+
         return $this->confirm('Continue with mode switch?', true);
     }
 
@@ -185,16 +189,17 @@ class IdnAreaSwitchModeCommand extends Command
         // Update .env file
         $this->updateEnvFile($mode);
 
-        $this->line("   ✅ Configuration updated");
+        $this->line('   ✅ Configuration updated');
     }
 
     private function updateConfig(string $mode): void
     {
         $configPath = config_path('idn-area.php');
-        
-        if (!File::exists($configPath)) {
+
+        if (! File::exists($configPath)) {
             $this->warn('Config file not found. You may need to publish it first:');
             $this->line('php artisan vendor:publish --tag="idn-area-config"');
+
             return;
         }
 
@@ -210,20 +215,21 @@ class IdnAreaSwitchModeCommand extends Command
     private function updateEnvFile(string $mode): void
     {
         $envPath = base_path('.env');
-        
-        if (!File::exists($envPath)) {
+
+        if (! File::exists($envPath)) {
             $this->warn('.env file not found. You may need to set IDN_AREA_MODE manually.');
+
             return;
         }
 
         $env = File::get($envPath);
-        
+
         if (str_contains($env, 'IDN_AREA_MODE=')) {
             $env = preg_replace('/IDN_AREA_MODE=.*/', "IDN_AREA_MODE={$mode}", $env);
         } else {
             $env .= "\nIDN_AREA_MODE={$mode}\n";
         }
-        
+
         File::put($envPath, $env);
     }
 
@@ -252,20 +258,20 @@ class IdnAreaSwitchModeCommand extends Command
     private function validateApiMode(): void
     {
         $this->line('   • Checking DataToko API credentials...');
-        
+
         $accessKey = config('idn-area.datatoko_api.access_key');
         $secretKey = config('idn-area.datatoko_api.secret_key');
-        
+
         if (empty($accessKey) || empty($secretKey)) {
             $this->line('   • DataToko credentials not found, prompting for setup...');
             $this->promptForDataTokoCredentials();
         } else {
             $this->line('   • DataToko credentials found');
-            
+
             // Test connectivity with existing credentials
             $this->line('   • Testing DataToko API connectivity...');
             try {
-                $dataTokoService = new DataTokoApiService();
+                $dataTokoService = new DataTokoApiService;
                 $provinces = $dataTokoService->getAllProvinces();
                 $this->line("   • DataToko API test: OK ({$provinces->count()} provinces)");
             } catch (DataTokoApiException $e) {
@@ -273,7 +279,7 @@ class IdnAreaSwitchModeCommand extends Command
                 if ($this->confirm('Would you like to re-enter your DataToko credentials?', true)) {
                     $this->promptForDataTokoCredentials();
                 } else {
-                    throw new \Exception('DataToko API validation failed: ' . $e->getMessage());
+                    throw new \Exception('DataToko API validation failed: '.$e->getMessage());
                 }
             }
         }
@@ -282,21 +288,21 @@ class IdnAreaSwitchModeCommand extends Command
     private function validateLocalMode(): void
     {
         $this->line('   • Checking database configuration...');
-        
+
         // Check database connection
         try {
             \DB::connection()->getPdo();
             $this->line('   • Database connection: OK');
         } catch (\Exception $e) {
-            throw new \Exception('Database connection failed: ' . $e->getMessage());
+            throw new \Exception('Database connection failed: '.$e->getMessage());
         }
 
         // Check if CSV data files exist for seeding
-        $dataPath = __DIR__ . '/../../database/seeders/data/';
+        $dataPath = __DIR__.'/../../database/seeders/data/';
         $requiredFiles = ['provinces.csv', 'regencies.csv', 'districts.csv'];
-        
+
         foreach ($requiredFiles as $file) {
-            if (!File::exists($dataPath . $file)) {
+            if (! File::exists($dataPath.$file)) {
                 $this->warn("   • Missing data file: {$file}");
             } else {
                 $this->line("   • Data file {$file}: OK");
@@ -304,8 +310,8 @@ class IdnAreaSwitchModeCommand extends Command
         }
 
         // Check villages.csv separately as it might still be generating
-        if (!File::exists($dataPath . 'villages.csv')) {
-            if (File::exists($dataPath . 'villages_partial.csv')) {
+        if (! File::exists($dataPath.'villages.csv')) {
+            if (File::exists($dataPath.'villages_partial.csv')) {
                 $this->warn('   • Villages data is still being generated (partial file found)');
             } else {
                 $this->warn('   • Villages data file not found - will need to generate or sync');
@@ -323,20 +329,20 @@ class IdnAreaSwitchModeCommand extends Command
         $missingTables = [];
 
         foreach ($tables as $table) {
-            if (!Schema::hasTable($table)) {
+            if (! Schema::hasTable($table)) {
                 $missingTables[] = $table;
             }
         }
 
-        if (!empty($missingTables)) {
-            $this->warn('   Missing tables: ' . implode(', ', $missingTables));
+        if (! empty($missingTables)) {
+            $this->warn('   Missing tables: '.implode(', ', $missingTables));
             $this->info('   Running migrations...');
-            
+
             try {
                 Artisan::call('migrate', ['--force' => true]);
                 $this->line('   ✅ Migrations completed successfully');
             } catch (\Exception $e) {
-                throw new \Exception('Migration failed: ' . $e->getMessage());
+                throw new \Exception('Migration failed: '.$e->getMessage());
             }
         } else {
             $this->line('   ✅ All required tables exist');
@@ -347,7 +353,7 @@ class IdnAreaSwitchModeCommand extends Command
     {
         if ($this->hasLocalData()) {
             $counts = $this->getDataCounts();
-            $this->line("   📊 Current local data:");
+            $this->line('   📊 Current local data:');
             $this->line("      • Provinces: {$counts['provinces']}");
             $this->line("      • Regencies: {$counts['regencies']}");
             $this->line("      • Districts: {$counts['districts']}");
@@ -355,7 +361,7 @@ class IdnAreaSwitchModeCommand extends Command
 
             if ($counts['total'] < 50000) { // Expected ~90k total records
                 $this->warn('   ⚠️  Local data seems incomplete');
-                
+
                 if ($this->confirm('Would you like to sync data from BPS API now?', true)) {
                     $this->syncLocalData();
                 }
@@ -364,7 +370,7 @@ class IdnAreaSwitchModeCommand extends Command
             }
         } else {
             $this->warn('   ⚠️  No local data found');
-            
+
             if ($this->hasDataFiles()) {
                 if ($this->confirm('Would you like to seed data from CSV files?', true)) {
                     $this->seedLocalData();
@@ -381,47 +387,47 @@ class IdnAreaSwitchModeCommand extends Command
 
     private function hasDataFiles(): bool
     {
-        $dataPath = __DIR__ . '/../../database/seeders/data/';
+        $dataPath = __DIR__.'/../../database/seeders/data/';
         $requiredFiles = ['provinces.csv', 'regencies.csv', 'districts.csv'];
-        
+
         foreach ($requiredFiles as $file) {
-            if (!File::exists($dataPath . $file)) {
+            if (! File::exists($dataPath.$file)) {
                 return false;
             }
         }
-        
+
         return true;
     }
 
     private function syncLocalData(): void
     {
         $this->info('🌱 Seeding data from pre-bundled CSV files...');
-        
+
         try {
             // Try CSV seeder first (much faster for local mode)
             $exitCode = Artisan::call('idn-area:seed', ['--force' => true]);
-            
+
             if ($exitCode !== 0) {
                 $this->warn('   CSV seeding failed, trying BPS API sync as fallback...');
                 $this->info('🔄 Syncing data from BPS API...');
                 Artisan::call('idn-area:sync-bps', ['--initial' => true]);
             }
-            
+
             $this->line('   ✅ Data seeding completed successfully');
         } catch (\Exception $e) {
-            throw new \Exception('Data seeding failed: ' . $e->getMessage());
+            throw new \Exception('Data seeding failed: '.$e->getMessage());
         }
     }
 
     private function seedLocalData(): void
     {
         $this->info('🌱 Seeding data from CSV files...');
-        
+
         try {
             Artisan::call('idn-area:seed', ['--force' => true]);
             $this->line('   ✅ Data seeding completed successfully');
         } catch (\Exception $e) {
-            throw new \Exception('Data seeding failed: ' . $e->getMessage());
+            throw new \Exception('Data seeding failed: '.$e->getMessage());
         }
     }
 
@@ -432,7 +438,7 @@ class IdnAreaSwitchModeCommand extends Command
             $regencies = Regency::count();
             $districts = District::count();
             $villages = Village::count();
-            
+
             return [
                 'provinces' => $provinces,
                 'regencies' => $regencies,
@@ -487,22 +493,22 @@ class IdnAreaSwitchModeCommand extends Command
             );
         } else {
             // Validate the provided token storage option
-            if (!in_array($tokenStorage, ['cache', 'redis', 'file'])) {
+            if (! in_array($tokenStorage, ['cache', 'redis', 'file'])) {
                 throw new \Exception('Invalid token storage method. Must be: cache, redis, or file');
             }
         }
 
         // Update environment variables
         $this->updateDataTokoCredentials($accessKey, $secretKey, $tokenStorage);
-        
+
         // Test the new credentials unless skipped
-        if (!$this->option('skip-connectivity')) {
+        if (! $this->option('skip-connectivity')) {
             $this->line('   • Testing new DataToko credentials...');
             try {
                 $this->testDataTokoConnection($accessKey, $secretKey);
                 $this->line('   • DataToko API connection successful');
             } catch (\Exception $e) {
-                throw new \Exception('DataToko API connection failed: ' . $e->getMessage());
+                throw new \Exception('DataToko API connection failed: '.$e->getMessage());
             }
         } else {
             $this->line('   • Skipping API connectivity test');
@@ -514,15 +520,15 @@ class IdnAreaSwitchModeCommand extends Command
         $envPath = base_path('.env');
         if (File::exists($envPath)) {
             $env = File::get($envPath);
-            
+
             // Update or add DataToko credentials
             $updates = [
                 'IDN_AREA_ACCESS_KEY' => $accessKey,
                 'IDN_AREA_SECRET_KEY' => $secretKey,
                 'IDN_AREA_TOKEN_STORAGE' => $tokenStorage,
-                'IDN_AREA_DATATOKO_URL' => 'https://data.toko.center'
+                'IDN_AREA_DATATOKO_URL' => 'https://data.toko.center',
             ];
-            
+
             foreach ($updates as $key => $value) {
                 if (str_contains($env, "{$key}=")) {
                     $env = preg_replace("/{$key}=.*/", "{$key}={$value}", $env);
@@ -530,7 +536,7 @@ class IdnAreaSwitchModeCommand extends Command
                     $env .= "\n{$key}={$value}";
                 }
             }
-            
+
             File::put($envPath, $env);
             $this->line('   • DataToko credentials saved to .env file');
         }
@@ -540,38 +546,38 @@ class IdnAreaSwitchModeCommand extends Command
     {
         $timestamp = time();
         $nonce = bin2hex(random_bytes(16));
-        
+
         // Create HMAC signature
-        $message = $accessKey . $timestamp . $nonce;
+        $message = $accessKey.$timestamp.$nonce;
         $signature = hash_hmac('sha256', $message, $secretKey);
-        
+
         $postData = json_encode([
             'access_key' => $accessKey,
             'timestamp' => $timestamp,
             'nonce' => $nonce,
-            'signature' => $signature
+            'signature' => $signature,
         ]);
-        
+
         $context = stream_context_create([
             'http' => [
                 'method' => 'POST',
                 'header' => [
                     'Content-Type: application/json',
-                    'Accept: application/json'
+                    'Accept: application/json',
                 ],
                 'content' => $postData,
-                'timeout' => 30
-            ]
+                'timeout' => 30,
+            ],
         ]);
-        
+
         $response = file_get_contents('https://data.toko.center/api/auth/login', false, $context);
-        
-        if (!$response) {
+
+        if (! $response) {
             throw new \Exception('No response from DataToko API');
         }
-        
+
         $data = json_decode($response, true);
-        if (!isset($data['data']['token']) && !isset($data['token'])) {
+        if (! isset($data['data']['token']) && ! isset($data['token'])) {
             throw new \Exception('Invalid response format or authentication failed');
         }
     }

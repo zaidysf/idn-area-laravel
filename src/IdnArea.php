@@ -113,14 +113,14 @@ final class IdnArea
     public function search(string $query, string $type = 'all', bool $cached = true): Collection|array
     {
         $result = $this->manager->search($query, $type, $cached);
-        
+
         // For specific types like 'provinces', wrap in expected structure
         if ($type !== 'all') {
             return [
-                $type => $result
+                $type => $result,
             ];
         }
-        
+
         // For type 'all', return structured array but keep collections as collections
         if ($type === 'all' && $result instanceof Collection && $result->has('provinces')) {
             return [
@@ -131,7 +131,7 @@ final class IdnArea
                 'islands' => $result['islands'] ?? collect(),
             ];
         }
-        
+
         return $result;
     }
 
@@ -182,6 +182,7 @@ final class IdnArea
     {
         if ($cached && config('idn-area.cache.enabled', true)) {
             $cacheKey = "idn_area.islands.regency.{$regencyCode}";
+
             return \Illuminate\Support\Facades\Cache::remember($cacheKey, config('idn-area.cache.ttl', 3600), function () use ($regencyCode) {
                 return \zaidysf\IdnArea\Models\Island::inRegency($regencyCode)->get();
             });
@@ -197,6 +198,7 @@ final class IdnArea
     {
         if ($cached && config('idn-area.cache.enabled', true)) {
             $cacheKey = 'idn_area.islands.populated';
+
             return \Illuminate\Support\Facades\Cache::remember($cacheKey, config('idn-area.cache.ttl', 3600), function () {
                 return \zaidysf\IdnArea\Models\Island::populated()->get();
             });
@@ -212,6 +214,7 @@ final class IdnArea
     {
         if ($cached && config('idn-area.cache.enabled', true)) {
             $cacheKey = 'idn_area.islands.outermost_small';
+
             return \Illuminate\Support\Facades\Cache::remember($cacheKey, config('idn-area.cache.ttl', 3600), function () {
                 return \zaidysf\IdnArea\Models\Island::outermostSmall()->get();
             });
@@ -227,6 +230,7 @@ final class IdnArea
     {
         if ($cached && config('idn-area.cache.enabled', true)) {
             $cacheKey = "idn_area.hierarchy.{$provinceCode}";
+
             return \Illuminate\Support\Facades\Cache::remember($cacheKey, config('idn-area.cache.ttl', 3600), function () use ($provinceCode) {
                 return $this->buildHierarchy($provinceCode);
             });
@@ -292,19 +296,19 @@ final class IdnArea
     private function buildHierarchy(string $provinceCode): array
     {
         $province = $this->province($provinceCode, false);
-        if (!$province) {
+        if (! $province) {
             return [];
         }
 
         $regencies = $this->regenciesByProvince($provinceCode, false);
         $provinceName = is_array($province) ? $province['name'] : $province->name;
         $provinceCode = is_array($province) ? $province['code'] : $province->code;
-        
+
         $hierarchy = [
             'code' => $provinceCode,
             'name' => $provinceName,
             'province' => $province,
-            'regencies' => []
+            'regencies' => [],
         ];
 
         foreach ($regencies as $regency) {
@@ -312,7 +316,7 @@ final class IdnArea
             $districts = $this->districtsByRegency($regencyCode, false);
             $regencyData = [
                 'regency' => $regency,
-                'districts' => []
+                'districts' => [],
             ];
 
             foreach ($districts as $district) {
@@ -321,7 +325,7 @@ final class IdnArea
                 $villagesArray = $villages instanceof \Illuminate\Support\Collection ? $villages->toArray() : $villages;
                 $regencyData['districts'][] = [
                     'district' => $district,
-                    'villages' => $villagesArray
+                    'villages' => $villagesArray,
                 ];
             }
 

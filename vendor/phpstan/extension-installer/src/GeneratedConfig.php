@@ -12,7 +12,7 @@ final class GeneratedConfig
 	public const EXTENSIONS = array (
   'larastan/larastan' => 
   array (
-    'install_path' => '/Users/zaid/codes/idn-area-laravel-12/vendor/larastan/larastan',
+    'install_path' => '/home/runner/work/idn-area-laravel/idn-area-laravel/vendor/larastan/larastan',
     'relative_install_path' => '../../../larastan/larastan',
     'extra' => 
     array (
@@ -26,7 +26,7 @@ final class GeneratedConfig
   ),
   'nesbot/carbon' => 
   array (
-    'install_path' => '/Users/zaid/codes/idn-area-laravel-12/vendor/nesbot/carbon',
+    'install_path' => '/home/runner/work/idn-area-laravel/idn-area-laravel/vendor/nesbot/carbon',
     'relative_install_path' => '../../../nesbot/carbon',
     'extra' => 
     array (
@@ -35,12 +35,12 @@ final class GeneratedConfig
         0 => 'extension.neon',
       ),
     ),
-    'version' => '3.10.2',
+    'version' => '3.10.3',
     'phpstanVersionConstraint' => NULL,
   ),
   'pestphp/pest' => 
   array (
-    'install_path' => '/Users/zaid/codes/idn-area-laravel-12/vendor/pestphp/pest',
+    'install_path' => '/home/runner/work/idn-area-laravel/idn-area-laravel/vendor/pestphp/pest',
     'relative_install_path' => '../../../pestphp/pest',
     'extra' => 
     array (
@@ -54,7 +54,7 @@ final class GeneratedConfig
   ),
   'phpstan/phpstan-deprecation-rules' => 
   array (
-    'install_path' => '/Users/zaid/codes/idn-area-laravel-12/vendor/phpstan/phpstan-deprecation-rules',
+    'install_path' => '/home/runner/work/idn-area-laravel/idn-area-laravel/vendor/phpstan/phpstan-deprecation-rules',
     'relative_install_path' => '../../phpstan-deprecation-rules',
     'extra' => 
     array (
@@ -68,7 +68,7 @@ final class GeneratedConfig
   ),
   'phpstan/phpstan-phpunit' => 
   array (
-    'install_path' => '/Users/zaid/codes/idn-area-laravel-12/vendor/phpstan/phpstan-phpunit',
+    'install_path' => '/home/runner/work/idn-area-laravel/idn-area-laravel/vendor/phpstan/phpstan-phpunit',
     'relative_install_path' => '../../phpstan-phpunit',
     'extra' => 
     array (
@@ -83,7 +83,7 @@ final class GeneratedConfig
   ),
   'tomasvotruba/type-coverage' => 
   array (
-    'install_path' => '/Users/zaid/codes/idn-area-laravel-12/vendor/tomasvotruba/type-coverage',
+    'install_path' => '/home/runner/work/idn-area-laravel/idn-area-laravel/vendor/tomasvotruba/type-coverage',
     'relative_install_path' => '../../../tomasvotruba/type-coverage',
     'extra' => 
     array (

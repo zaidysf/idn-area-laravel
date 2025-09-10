@@ -47,9 +47,6 @@ class TestCase extends Orchestra
 
         $migration = include __DIR__.'/../database/migrations/create_idn_villages_table.php.stub';
         $migration->up();
-
-        $migration = include __DIR__.'/../database/migrations/create_idn_islands_table.php.stub';
-        $migration->up();
     }
 
     protected function defineDatabaseMigrations()

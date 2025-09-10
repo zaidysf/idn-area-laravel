@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 use zaidysf\IdnArea\Facades\IdnArea;
 use zaidysf\IdnArea\Models\District;
-use zaidysf\IdnArea\Models\Island;
 use zaidysf\IdnArea\Models\Province;
 use zaidysf\IdnArea\Models\Regency;
 use zaidysf\IdnArea\Models\Village;
@@ -40,7 +39,6 @@ it('can get regencies by province', function () {
     $regency = Regency::factory()->forProvince($province->code)->create();
     $district = District::factory()->forRegency($regency->code)->create();
     $village = Village::factory()->forDistrict($district->code)->create();
-    $island = Island::factory()->forRegency($regency->code)->create();
 
     $regencies = IdnArea::regenciesByProvince('32', false);
 
@@ -54,7 +52,6 @@ it('can get districts by regency', function () {
     $regency = Regency::factory()->forProvince($province->code)->create();
     $district = District::factory()->forRegency($regency->code)->create();
     $village = Village::factory()->forDistrict($district->code)->create();
-    $island = Island::factory()->forRegency($regency->code)->create();
 
     $districts = IdnArea::districtsByRegency($regency->code, 0, false);
 
@@ -79,7 +76,6 @@ it('can get villages by district', function () {
     $regency = Regency::factory()->forProvince($province->code)->create();
     $district = District::factory()->forRegency($regency->code)->create();
     $village = Village::factory()->forDistrict($district->code)->create();
-    $island = Island::factory()->forRegency($regency->code)->create();
 
     $villages = IdnArea::villagesByDistrict($district->code, 100, false);
 
@@ -88,38 +84,6 @@ it('can get villages by district', function () {
     expect($villages->first()['name'])->toBe($village->name);
 });
 
-it('can get islands by regency', function () {
-    $province = Province::factory()->create(['code' => '32']);
-    $regency = Regency::factory()->forProvince($province->code)->create();
-    $district = District::factory()->forRegency($regency->code)->create();
-    $village = Village::factory()->forDistrict($district->code)->create();
-    $island = Island::factory()->forRegency($regency->code)->create();
-
-    $islands = IdnArea::islandsByRegency($regency->code, false);
-
-    expect($islands)->toHaveCount(1);
-    expect($islands->first()->name)->toBe($island->name);
-});
-
-it('can get outermost small islands', function () {
-    Island::factory()->create(['name' => 'Regular Island', 'is_outermost_small' => false]);
-    Island::factory()->create(['name' => 'Outermost Small Island', 'is_outermost_small' => true]);
-
-    $islands = IdnArea::outermostSmallIslands(false);
-
-    expect($islands)->toHaveCount(1);
-    expect($islands->first()->name)->toBe('Outermost Small Island');
-});
-
-it('can get populated islands', function () {
-    Island::factory()->create(['name' => 'Unpopulated Island', 'is_populated' => false]);
-    Island::factory()->create(['name' => 'Populated Island', 'is_populated' => true]);
-
-    $islands = IdnArea::populatedIslands(false);
-
-    expect($islands)->toHaveCount(1);
-    expect($islands->first()->name)->toBe('Populated Island');
-});
 
 it('can search areas', function () {
     Province::factory()->create(['code' => '31', 'name' => 'Jakarta']);
@@ -148,7 +112,6 @@ it('can get hierarchy', function () {
     $regency = Regency::factory()->forProvince($province->code)->create();
     $district = District::factory()->forRegency($regency->code)->create();
     $village = Village::factory()->forDistrict($district->code)->create();
-    $island = Island::factory()->forRegency($regency->code)->create();
 
     $result = IdnArea::hierarchy('32', false);
 
@@ -163,7 +126,6 @@ it('can get statistics', function () {
     $regency = Regency::factory()->forProvince($province->code)->create();
     $district = District::factory()->forRegency($regency->code)->create();
     $village = Village::factory()->forDistrict($district->code)->create();
-    $island = Island::factory()->forRegency($regency->code)->create();
 
     $stats = IdnArea::statistics(false);
 
@@ -173,15 +135,11 @@ it('can get statistics', function () {
         'regencies',
         'districts',
         'villages',
-        'islands',
-        'outermost_small_islands',
-        'populated_islands',
     ]);
     expect($stats['provinces'])->toBe(1);
     expect($stats['regencies'])->toBe(1);
     expect($stats['districts'])->toBe(1);
     expect($stats['villages'])->toBe(1);
-    expect($stats['islands'])->toBe(1);
 });
 
 it('can get multiple areas by codes', function () {

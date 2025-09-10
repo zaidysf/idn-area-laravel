@@ -1,7 +1,6 @@
 <?php
 
 use zaidysf\IdnArea\Models\District;
-use zaidysf\IdnArea\Models\Island;
 use zaidysf\IdnArea\Models\Province;
 use zaidysf\IdnArea\Models\Regency;
 use zaidysf\IdnArea\Models\Village;
@@ -14,7 +13,6 @@ describe('Model Relationships', function () {
         $regency = Regency::create(['code' => '32.04', 'province_code' => '32', 'name' => 'KABUPATEN BANDUNG']);
         $district = District::create(['code' => '32.04.01', 'regency_code' => '32.04', 'name' => 'SUKASARI']);
         $village = Village::create(['code' => '32.04.01.2001', 'district_code' => '32.04.01', 'name' => 'SUKAMAJU']);
-        Island::create(['name' => 'Test Island', 'regency_code' => '32.04']);
     });
 
     it('province has many regencies', function () {
@@ -49,13 +47,6 @@ describe('Model Relationships', function () {
         expect($districts->first()->name)->toBe('SUKASARI');
     });
 
-    it('regency has many islands', function () {
-        $regency = Regency::find('32.04');
-        $islands = $regency->islands;
-
-        expect($islands)->toHaveCount(1);
-        expect($islands->first()->name)->toBe('Test Island');
-    });
 
     it('district belongs to regency', function () {
         $district = District::find('32.04.01');
@@ -89,11 +80,4 @@ describe('Model Relationships', function () {
         expect($regency->name)->toBe('KABUPATEN BANDUNG');
     });
 
-    it('island belongs to regency', function () {
-        $island = Island::first();
-        $regency = $island->regency;
-
-        expect($regency)->toBeInstanceOf(Regency::class);
-        expect($regency->name)->toBe('KABUPATEN BANDUNG');
-    });
 });

@@ -1,7 +1,6 @@
 <?php
 
 use zaidysf\IdnArea\Facades\IdnArea;
-use zaidysf\IdnArea\Models\Island;
 use zaidysf\IdnArea\Models\Province;
 use zaidysf\IdnArea\Models\Regency;
 
@@ -14,9 +13,6 @@ describe('IdnArea Facade', function () {
 
         Regency::create(['code' => '31.71', 'province_code' => '31', 'name' => 'KOTA ADMINISTRASI JAKARTA PUSAT']);
         Regency::create(['code' => '32.04', 'province_code' => '32', 'name' => 'KABUPATEN BANDUNG']);
-
-        Island::create(['name' => 'Pulau Bidadari', 'is_populated' => true, 'regency_code' => '31.71']);
-        Island::create(['name' => 'Pulau Seribu', 'is_outermost_small' => true, 'regency_code' => '31.71']);
     });
 
     it('can get provinces via facade', function () {
@@ -53,31 +49,8 @@ describe('IdnArea Facade', function () {
 
         expect($stats['provinces'])->toBe(2);
         expect($stats['regencies'])->toBe(2);
-        expect($stats['islands'])->toBe(2);
-        expect($stats['populated_islands'])->toBe(1);
-        expect($stats['outermost_small_islands'])->toBe(1);
     });
 
-    it('can get populated islands via facade', function () {
-        $islands = IdnArea::populatedIslands();
-
-        expect($islands)->toHaveCount(1);
-        expect($islands->first()->name)->toBe('Pulau Bidadari');
-    });
-
-    it('can get outermost small islands via facade', function () {
-        $islands = IdnArea::outermostSmallIslands();
-
-        expect($islands)->toHaveCount(1);
-        expect($islands->first()->name)->toBe('Pulau Seribu');
-    });
-
-    it('can get islands by regency via facade', function () {
-        $islands = IdnArea::islandsByRegency('31.71');
-
-        expect($islands)->toHaveCount(2);
-        expect($islands->pluck('name')->toArray())->toContain('Pulau Bidadari');
-    });
 
     it('returns null for non-existent areas', function () {
         $province = IdnArea::province('99');
@@ -95,12 +68,10 @@ describe('IdnArea Facade', function () {
         $regencies = IdnArea::regenciesByProvince('99');
         $districts = IdnArea::districtsByRegency('99.99');
         $villages = IdnArea::villagesByDistrict('99.99.99');
-        $islands = IdnArea::islandsByRegency('99.99');
 
         expect($regencies)->toBeInstanceOf(\Illuminate\Database\Eloquent\Collection::class);
         expect($regencies)->toHaveCount(0);
         expect($districts)->toHaveCount(0);
         expect($villages)->toHaveCount(0);
-        expect($islands)->toHaveCount(0);
     });
 });

@@ -247,11 +247,17 @@ final class IdnAreaManager
      */
     public function isApiAvailable(): bool
     {
-        if ($this->isApiMode() && $this->dataService instanceof DataTokoApiService) {
-            return true; // DataToko API availability is checked during authentication
+        if (! $this->isApiMode() || ! $this->dataService instanceof DataTokoApiService) {
+            return false;
         }
 
-        return false;
+        try {
+            // Test API connectivity by attempting to get provinces
+            $this->dataService->getAllProvinces();
+            return true;
+        } catch (\Exception $e) {
+            return false;
+        }
     }
 
     /**

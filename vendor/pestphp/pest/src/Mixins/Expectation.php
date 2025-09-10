@@ -183,7 +183,6 @@ final class Expectation
     {
         foreach ($needles as $needle) {
             if (is_string($this->value)) {
-                // @phpstan-ignore-next-line
                 Assert::assertStringContainsString((string) $needle, $this->value);
             } else {
                 if (! is_iterable($this->value)) {
@@ -339,36 +338,6 @@ final class Expectation
     {
         foreach ($names as $name => $value) {
             is_int($name) ? $this->toHaveProperty($value, message: $message) : $this->toHaveProperty($name, $value, $message); // @phpstan-ignore-line
-        }
-
-        return $this;
-    }
-
-    /**
-     * Asserts that the value has the method $name.
-     *
-     * @return self<TValue>
-     */
-    public function toHaveMethod(string $name, string $message = ''): self
-    {
-        $this->toBeObject();
-
-        // @phpstan-ignore-next-line
-        Assert::assertTrue(method_exists($this->value, $name), $message);
-
-        return $this;
-    }
-
-    /**
-     * Asserts that the value has the provided methods $names.
-     *
-     * @param  iterable<array-key, string>  $names
-     * @return self<TValue>
-     */
-    public function toHaveMethods(iterable $names, string $message = ''): self
-    {
-        foreach ($names as $name) {
-            $this->toHaveMethod($name, message: $message);
         }
 
         return $this;

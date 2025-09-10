@@ -1,7 +1,6 @@
 <?php
 
 use zaidysf\IdnArea\Models\District;
-use zaidysf\IdnArea\Models\Island;
 use zaidysf\IdnArea\Models\Province;
 use zaidysf\IdnArea\Models\Regency;
 use zaidysf\IdnArea\Models\Village;
@@ -89,44 +88,12 @@ describe('Model Factories', function () {
         expect($village->code)->toStartWith($district->code.'.');
     });
 
-    it('can create island using factory', function () {
-        $island = Island::factory()->create();
-
-        expect($island)->toBeInstanceOf(Island::class);
-        expect($island->name)->toBeString();
-        expect($island->is_populated)->toBeBool();
-        expect($island->is_outermost_small)->toBeBool();
-        expect($island->exists)->toBeTrue();
-    });
-
-    it('can create island with specific types', function () {
-        $populated = Island::factory()->populated()->create();
-        $outermost = Island::factory()->outermostSmall()->create();
-        $uninhabited = Island::factory()->uninhabited()->create();
-
-        expect($populated->is_populated)->toBeTrue();
-        expect($populated->is_outermost_small)->toBeFalse();
-
-        expect($outermost->is_outermost_small)->toBeTrue();
-        expect($outermost->is_populated)->toBeFalse();
-
-        expect($uninhabited->is_populated)->toBeFalse();
-        expect($uninhabited->is_outermost_small)->toBeFalse();
-    });
-
-    it('can create island for specific regency', function () {
-        $regency = Regency::factory()->jakartaCentral()->create();
-        $island = Island::factory()->forRegency($regency->code)->create();
-
-        expect($island->regency_code)->toBe($regency->code);
-    });
 
     it('can create complete hierarchy using factories', function () {
         $province = Province::factory()->jakarta()->create();
         $regency = Regency::factory()->jakartaCentral()->create();
         $district = District::factory()->menteng()->create();
         $village = Village::factory()->gondangdia()->create();
-        $island = Island::factory()->bidadari()->create();
 
         // Test relationships
         expect($regency->province->code)->toBe($province->code);
@@ -138,30 +105,24 @@ describe('Model Factories', function () {
         expect($regency->name)->toBe('KOTA ADMINISTRASI JAKARTA PUSAT');
         expect($district->name)->toBe('MENTENG');
         expect($village->name)->toBe('GONDANGDIA');
-        expect($island->name)->toBe('PULAU BIDADARI');
     });
 
     it('can create multiple models using factories', function () {
         $provinces = Province::factory()->count(3)->create();
         $regencies = Regency::factory()->count(5)->create();
-        $islands = Island::factory()->count(10)->create();
 
         expect($provinces)->toHaveCount(3);
         expect($regencies)->toHaveCount(5);
-        expect($islands)->toHaveCount(10);
     });
 
     it('can make models without persisting to database', function () {
         $province = Province::factory()->make();
         $regency = Regency::factory()->make();
-        $island = Island::factory()->make();
 
         expect($province->exists)->toBeFalse();
         expect($regency->exists)->toBeFalse();
-        expect($island->exists)->toBeFalse();
 
         expect($province->code)->toBeString();
         expect($regency->name)->toBeString();
-        expect($island->name)->toBeString();
     });
 });

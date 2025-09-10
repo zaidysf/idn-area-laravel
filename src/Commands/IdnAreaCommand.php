@@ -21,6 +21,7 @@ class IdnAreaCommand extends Command
         {--backup : Backup existing data before seeding}
         {--chunk-size=500 : Number of records to process at once}
         {--skip-cache-clear : Skip clearing cache after seeding}
+        {--only= : Only seed specific types (comma-separated: provinces,regencies,districts,villages)}
         {--exclude= : Exclude specific types from seeding}';
 
     public $description = 'Enhanced seeder for Indonesian area data with modern Laravel features';
@@ -160,6 +161,7 @@ class IdnAreaCommand extends Command
             'regencies' => $regencies,
             'districts' => $districts,
             'villages' => $villages,
+            'has_any' => $provinces > 0 || $regencies > 0 || $districts > 0 || $villages > 0,
         ];
     }
 

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Pest\TypeCoverage;
 
-use Pest\Contracts\Plugins\HandlesArguments;
+use Pest\Contracts\Plugins\HandlesOriginalArguments;
 use Pest\Plugins\Concerns\HandleArguments;
 use Pest\Support\View;
 use Pest\TestSuite;
@@ -24,7 +24,7 @@ use function Termwind\terminal;
  *
  * @final
  */
-class Plugin implements HandlesArguments
+class Plugin implements HandlesOriginalArguments
 {
     use HandleArguments;
 
@@ -39,6 +39,11 @@ class Plugin implements HandlesArguments
     private Logger $coverageLogger;
 
     /**
+     * Whether to use compact output.
+     */
+    private bool $compact = false;
+
+    /**
      * Creates a new Plugin instance.
      */
     public function __construct(
@@ -50,19 +55,13 @@ class Plugin implements HandlesArguments
     /**
      * {@inheritdoc}
      */
-    public function handleArguments(array $arguments): array
+    public function handleOriginalArguments(array $arguments): void
     {
-        $continue = false;
-
-        foreach ($arguments as $argument) {
-            if (str_starts_with($argument, '--type-coverage')) {
-                $continue = true;
-            }
+        if (! $this->hasArgument('--type-coverage', $arguments)) {
+            return;
         }
 
-        if (! $continue) {
-            return $arguments;
-        }
+        $startTime = microtime(true);
 
         foreach ($arguments as $argument) {
             if (str_starts_with($argument, '--min')) {
@@ -106,6 +105,10 @@ class Plugin implements HandlesArguments
 
                 $this->coverageLogger = new JsonLogger(explode('=', $argument)[1], $this->coverageMin);
             }
+
+            if (str_starts_with($argument, '--compact')) {
+                $this->compact = true;
+            }
         }
 
         $source = ConfigurationSourceDetector::detect();
@@ -127,7 +130,7 @@ class Plugin implements HandlesArguments
         Analyser::analyse(
             array_keys(iterator_to_array($files)),
             function (Result $result) use (&$totals): void {
-                $path = str_replace(TestSuite::getInstance()->rootPath.'/', '', $result->file);
+                $path = str_replace(TestSuite::getInstance()->rootPath.DIRECTORY_SEPARATOR, '', $result->file);
 
                 $truncateAt = max(1, terminal()->width() - 12);
 
@@ -164,6 +167,10 @@ class Plugin implements HandlesArguments
 
                 $totals[] = $percentage = $result->totalCoverage;
 
+                if ($this->compact === true && $percentage === 100) {
+                    return;
+                }
+
                 renderUsing($this->output);
                 render(<<<HTML
                 <div class="flex mx-2">
@@ -181,10 +188,12 @@ class Plugin implements HandlesArguments
 
         $exitCode = (int) ($coverage < $this->coverageMin);
 
+        $duration = number_format(microtime(true) - $startTime, 2, '.', '');
+
         if ($exitCode === 1) {
             View::render('components.badge', [
                 'type' => 'ERROR',
-                'content' => 'Type coverage below expected: '.number_format($coverage, 1).'%. Minimum: '.number_format($this->coverageMin, 1).'%',
+                'content' => 'Type coverage below expected: '.number_format($this->coverageMin, 1).'%, currently '.number_format(floor($coverage * 10) / 10, 1).'%',
             ]);
         } else {
             $totalCoverageAsString = $coverage === 0
@@ -195,7 +204,7 @@ class Plugin implements HandlesArguments
                 <div class="mx-2">
                     <hr class="text-gray" />
                     <div class="w-full text-right">
-                        <span class="ml-1 font-bold">Total: {$totalCoverageAsString} %</span>
+                        <span class="ml-1 font-bold"><span class="text-gray">({$duration}s)</span> Total:    {$totalCoverageAsString} %</span>
                     </div>
                 </div>
             HTML);

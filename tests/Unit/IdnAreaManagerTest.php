@@ -262,6 +262,7 @@ it('validates service availability', function () {
 
     Http::fake([
         'data.toko.center/api/auth/login' => Http::response([], 500),
+        'data.toko.center/api/provinces' => Http::response([], 500),
     ]);
 
     $manager = new IdnAreaManager;

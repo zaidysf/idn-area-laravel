@@ -49,7 +49,7 @@ final class GeneratedConfig
         0 => 'extension.neon',
       ),
     ),
-    'version' => 'v2.36.0',
+    'version' => 'v3.8.4',
     'phpstanVersionConstraint' => NULL,
   ),
   'phpstan/phpstan-deprecation-rules' => 
@@ -92,7 +92,7 @@ final class GeneratedConfig
         0 => 'config/extension.neon',
       ),
     ),
-    'version' => '0.2.8',
+    'version' => '1.0.0',
     'phpstanVersionConstraint' => '>=1.9.3.0-dev, <2.0.0.0-dev',
   ),
 );

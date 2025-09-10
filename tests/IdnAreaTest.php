@@ -3,7 +3,6 @@
 use zaidysf\IdnArea\Facades\IdnArea as IdnAreaFacade;
 use zaidysf\IdnArea\IdnArea;
 use zaidysf\IdnArea\Models\District;
-use zaidysf\IdnArea\Models\Island;
 use zaidysf\IdnArea\Models\Province;
 use zaidysf\IdnArea\Models\Regency;
 use zaidysf\IdnArea\Models\Village;
@@ -28,7 +27,7 @@ it('can search areas with empty results', function () {
     $results = $idnArea->search('Jakarta');
 
     expect($results)->toBeArray();
-    expect($results)->toHaveKeys(['provinces', 'regencies', 'districts', 'villages', 'islands']);
+    expect($results)->toHaveKeys(['provinces', 'regencies', 'districts', 'villages']);
 });
 
 it('can get statistics with zero counts', function () {
@@ -41,9 +40,6 @@ it('can get statistics with zero counts', function () {
         'regencies',
         'districts',
         'villages',
-        'islands',
-        'outermost_small_islands',
-        'populated_islands',
     ]);
     expect($stats['provinces'])->toBe(0);
     expect($stats['regencies'])->toBe(0);
@@ -86,13 +82,6 @@ it('village model has correct configuration', function () {
     expect($village->getIncrementing())->toBeFalse();
 });
 
-it('island model has correct configuration', function () {
-    $island = new Island;
-
-    expect($island->getTable())->toBe('idn_islands');
-    expect($island->getKeyName())->toBe('id');
-    expect($island->getIncrementing())->toBeTrue();
-});
 
 // Test facade
 it('can use facade', function () {
@@ -138,27 +127,6 @@ it('can create regency with province relationship', function () {
     expect($relatedProvince->code)->toBe('32');
 });
 
-it('can test island scopes', function () {
-    Island::create([
-        'name' => 'Test Island 1',
-        'is_populated' => true,
-        'is_outermost_small' => false,
-    ]);
-
-    Island::create([
-        'name' => 'Test Island 2',
-        'is_populated' => false,
-        'is_outermost_small' => true,
-    ]);
-
-    $populatedIslands = Island::populated()->get();
-    expect($populatedIslands)->toHaveCount(1);
-    expect($populatedIslands->first()->name)->toBe('Test Island 1');
-
-    $outermostIslands = Island::outermostSmall()->get();
-    expect($outermostIslands)->toHaveCount(1);
-    expect($outermostIslands->first()->name)->toBe('Test Island 2');
-});
 
 it('can test search with sample data', function () {
     Province::create(['code' => '31', 'name' => 'DKI JAKARTA']);

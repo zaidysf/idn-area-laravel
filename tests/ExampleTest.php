@@ -24,7 +24,6 @@ it('database tables exist', function () {
         'idn_regencies',
         'idn_districts',
         'idn_villages',
-        'idn_islands',
     ];
 
     foreach ($tables as $table) {

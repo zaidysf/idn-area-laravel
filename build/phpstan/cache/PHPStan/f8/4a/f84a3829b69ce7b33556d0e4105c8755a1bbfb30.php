@@ -7,7 +7,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
   array (
     '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php' => 
     array (
-      0 => 'c0963c2fc34ef459d3639194107e9fc5199b29af',
+      0 => 'fb89b690d44ffd00ee98f9cab39880f29ca39ac8',
       1 => 
       array (
         0 => 'zaidysf\\idnarea\\idnarea',
@@ -42,7 +42,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/zaid/codes/idn-area-laravel-12/src/Models/Province.php' => 
     array (
-      0 => '129a7e1cab499679334324d512c4042cd62e0932',
+      0 => '72a7c952e22a7ccdc98d980e77439b9a324e0688',
       1 => 
       array (
         0 => 'zaidysf\\idnarea\\models\\province',
@@ -70,7 +70,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/zaid/codes/idn-area-laravel-12/src/Models/Regency.php' => 
     array (
-      0 => '3209a272852ef98d425be120a7c250d91593a031',
+      0 => '7f9dc652ebb07c613dd7c1407974590453edc834',
       1 => 
       array (
         0 => 'zaidysf\\idnarea\\models\\regency',
@@ -101,7 +101,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/zaid/codes/idn-area-laravel-12/src/Models/Village.php' => 
     array (
-      0 => '7396b4d0092ec5ec858692eee9a8340981480c01',
+      0 => 'd9a38590a5e0e6191197d9eba29edeaf0d1a629d',
       1 => 
       array (
         0 => 'zaidysf\\idnarea\\models\\village',
@@ -138,7 +138,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/zaid/codes/idn-area-laravel-12/src/Models/District.php' => 
     array (
-      0 => '6d3606c0a3b0998447d3796f29ff366dc9674312',
+      0 => '7f77e8fbfe1af8cdea99eb04809c05e77f1da316',
       1 => 
       array (
         0 => 'zaidysf\\idnarea\\models\\district',
@@ -186,7 +186,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaCommand.php' => 
     array (
-      0 => '67f56f2269c1da9213d64246a5d88a6cea640227',
+      0 => 'b037bb0568ddb20974a0ef082d13eca513116249',
       1 => 
       array (
         0 => 'zaidysf\\idnarea\\commands\\idnareacommand',
@@ -251,7 +251,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaServiceProvider.php' => 
     array (
-      0 => 'f8f4e61f7a13b596e08a11bf215b5fc7e9601e97',
+      0 => '8851fbff5c24283d4a8949c349838fa30622e2ab',
       1 => 
       array (
         0 => 'zaidysf\\idnarea\\idnareaserviceprovider',
@@ -294,7 +294,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php' => 
     array (
-      0 => '26860ffc9518d4f67f80c022ff018d4b18317191',
+      0 => '26c1ffb5b458d1a0542e33e29f9f94f94a94c40e',
       1 => 
       array (
         0 => 'zaidysf\\idnarea\\idnareamanager',
@@ -436,7 +436,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php' => 
     array (
-      0 => 'bc437faab85f9bc9eced2bf7bb5dc55f6d87ede5',
+      0 => '88a0d23e8ba2155acb23b691cdb82e7b7b939d8c',
       1 => 
       array (
         0 => 'zaidysf\\idnarea\\services\\localdataservice',
@@ -492,7 +492,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/zaid/codes/idn-area-laravel-12/src/Services/DataTokoApiService.php' => 
     array (
-      0 => '824a2224afc2388a2a3548fd4fc12cc2d9045c35',
+      0 => '43f127ec53eb85e735338eefff7563d565d8250e',
       1 => 
       array (
         0 => 'zaidysf\\idnarea\\services\\datatokoapiservice',

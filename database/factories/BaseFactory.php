@@ -15,17 +15,15 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  * - RegencyFactory
  * - DistrictFactory
  * - VillageFactory
- * - IslandFactory
  *
  * Usage example:
  *
  * Province::factory()->create();
  * Province::factory()->jakarta()->create();
  * Regency::factory()->forProvince('32')->create();
- * Island::factory()->populated()->create();
  */
-class BaseFactory extends Factory
+abstract class BaseFactory extends Factory
 {
-    // This is a base class for documentation purposes
+    // This is an abstract base class for documentation purposes
     // Individual model factories should extend Factory directly
 }

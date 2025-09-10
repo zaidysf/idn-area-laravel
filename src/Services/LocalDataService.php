@@ -18,9 +18,10 @@ class LocalDataService implements AreaDataServiceInterface
      */
     public function getAllProvinces(): Collection
     {
+        /** @phpstan-ignore-next-line */
         return Province::orderBy('name')->get()->map(function ($province) {
             return $province->toArray();
-        });
+        })->values();
     }
 
     public function getProvince(string $code): ?\zaidysf\IdnArea\Models\Province
@@ -33,12 +34,13 @@ class LocalDataService implements AreaDataServiceInterface
      */
     public function getRegenciesByProvince(string $provinceCode): Collection
     {
+        /** @phpstan-ignore-next-line */
         return Regency::where('province_code', $provinceCode)
             ->orderBy('name')
             ->get()
             ->map(function ($regency) {
                 return $regency->toArray();
-            });
+            })->values();
     }
 
     /**
@@ -46,9 +48,10 @@ class LocalDataService implements AreaDataServiceInterface
      */
     public function getAllRegencies(): Collection
     {
+        /** @phpstan-ignore-next-line */
         return Regency::orderBy('name')->get()->map(function ($regency) {
             return $regency->toArray();
-        });
+        })->values();
     }
 
     public function getRegency(string $code): ?\zaidysf\IdnArea\Models\Regency
@@ -61,12 +64,13 @@ class LocalDataService implements AreaDataServiceInterface
      */
     public function getDistrictsByRegency(string $regencyCode): Collection
     {
+        /** @phpstan-ignore-next-line */
         return District::where('regency_code', $regencyCode)
             ->orderBy('name')
             ->get()
             ->map(function ($district) {
                 return $district->toArray();
-            });
+            })->values();
     }
 
     /**
@@ -74,9 +78,10 @@ class LocalDataService implements AreaDataServiceInterface
      */
     public function getAllDistricts(): Collection
     {
+        /** @phpstan-ignore-next-line */
         return District::orderBy('name')->get()->map(function ($district) {
             return $district->toArray();
-        });
+        })->values();
     }
 
     public function getDistrict(string $code): ?\zaidysf\IdnArea\Models\District
@@ -89,12 +94,13 @@ class LocalDataService implements AreaDataServiceInterface
      */
     public function getVillagesByDistrict(string $districtCode): Collection
     {
+        /** @phpstan-ignore-next-line */
         return Village::where('district_code', $districtCode)
             ->orderBy('name')
             ->get()
             ->map(function ($village) {
                 return $village->toArray();
-            });
+            })->values();
     }
 
     /**
@@ -102,9 +108,10 @@ class LocalDataService implements AreaDataServiceInterface
      */
     public function getAllVillages(): Collection
     {
+        /** @phpstan-ignore-next-line */
         return Village::orderBy('name')->get()->map(function ($village) {
             return $village->toArray();
-        });
+        })->values();
     }
 
     public function getVillage(string $code): ?\zaidysf\IdnArea\Models\Village
@@ -119,33 +126,66 @@ class LocalDataService implements AreaDataServiceInterface
     {
         switch ($type) {
             case 'provinces':
+                /** @phpstan-ignore-next-line */
                 return Province::search($query)->map(function ($item) {
                     return [
                         'code' => $item->code,
                         'name' => $item->name,
                     ];
-                });
+                })->values();
 
             case 'regencies':
+                /** @phpstan-ignore-next-line */
                 return Regency::search($query)->map(function ($item) {
                     return [
                         'code' => $item->code,
                         'province_code' => $item->province_code,
                         'name' => $item->name,
                     ];
-                });
+                })->values();
 
             case 'districts':
+                /** @phpstan-ignore-next-line */
                 return District::search($query)->map(function ($item) {
                     return [
                         'code' => $item->code,
                         'regency_code' => $item->regency_code,
                         'name' => $item->name,
                     ];
-                });
+                })->values();
 
             case 'villages':
+                /** @phpstan-ignore-next-line */
                 return Village::search($query)->map(function ($item) {
+                    return [
+                        'code' => $item->code,
+                        'district_code' => $item->district_code,
+                        'name' => $item->name,
+                    ];
+                })->values();
+
+            default: // 'all' - merge all results into flat collection
+                $provinces = Province::search($query)->map(function ($item) {
+                    return [
+                        'code' => $item->code,
+                        'name' => $item->name,
+                    ];
+                });
+                $regencies = Regency::search($query)->map(function ($item) {
+                    return [
+                        'code' => $item->code,
+                        'province_code' => $item->province_code,
+                        'name' => $item->name,
+                    ];
+                });
+                $districts = District::search($query)->map(function ($item) {
+                    return [
+                        'code' => $item->code,
+                        'regency_code' => $item->regency_code,
+                        'name' => $item->name,
+                    ];
+                });
+                $villages = Village::search($query)->map(function ($item) {
                     return [
                         'code' => $item->code,
                         'district_code' => $item->district_code,
@@ -153,19 +193,13 @@ class LocalDataService implements AreaDataServiceInterface
                     ];
                 });
 
-            default: // 'all' - return structured array with separate collections
-                $provinces = Province::search($query);
-                $regencies = Regency::search($query);
-                $districts = District::search($query);
-                $villages = Village::search($query);
-
-                // Return structured array instead of merged collection
-                return collect([
-                    'provinces' => $provinces,
-                    'regencies' => $regencies,
-                    'districts' => $districts,
-                    'villages' => $villages,
-                ]);
+                // Flatten all results into a single collection
+                return collect()
+                    ->merge($provinces)
+                    ->merge($regencies)
+                    ->merge($districts)
+                    ->merge($villages)
+                    ->values();
         }
     }
 

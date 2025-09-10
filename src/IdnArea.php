@@ -144,7 +144,7 @@ final class IdnArea
         }
 
         // For type 'all', return structured array but keep collections as collections
-        if ($type === 'all' && $result instanceof Collection && $result->has('provinces')) {
+        if ($result instanceof Collection && $result->has('provinces')) {
             return [
                 'provinces' => $result['provinces'],
                 'regencies' => $result['regencies'],
@@ -298,7 +298,7 @@ final class IdnArea
             foreach ($districts as $district) {
                 $districtCode = is_array($district) ? $district['code'] : $district->code;
                 $villages = $this->villagesByDistrict($districtCode, false);
-                $villagesArray = $villages instanceof \Illuminate\Support\Collection ? $villages->toArray() : $villages;
+                $villagesArray = $villages->toArray();
                 $regencyData['districts'][] = [
                     'district' => $district,
                     'villages' => $villagesArray,

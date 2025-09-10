@@ -155,7 +155,7 @@ class Village extends Model
      *
      * @return \Illuminate\Database\Eloquent\Collection<int, static>
      */
-    public static function byDistrict(string $districtCode)
+    public static function byDistrict(string $districtCode): \Illuminate\Database\Eloquent\Collection
     {
         return static::query()->inDistrict($districtCode)->get();
     }
@@ -165,7 +165,7 @@ class Village extends Model
      *
      * @return \Illuminate\Database\Eloquent\Collection<int, static>
      */
-    public static function search(string $term)
+    public static function search(string $term): \Illuminate\Database\Eloquent\Collection
     {
         return static::query()->search($term)->get();
     }

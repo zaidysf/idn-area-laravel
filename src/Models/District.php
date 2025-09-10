@@ -172,7 +172,7 @@ class District extends Model
      *
      * @return \Illuminate\Database\Eloquent\Collection<int, static>
      */
-    public static function byRegency(string $regencyCode)
+    public static function byRegency(string $regencyCode): \Illuminate\Database\Eloquent\Collection
     {
         return static::query()->inRegency($regencyCode)->get();
     }
@@ -182,7 +182,7 @@ class District extends Model
      *
      * @return \Illuminate\Database\Eloquent\Collection<int, static>
      */
-    public static function search(string $term)
+    public static function search(string $term): \Illuminate\Database\Eloquent\Collection
     {
         return static::query()->search($term)->get();
     }

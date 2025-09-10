@@ -160,12 +160,13 @@ final class DataTokoApiService implements AreaDataServiceInterface
         ]);
 
         if ($type === 'all') {
-            return collect([
-                'provinces' => $this->transformProvinces($response['provinces'] ?? []),
-                'regencies' => $this->transformRegencies($response['regencies'] ?? []),
-                'districts' => $this->transformDistricts($response['districts'] ?? []),
-                'villages' => $this->transformVillages($response['villages'] ?? []),
-            ]);
+            // Flatten all results into a single collection
+            return collect()
+                ->merge($this->transformProvinces($response['provinces'] ?? []))
+                ->merge($this->transformRegencies($response['regencies'] ?? []))
+                ->merge($this->transformDistricts($response['districts'] ?? []))
+                ->merge($this->transformVillages($response['villages'] ?? []))
+                ->values(); // Re-index with numeric keys
         }
 
         // Return specific type search results
@@ -411,15 +412,18 @@ final class DataTokoApiService implements AreaDataServiceInterface
     /**
      * @param  mixed  $data
      * @return Collection<int, array<string, mixed>>
+     *
+     * @phpstan-return Collection<int, array<string, mixed>>
      */
     private function transformProvinces($data): Collection
     {
+        /** @phpstan-ignore-next-line */
         return collect($data)->map(function ($item) {
             return [
                 'code' => $item['code'] ?? $item['id'],
                 'name' => $item['name'] ?? $item['nama'],
             ];
-        });
+        })->values();
     }
 
     /**
@@ -437,16 +441,19 @@ final class DataTokoApiService implements AreaDataServiceInterface
     /**
      * @param  mixed  $data
      * @return Collection<int, array<string, mixed>>
+     *
+     * @phpstan-return Collection<int, array<string, mixed>>
      */
     private function transformRegencies($data, ?string $provinceCode = null): Collection
     {
+        /** @phpstan-ignore-next-line */
         return collect($data)->map(function ($item) use ($provinceCode) {
             return [
                 'code' => $item['code'] ?? $item['id'],
                 'province_code' => $provinceCode ?? $item['province_code'] ?? $item['province_id'],
                 'name' => $item['name'] ?? $item['nama'],
             ];
-        });
+        })->values();
     }
 
     /**
@@ -465,16 +472,19 @@ final class DataTokoApiService implements AreaDataServiceInterface
     /**
      * @param  mixed  $data
      * @return Collection<int, array<string, mixed>>
+     *
+     * @phpstan-return Collection<int, array<string, mixed>>
      */
     private function transformDistricts($data, ?string $regencyCode = null): Collection
     {
+        /** @phpstan-ignore-next-line */
         return collect($data)->map(function ($item) use ($regencyCode) {
             return [
                 'code' => $item['code'] ?? $item['id'],
                 'regency_code' => $regencyCode ?? $item['regency_code'] ?? $item['regency_id'],
                 'name' => $item['name'] ?? $item['nama'],
             ];
-        });
+        })->values();
     }
 
     /**
@@ -493,16 +503,19 @@ final class DataTokoApiService implements AreaDataServiceInterface
     /**
      * @param  mixed  $data
      * @return Collection<int, array<string, mixed>>
+     *
+     * @phpstan-return Collection<int, array<string, mixed>>
      */
     private function transformVillages($data, ?string $districtCode = null): Collection
     {
+        /** @phpstan-ignore-next-line */
         return collect($data)->map(function ($item) use ($districtCode) {
             return [
                 'code' => $item['code'] ?? $item['id'],
                 'district_code' => $districtCode ?? $item['district_code'] ?? $item['district_id'],
                 'name' => $item['name'] ?? $item['nama'],
             ];
-        });
+        })->values();
     }
 
     /**

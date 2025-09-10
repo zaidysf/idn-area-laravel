@@ -171,7 +171,7 @@ class Regency extends Model
      *
      * @return \Illuminate\Database\Eloquent\Collection<int, static>
      */
-    public static function byProvince(string $provinceCode)
+    public static function byProvince(string $provinceCode): \Illuminate\Database\Eloquent\Collection
     {
         return static::query()->inProvince($provinceCode)->get();
     }
@@ -181,7 +181,7 @@ class Regency extends Model
      *
      * @return \Illuminate\Database\Eloquent\Collection<int, static>
      */
-    public static function search(string $term)
+    public static function search(string $term): \Illuminate\Database\Eloquent\Collection
     {
         return static::query()->search($term)->get();
     }

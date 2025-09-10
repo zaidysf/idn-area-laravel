@@ -2,6 +2,6 @@
 
 // variadic-method-zaidysf\IdnArea\IdnAreaManager-villagesByDistrict-/Users/zaid/codes/idn-area-laravel-12/src/IdnAreaManager.php
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => '1757477999-v4',
+   'variableKey' => '1757480299-v4',
    'data' => false,
 ));

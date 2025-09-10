@@ -73,11 +73,6 @@ class IdnAreaServiceProvider extends PackageServiceProvider
         }
 
         // Register optimization commands if running in console
-        if ($this->app->runningInConsole()) {
-            $this->optimizes(
-                optimize: 'idn-area:cache warm',
-                clear: 'idn-area:cache clear',
-            );
-        }
+        // Note: Laravel optimization commands are handled via Artisan
     }
 }

@@ -9,8 +9,8 @@ Clean and fast Indonesian administrative area data package for Laravel. Get prov
 
 ## ✨ Features
 
-- 🚀 **Fast Local Mode** - No API calls, works offline
-- 🌐 **API Mode** - Real-time data via DataToko service  
+- 🌐 **API Mode (Recommended)** - Always up-to-date data via DataToko service
+- 🚀 **Fast Local Mode** - No API calls, works offline  
 - 🧹 **Clean Data** - Curated and validated from official sources
 - 🔍 **Search & Filter** - Advanced search capabilities
 - 📦 **Easy Setup** - Simple artisan commands
@@ -34,12 +34,26 @@ composer require zaidysf/idn-area-laravel
 
 ## ⚡ Quick Setup
 
-```bash
-# Setup the package (choose local mode for speed)
-php artisan idn-area:setup --mode=local
+### 🌐 API Mode (Recommended)
+Get always up-to-date data directly from official sources via DataToko service:
 
-# Or use API mode for real-time data
+```bash
+# Setup with API mode for real-time data
 php artisan idn-area:setup --mode=api
+```
+
+**Why API Mode?**
+- ✅ **Always Current** - Real-time data from official government sources
+- ✅ **No Maintenance** - We handle all data updates automatically  
+- ✅ **Accurate** - Direct from BPS (Indonesian Central Statistics Agency)
+- ✅ **Reliable** - Enterprise-grade DataToko infrastructure
+
+### 🚀 Local Mode (Offline)
+For applications that need offline capability:
+
+```bash
+# Setup with local mode (uses curated CSV files)
+php artisan idn-area:setup --mode=local
 ```
 
 ## 💡 Usage
@@ -170,18 +184,12 @@ Publish the config file:
 php artisan vendor:publish --tag="idn-area-config"
 ```
 
-### Local Mode (Recommended)
-```php
-// config/idn-area.php
-'mode' => 'local', // Fast, offline, reliable
-```
-
-### API Mode 
+### 🌐 API Mode (Recommended for Production)
 ```php
 // config/idn-area.php
 'mode' => 'api',
 'datatoko_api' => [
-    'base_url' => env('IDN_AREA_DATATOKO_URL'),
+    'base_url' => env('IDN_AREA_DATATOKO_URL', 'https://data.toko.center'),
     'access_key' => env('IDN_AREA_ACCESS_KEY'),
     'secret_key' => env('IDN_AREA_SECRET_KEY'),
 ],
@@ -189,9 +197,17 @@ php artisan vendor:publish --tag="idn-area-config"
 
 Add to your `.env`:
 ```env
-IDN_AREA_MODE=local
+IDN_AREA_MODE=api
 IDN_AREA_ACCESS_KEY=your_access_key
 IDN_AREA_SECRET_KEY=your_secret_key
+```
+
+**Get API Keys**: Contact [DataToko](https://data.toko.center) for enterprise-grade API access with guaranteed uptime and real-time data updates.
+
+### 🚀 Local Mode (Development/Offline)
+```php
+// config/idn-area.php
+'mode' => 'local', // Uses curated CSV files
 ```
 
 ## 🎛️ Artisan Commands

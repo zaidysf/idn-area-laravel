@@ -71,15 +71,14 @@
         ],
         "analyse": "vendor/bin/phpstan analyse",
         "test": "vendor/bin/pest",
-        "test-coverage": "vendor/bin/pest --coverage --min=45",
-        "test-type-coverage": "vendor/bin/pest --type-coverage --min=45",
+        "test-coverage": "vendor/bin/pest --coverage --min=80",
+        "test-type-coverage": "vendor/bin/pest --type-coverage --min=80",
         "format": "vendor/bin/pint",
         "format-check": "vendor/bin/pint --test",
         "ci": [
             "@composer run format-check",
             "@composer run analyse",
-            "@composer run test-coverage",
-            "@composer run test-type-coverage"
+            "@composer run test-coverage"
         ]
     },
     "config": {

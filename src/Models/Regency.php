@@ -88,7 +88,7 @@ class Regency extends Model
             'district_code', // Foreign key on villages table
             'code',         // Local key on regencies table
             'code'          // Local key on districts table
-        )->orderBy('villages.name');
+        )->orderBy('idn_villages.name');
     }
 
     /**

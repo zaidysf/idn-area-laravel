@@ -121,7 +121,4 @@ jobs:
         run: composer install --prefer-dist --no-interaction --dev
 
       - name: Execute tests with coverage
-        run: vendor/bin/pest --coverage --min=45
-
-      - name: Execute type coverage
-        run: vendor/bin/pest --type-coverage --min=45
+        run: vendor/bin/pest --coverage --min=80

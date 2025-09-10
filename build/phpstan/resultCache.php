@@ -2655,18 +2655,251 @@ return [
       ),
     )),
   ),
+  '/Users/zaid/codes/idn-area-laravel-12/src/Models/District.php' => 
+  array (
+    0 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Class zaidysf\\IdnArea\\Models\\District uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types: TFactory',
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Models/District.php',
+       'line' => 29,
+       'canBeIgnored' => true,
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Models/District.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 29,
+       'nodeType' => 'PhpParser\\Node\\Stmt\\TraitUse',
+       'identifier' => 'missingType.generics',
+       'metadata' => 
+      array (
+      ),
+    )),
+    1 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Method zaidysf\\IdnArea\\Models\\District::regency() return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types: TRelatedModel, TDeclaringModel',
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Models/District.php',
+       'line' => 66,
+       'canBeIgnored' => true,
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Models/District.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 66,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'missingType.generics',
+       'metadata' => 
+      array (
+      ),
+    )),
+    2 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Method zaidysf\\IdnArea\\Models\\District::province() return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasOneThrough does not specify its types: TRelatedModel, TIntermediateModel, TDeclaringModel',
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Models/District.php',
+       'line' => 76,
+       'canBeIgnored' => true,
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Models/District.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 76,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'missingType.generics',
+       'metadata' => 
+      array (
+      ),
+    )),
+    3 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Method zaidysf\\IdnArea\\Models\\District::villages() return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types: TRelatedModel, TDeclaringModel',
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Models/District.php',
+       'line' => 93,
+       'canBeIgnored' => true,
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Models/District.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 93,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'missingType.generics',
+       'metadata' => 
+      array (
+      ),
+    )),
+  ),
+  '/Users/zaid/codes/idn-area-laravel-12/src/Models/Province.php' => 
+  array (
+    0 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Class zaidysf\\IdnArea\\Models\\Province uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types: TFactory',
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Models/Province.php',
+       'line' => 27,
+       'canBeIgnored' => true,
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Models/Province.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 27,
+       'nodeType' => 'PhpParser\\Node\\Stmt\\TraitUse',
+       'identifier' => 'missingType.generics',
+       'metadata' => 
+      array (
+      ),
+    )),
+    1 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Method zaidysf\\IdnArea\\Models\\Province::regencies() return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types: TRelatedModel, TDeclaringModel',
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Models/Province.php',
+       'line' => 62,
+       'canBeIgnored' => true,
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Models/Province.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 62,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'missingType.generics',
+       'metadata' => 
+      array (
+      ),
+    )),
+    2 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Method zaidysf\\IdnArea\\Models\\Province::districts() return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasManyThrough does not specify its types: TRelatedModel, TIntermediateModel, TDeclaringModel',
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Models/Province.php',
+       'line' => 73,
+       'canBeIgnored' => true,
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Models/Province.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 73,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'missingType.generics',
+       'metadata' => 
+      array (
+      ),
+    )),
+  ),
+  '/Users/zaid/codes/idn-area-laravel-12/src/Models/Regency.php' => 
+  array (
+    0 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Class zaidysf\\IdnArea\\Models\\Regency uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types: TFactory',
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Models/Regency.php',
+       'line' => 30,
+       'canBeIgnored' => true,
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Models/Regency.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 30,
+       'nodeType' => 'PhpParser\\Node\\Stmt\\TraitUse',
+       'identifier' => 'missingType.generics',
+       'metadata' => 
+      array (
+      ),
+    )),
+    1 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Method zaidysf\\IdnArea\\Models\\Regency::province() return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types: TRelatedModel, TDeclaringModel',
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Models/Regency.php',
+       'line' => 67,
+       'canBeIgnored' => true,
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Models/Regency.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 67,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'missingType.generics',
+       'metadata' => 
+      array (
+      ),
+    )),
+    2 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Method zaidysf\\IdnArea\\Models\\Regency::districts() return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types: TRelatedModel, TDeclaringModel',
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Models/Regency.php',
+       'line' => 77,
+       'canBeIgnored' => true,
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Models/Regency.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 77,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'missingType.generics',
+       'metadata' => 
+      array (
+      ),
+    )),
+    3 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Method zaidysf\\IdnArea\\Models\\Regency::villages() return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasManyThrough does not specify its types: TRelatedModel, TIntermediateModel, TDeclaringModel',
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Models/Regency.php',
+       'line' => 88,
+       'canBeIgnored' => true,
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Models/Regency.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 88,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'missingType.generics',
+       'metadata' => 
+      array (
+      ),
+    )),
+  ),
   '/Users/zaid/codes/idn-area-laravel-12/src/Models/Village.php' => 
   array (
     0 => 
     \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Class zaidysf\\IdnArea\\Models\\Village uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types: TFactory',
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Models/Village.php',
+       'line' => 27,
+       'canBeIgnored' => true,
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Models/Village.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 27,
+       'nodeType' => 'PhpParser\\Node\\Stmt\\TraitUse',
+       'identifier' => 'missingType.generics',
+       'metadata' => 
+      array (
+      ),
+    )),
+    1 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Method zaidysf\\IdnArea\\Models\\Village::district() return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types: TRelatedModel, TDeclaringModel',
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Models/Village.php',
+       'line' => 64,
+       'canBeIgnored' => true,
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Models/Village.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 64,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'missingType.generics',
+       'metadata' => 
+      array (
+      ),
+    )),
+    2 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Method zaidysf\\IdnArea\\Models\\Village::regency() return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasOneThrough does not specify its types: TRelatedModel, TIntermediateModel, TDeclaringModel',
+       'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Models/Village.php',
+       'line' => 74,
+       'canBeIgnored' => true,
+       'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Models/Village.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 74,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'missingType.generics',
+       'metadata' => 
+      array (
+      ),
+    )),
+    3 => 
+    \PHPStan\Analyser\Error::__set_state(array(
        'message' => 'Method zaidysf\\IdnArea\\Models\\Village::getHierarchyAttribute() return type has no value type specified in iterable type array.',
        'file' => '/Users/zaid/codes/idn-area-laravel-12/src/Models/Village.php',
-       'line' => 268,
+       'line' => 267,
        'canBeIgnored' => true,
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Models/Village.php',
        'traitFilePath' => NULL,
        'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
-       'nodeLine' => 268,
+       'nodeLine' => 267,
        'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
        'identifier' => 'missingType.iterableValue',
        'metadata' => 
@@ -6487,7 +6720,7 @@ return [
         0 => 1,
         1 => 
         array (
-          0 => 130,
+          0 => 129,
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Models/District.php',
@@ -6773,7 +7006,7 @@ return [
         0 => 1,
         1 => 
         array (
-          0 => 94,
+          0 => 93,
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Models/Province.php',
@@ -7368,7 +7601,7 @@ return [
         0 => 1,
         1 => 
         array (
-          0 => 92,
+          0 => 91,
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Models/Village.php',
@@ -7453,7 +7686,7 @@ return [
         0 => 1,
         1 => 
         array (
-          0 => 127,
+          0 => 126,
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Models/Village.php',
@@ -7490,7 +7723,7 @@ return [
         0 => 1,
         1 => 
         array (
-          0 => 140,
+          0 => 139,
         ),
       ),
        'filePath' => '/Users/zaid/codes/idn-area-laravel-12/src/Models/Village.php',
@@ -9766,7 +9999,7 @@ return [
   ),
   '/Users/zaid/codes/idn-area-laravel-12/src/Models/District.php' => 
   array (
-    'fileHash' => '7f77e8fbfe1af8cdea99eb04809c05e77f1da316',
+    'fileHash' => '325b5bfdbe76804e1e052037618cc42c0c259084',
     'dependentFiles' => 
     array (
       0 => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaCacheCommand.php',
@@ -9783,7 +10016,7 @@ return [
   ),
   '/Users/zaid/codes/idn-area-laravel-12/src/Models/Province.php' => 
   array (
-    'fileHash' => '72a7c952e22a7ccdc98d980e77439b9a324e0688',
+    'fileHash' => 'c49292d4095ed883b2b86b3a4a9f13ebce816e29',
     'dependentFiles' => 
     array (
       0 => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaCacheCommand.php',
@@ -9800,7 +10033,7 @@ return [
   ),
   '/Users/zaid/codes/idn-area-laravel-12/src/Models/Regency.php' => 
   array (
-    'fileHash' => '7f9dc652ebb07c613dd7c1407974590453edc834',
+    'fileHash' => 'a3b569c525b4ea671920a6d2f2b625fe7cd89281',
     'dependentFiles' => 
     array (
       0 => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaCacheCommand.php',
@@ -9817,7 +10050,7 @@ return [
   ),
   '/Users/zaid/codes/idn-area-laravel-12/src/Models/Village.php' => 
   array (
-    'fileHash' => 'd9a38590a5e0e6191197d9eba29edeaf0d1a629d',
+    'fileHash' => 'e2866fa94707cf0c2f29a9c40237e6bb9e8a3dd9',
     'dependentFiles' => 
     array (
       0 => '/Users/zaid/codes/idn-area-laravel-12/src/Commands/IdnAreaCacheCommand.php',
@@ -13389,7 +13622,7 @@ return [
              'phpDocString' => '/**
      * Get the regency that owns the district.
      *
-     * @return BelongsTo<Regency, $this>
+     * @return BelongsTo
      */',
              'namespace' => 'zaidysf\\IdnArea\\Models',
              'uses' => 
@@ -13427,7 +13660,7 @@ return [
              'phpDocString' => '/**
      * Get the province through regency.
      *
-     * @return HasOneThrough<Province, Regency, $this>
+     * @return HasOneThrough
      */',
              'namespace' => 'zaidysf\\IdnArea\\Models',
              'uses' => 
@@ -13465,7 +13698,7 @@ return [
              'phpDocString' => '/**
      * Get all villages that belong to this district.
      *
-     * @return HasMany<Village, $this>
+     * @return HasMany
      */',
              'namespace' => 'zaidysf\\IdnArea\\Models',
              'uses' => 
@@ -14354,7 +14587,7 @@ return [
              'phpDocString' => '/**
      * Get all regencies that belong to this province.
      *
-     * @return HasMany<Regency, $this>
+     * @return HasMany
      */',
              'namespace' => 'zaidysf\\IdnArea\\Models',
              'uses' => 
@@ -14391,7 +14624,7 @@ return [
              'phpDocString' => '/**
      * Get all districts that belong to this province through regencies.
      *
-     * @return HasManyThrough<District, Regency, $this>
+     * @return HasManyThrough
      */',
              'namespace' => 'zaidysf\\IdnArea\\Models',
              'uses' => 
@@ -15081,7 +15314,7 @@ return [
              'phpDocString' => '/**
      * Get the province that owns the regency.
      *
-     * @return BelongsTo<Province, $this>
+     * @return BelongsTo
      */',
              'namespace' => 'zaidysf\\IdnArea\\Models',
              'uses' => 
@@ -15119,7 +15352,7 @@ return [
              'phpDocString' => '/**
      * Get all districts that belong to this regency.
      *
-     * @return HasMany<District, $this>
+     * @return HasMany
      */',
              'namespace' => 'zaidysf\\IdnArea\\Models',
              'uses' => 
@@ -15157,7 +15390,7 @@ return [
              'phpDocString' => '/**
      * Get all villages that belong to this regency through districts.
      *
-     * @return HasManyThrough<Village, District, $this>
+     * @return HasManyThrough
      */',
              'namespace' => 'zaidysf\\IdnArea\\Models',
              'uses' => 
@@ -15964,7 +16197,7 @@ return [
              'phpDocString' => '/**
      * Get the district that owns the village.
      *
-     * @return BelongsTo<District, $this>
+     * @return BelongsTo
      */',
              'namespace' => 'zaidysf\\IdnArea\\Models',
              'uses' => 
@@ -16001,7 +16234,7 @@ return [
              'phpDocString' => '/**
      * Get the regency through district.
      *
-     * @return HasOneThrough<Regency, District, $this>
+     * @return HasOneThrough
      */',
              'namespace' => 'zaidysf\\IdnArea\\Models',
              'uses' => 

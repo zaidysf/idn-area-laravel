@@ -24,7 +24,6 @@ use Illuminate\Database\Eloquent\Relations\HasOneThrough;
  */
 class Village extends Model
 {
-    /** @use HasFactory<\zaidysf\IdnArea\Database\Factories\VillageFactory> */
     use HasFactory;
 
     protected $table = 'idn_villages';
@@ -60,7 +59,7 @@ class Village extends Model
     /**
      * Get the district that owns the village.
      *
-     * @return BelongsTo<District, $this>
+     * @return BelongsTo
      */
     public function district(): BelongsTo
     {
@@ -70,7 +69,7 @@ class Village extends Model
     /**
      * Get the regency through district.
      *
-     * @return HasOneThrough<Regency, District, $this>
+     * @return HasOneThrough
      */
     public function regency(): HasOneThrough
     {

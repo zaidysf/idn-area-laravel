@@ -1,0 +1,782 @@
+{
+	"info": {
+		"_postman_id": "data-toko-idn-area-collection",
+		"name": "DataToko Indonesian Area API",
+		"description": "Complete API collection for data.toko.center Indonesian Area Data API\n\nThis collection provides access to Indonesian administrative area data including:\n- Provinces (Provinsi)\n- Regencies (Kabupaten/Kota) \n- Districts (Kecamatan)\n- Villages (Kelurahan/Desa)\n- Search functionality\n\n**Authentication:**\nUses HMAC SHA256 signature authentication with access_key and secret_key.\n\n**Base URL:** https://data.toko.center\n\n**Required Environment Variables:**\n- `base_url` = https://data.toko.center\n- `access_key` = Your DataToko access key\n- `secret_key` = Your DataToko secret key\n- `auth_token` = JWT token (automatically set by login request)\n\n**Setup Instructions:**\n1. Set your access_key and secret_key in environment variables\n2. Run the 'Authentication / Login' request first to get auth_token\n3. The auth_token will be automatically used in subsequent requests\n4. Token expires after 1 hour - re-run login if needed",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "datatoko-idn-area"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"// Generate HMAC signature for authentication",
+									"const accessKey = pm.environment.get('access_key');",
+									"const secretKey = pm.environment.get('secret_key');",
+									"",
+									"if (!accessKey || !secretKey) {",
+									"    throw new Error('Please set access_key and secret_key in environment variables');",
+									"}",
+									"",
+									"const timestamp = Math.floor(Date.now() / 1000);",
+									"const nonce = Array.from({length: 32}, () => Math.floor(Math.random() * 16).toString(16)).join('');",
+									"",
+									"// Create message for HMAC",
+									"const message = accessKey + timestamp + nonce;",
+									"",
+									"// Generate HMAC SHA256 signature",
+									"const signature = CryptoJS.HmacSHA256(message, secretKey).toString();",
+									"",
+									"// Set variables for the request",
+									"pm.environment.set('timestamp', timestamp);",
+									"pm.environment.set('nonce', nonce);",
+									"pm.environment.set('signature', signature);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Extract and store auth token",
+									"if (pm.response.code === 200) {",
+									"    const response = pm.response.json();",
+									"    const token = response.data?.token || response.token;",
+									"    ",
+									"    if (token) {",
+									"        pm.environment.set('auth_token', token);",
+									"        console.log('Authentication successful - token stored');",
+									"    } else {",
+									"        console.error('No token received in response');",
+									"    }",
+									"} else {",
+									"    console.error('Authentication failed:', pm.response.text());",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"access_key\": \"{{access_key}}\",\n    \"timestamp\": {{timestamp}},\n    \"nonce\": \"{{nonce}}\",\n    \"signature\": \"{{signature}}\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/auth/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						},
+						"description": "Authenticate with DataToko API using HMAC SHA256 signature.\n\nThis endpoint generates a JWT token that must be used for all subsequent API calls.\n\n**Required:**\n- access_key: Your DataToko access key\n- secret_key: Your DataToko secret key (used for signature generation)\n\n**Returns:**\n- JWT token valid for 1 hour\n- Token is automatically stored in environment variable 'auth_token'"
+					}
+				}
+			],
+			"description": "Authentication endpoints for DataToko API access"
+		},
+		{
+			"name": "Provinces",
+			"item": [
+				{
+					"name": "Get All Provinces",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/indonesia/provinces",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"indonesia",
+								"provinces"
+							]
+						},
+						"description": "Get all Indonesian provinces.\n\n**Returns:**\nArray of provinces with:\n- code: Province code (e.g., \"11\", \"12\")\n- name: Province name (e.g., \"ACEH\", \"SUMATERA UTARA\")\n\n**Total:** 38 provinces including special regions"
+					}
+				},
+				{
+					"name": "Get Province by Code",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/indonesia/provinces/11",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"indonesia",
+								"provinces",
+								"11"
+							]
+						},
+						"description": "Get specific province by its code.\n\n**Parameters:**\n- code: Province code (e.g., \"11\" for Aceh)\n\n**Returns:**\nSingle province object with:\n- code: Province code\n- name: Province name\n\n**Common Province Codes:**\n- 11: ACEH\n- 12: SUMATERA UTARA\n- 31: DKI JAKARTA\n- 32: JAWA BARAT\n- 34: DI YOGYAKARTA"
+					}
+				}
+			],
+			"description": "Indonesian provinces (provinsi) data endpoints"
+		},
+		{
+			"name": "Regencies",
+			"item": [
+				{
+					"name": "Get All Regencies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/indonesia/regencies",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"indonesia",
+								"regencies"
+							]
+						},
+						"description": "Get all Indonesian regencies (kabupaten/kota).\n\n**Returns:**\nArray of regencies with:\n- code: Regency code (e.g., \"1101\", \"1102\")\n- province_code: Parent province code\n- name: Regency name (e.g., \"KAB. SIMEULUE\", \"KOTA BANDA ACEH\")\n\n**Total:** 514+ regencies (kabupaten and kota combined)"
+					}
+				},
+				{
+					"name": "Get Regencies by Province",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/indonesia/provinces/11/regencies",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"indonesia",
+								"provinces",
+								"11",
+								"regencies"
+							]
+						},
+						"description": "Get all regencies within a specific province.\n\n**Parameters:**\n- province_code: Province code (e.g., \"11\" for Aceh)\n\n**Returns:**\nArray of regencies in the specified province with:\n- code: Regency code\n- province_code: Parent province code\n- name: Regency name\n\n**Example for Aceh (11):**\n- 1101: KAB. SIMEULUE\n- 1102: KAB. ACEH SINGKIL\n- 1171: KOTA BANDA ACEH\n- 1172: KOTA SABANG"
+					}
+				},
+				{
+					"name": "Get Regency by Code",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/indonesia/regencies/1101",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"indonesia",
+								"regencies",
+								"1101"
+							]
+						},
+						"description": "Get specific regency by its code.\n\n**Parameters:**\n- code: Regency code (e.g., \"1101\")\n\n**Returns:**\nSingle regency object with:\n- code: Regency code\n- province_code: Parent province code\n- name: Regency name"
+					}
+				}
+			],
+			"description": "Indonesian regencies (kabupaten/kota) data endpoints"
+		},
+		{
+			"name": "Districts",
+			"item": [
+				{
+					"name": "Get All Districts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/indonesia/districts",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"indonesia",
+								"districts"
+							]
+						},
+						"description": "Get all Indonesian districts (kecamatan).\n\n**Returns:**\nArray of districts with:\n- code: District code (e.g., \"110101\", \"110102\")\n- regency_code: Parent regency code\n- name: District name (e.g., \"TEUPAH SELATAN\", \"SIMEULUE TENGAH\")\n\n**Total:** 7,000+ districts nationwide"
+					}
+				},
+				{
+					"name": "Get Districts by Regency",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/indonesia/regencies/1101/districts",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"indonesia",
+								"regencies",
+								"1101",
+								"districts"
+							]
+						},
+						"description": "Get all districts within a specific regency.\n\n**Parameters:**\n- regency_code: Regency code (e.g., \"1101\")\n\n**Returns:**\nArray of districts in the specified regency with:\n- code: District code\n- regency_code: Parent regency code\n- name: District name\n\n**Example for KAB. SIMEULUE (1101):**\n- 110101: TEUPAH SELATAN\n- 110102: SIMEULUE TENGAH\n- 110103: SIMEULUE TIMUR"
+					}
+				},
+				{
+					"name": "Get District by Code",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/indonesia/districts/110101",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"indonesia",
+								"districts",
+								"110101"
+							]
+						},
+						"description": "Get specific district by its code.\n\n**Parameters:**\n- code: District code (e.g., \"110101\")\n\n**Returns:**\nSingle district object with:\n- code: District code\n- regency_code: Parent regency code\n- name: District name"
+					}
+				}
+			],
+			"description": "Indonesian districts (kecamatan) data endpoints"
+		},
+		{
+			"name": "Villages",
+			"item": [
+				{
+					"name": "Get All Villages",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/indonesia/villages",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"indonesia",
+								"villages"
+							]
+						},
+						"description": "Get all Indonesian villages (kelurahan/desa).\n\n**WARNING:** This endpoint returns 80,000+ records and may be slow.\nConsider using pagination or filtering by district.\n\n**Returns:**\nArray of villages with:\n- code: Village code (10-digit, e.g., \"1101011001\")\n- district_code: Parent district code\n- name: Village name (e.g., \"LUGU\", \"KAMPUNG BARU\")\n\n**Total:** 83,000+ villages nationwide"
+					}
+				},
+				{
+					"name": "Get Villages by District",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/indonesia/districts/110101/villages",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"indonesia",
+								"districts",
+								"110101",
+								"villages"
+							]
+						},
+						"description": "Get all villages within a specific district.\n\n**Parameters:**\n- district_code: District code (e.g., \"110101\")\n\n**Returns:**\nArray of villages in the specified district with:\n- code: Village code (10-digit)\n- district_code: Parent district code\n- name: Village name\n\n**Example for TEUPAH SELATAN (110101):**\n- 1101011001: LUGU\n- 1101011002: KAMPUNG BARU\n- 1101011003: LANTIK"
+					}
+				},
+				{
+					"name": "Get Village by Code",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/indonesia/villages/1101011001",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"indonesia",
+								"villages",
+								"1101011001"
+							]
+						},
+						"description": "Get specific village by its code.\n\n**Parameters:**\n- code: Village code (10-digit, e.g., \"1101011001\")\n\n**Returns:**\nSingle village object with:\n- code: Village code\n- district_code: Parent district code\n- name: Village name"
+					}
+				}
+			],
+			"description": "Indonesian villages (kelurahan/desa) data endpoints"
+		},
+		{
+			"name": "Search",
+			"item": [
+				{
+					"name": "Search All Areas",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/indonesia/search?query=jakarta",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"indonesia",
+								"search"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "jakarta",
+									"description": "Search term (minimum 2 characters)"
+								}
+							]
+						},
+						"description": "Search across all area types (provinces, regencies, districts, villages).\n\n**Parameters:**\n- query: Search term (minimum 2 characters)\n\n**Returns:**\nObject with separated arrays:\n- provinces: Matching provinces\n- regencies: Matching regencies  \n- districts: Matching districts\n- villages: Matching villages\n\n**Examples:**\n- \"jakarta\" → finds DKI JAKARTA province + Jakarta regencies\n- \"bandung\" → finds Bandung city + districts\n- \"aceh\" → finds Aceh province + areas with \"aceh\" in name"
+					}
+				},
+				{
+					"name": "Search Provinces Only",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/indonesia/search?query=jawa&type=provinces",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"indonesia",
+								"search"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "jawa",
+									"description": "Search term"
+								},
+								{
+									"key": "type",
+									"value": "provinces",
+									"description": "Search only provinces"
+								}
+							]
+						},
+						"description": "Search only within provinces.\n\n**Parameters:**\n- query: Search term\n- type: \"provinces\"\n\n**Returns:**\nArray of matching provinces only\n\n**Example:**\n\"jawa\" → JAWA BARAT, JAWA TENGAH, JAWA TIMUR"
+					}
+				},
+				{
+					"name": "Search Regencies Only",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/indonesia/search?query=bandung&type=regencies",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"indonesia",
+								"search"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "bandung",
+									"description": "Search term"
+								},
+								{
+									"key": "type",
+									"value": "regencies",
+									"description": "Search only regencies"
+								}
+							]
+						},
+						"description": "Search only within regencies.\n\n**Parameters:**\n- query: Search term\n- type: \"regencies\"\n\n**Returns:**\nArray of matching regencies only\n\n**Example:**\n\"bandung\" → KAB. BANDUNG, KOTA BANDUNG, KAB. BANDUNG BARAT"
+					}
+				},
+				{
+					"name": "Search Districts Only",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/indonesia/search?query=menteng&type=districts",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"indonesia",
+								"search"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "menteng",
+									"description": "Search term"
+								},
+								{
+									"key": "type",
+									"value": "districts",
+									"description": "Search only districts"
+								}
+							]
+						},
+						"description": "Search only within districts.\n\n**Parameters:**\n- query: Search term\n- type: \"districts\"\n\n**Returns:**\nArray of matching districts only"
+					}
+				},
+				{
+					"name": "Search Villages Only",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/indonesia/search?query=sari&type=villages",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"indonesia",
+								"search"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "sari",
+									"description": "Search term"
+								},
+								{
+									"key": "type",
+									"value": "villages",
+									"description": "Search only villages"
+								}
+							]
+						},
+						"description": "Search only within villages.\n\n**Parameters:**\n- query: Search term\n- type: \"villages\"\n\n**Returns:**\nArray of matching villages only\n\n**Note:** May return many results due to common village name patterns"
+					}
+				}
+			],
+			"description": "Search functionality across Indonesian area data"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// Set base URL if not already set",
+					"if (!pm.environment.get('base_url')) {",
+					"    pm.environment.set('base_url', 'https://data.toko.center');",
+					"}",
+					"",
+					"// Check if auth token exists and warn if missing",
+					"const authToken = pm.environment.get('auth_token');",
+					"if (!authToken && pm.info.requestName !== 'Login') {",
+					"    console.warn('No auth_token found. Please run the Login request first.');",
+					"}"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// Global test for successful responses",
+					"if (pm.response.code === 401) {",
+					"    console.error('Authentication failed. Please run the Login request again.');",
+					"} else if (pm.response.code >= 400) {",
+					"    console.error('Request failed with status:', pm.response.code, pm.response.text());",
+					"}"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://data.toko.center",
+			"type": "string"
+		}
+	]
+}

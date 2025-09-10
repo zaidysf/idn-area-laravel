@@ -21,6 +21,7 @@ final class IdnArea
 
     /**
      * Get all provinces with optional caching.
+     *
      * @return Collection<int, array<string, mixed>>
      */
     public function provinces(bool $cached = true): Collection

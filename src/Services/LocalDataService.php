@@ -172,10 +172,8 @@ class LocalDataService implements AreaDataServiceInterface
     }
 
     // Additional methods for testing compatibility
-    
+
     /**
-     * @param int|null $limit
-     * @param int|null $offset
      * @return array<int, array<string, mixed>>
      */
     public function getProvinces(?int $limit = null, ?int $offset = null): array

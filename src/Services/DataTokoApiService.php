@@ -411,7 +411,7 @@ final class DataTokoApiService implements AreaDataServiceInterface
 
     // Data transformation methods
     /**
-     * @param mixed $data
+     * @param  mixed  $data
      * @return Collection<int, array<string, mixed>>
      */
     private function transformProvinces($data): Collection
@@ -425,7 +425,7 @@ final class DataTokoApiService implements AreaDataServiceInterface
     }
 
     /**
-     * @param mixed $data
+     * @param  mixed  $data
      * @return array<string, mixed>
      */
     private function transformProvince($data): array
@@ -437,7 +437,7 @@ final class DataTokoApiService implements AreaDataServiceInterface
     }
 
     /**
-     * @param mixed $data
+     * @param  mixed  $data
      * @return Collection<int, array<string, mixed>>
      */
     private function transformRegencies($data, ?string $provinceCode = null): Collection
@@ -452,7 +452,7 @@ final class DataTokoApiService implements AreaDataServiceInterface
     }
 
     /**
-     * @param mixed $data
+     * @param  mixed  $data
      * @return array<string, mixed>
      */
     private function transformRegency($data): array
@@ -465,7 +465,7 @@ final class DataTokoApiService implements AreaDataServiceInterface
     }
 
     /**
-     * @param mixed $data
+     * @param  mixed  $data
      * @return Collection<int, array<string, mixed>>
      */
     private function transformDistricts($data, ?string $regencyCode = null): Collection
@@ -480,7 +480,7 @@ final class DataTokoApiService implements AreaDataServiceInterface
     }
 
     /**
-     * @param mixed $data
+     * @param  mixed  $data
      * @return array<string, mixed>
      */
     private function transformDistrict($data): array
@@ -493,7 +493,7 @@ final class DataTokoApiService implements AreaDataServiceInterface
     }
 
     /**
-     * @param mixed $data
+     * @param  mixed  $data
      * @return Collection<int, array<string, mixed>>
      */
     private function transformVillages($data, ?string $districtCode = null): Collection
@@ -508,7 +508,7 @@ final class DataTokoApiService implements AreaDataServiceInterface
     }
 
     /**
-     * @param mixed $data
+     * @param  mixed  $data
      * @return array<string, mixed>
      */
     private function transformVillage($data): array

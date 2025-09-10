@@ -8077,6 +8077,7 @@ class ComposerStaticInit8a21e7e0ebeb33ce56d67866ba8bc697
         'zaidysf\\IdnArea\\Commands\\IdnAreaStatsCommand' => __DIR__ . '/../..' . '/src/Commands/IdnAreaStatsCommand.php',
         'zaidysf\\IdnArea\\Commands\\IdnAreaSwitchModeCommand' => __DIR__ . '/../..' . '/src/Commands/IdnAreaSwitchModeCommand.php',
         'zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface' => __DIR__ . '/../..' . '/src/Contracts/AreaDataServiceInterface.php',
+        'zaidysf\\IdnArea\\Database\\Factories\\BaseFactory' => __DIR__ . '/../..' . '/database/factories/BaseFactory.php',
         'zaidysf\\IdnArea\\Database\\Factories\\DistrictFactory' => __DIR__ . '/../..' . '/database/factories/DistrictFactory.php',
         'zaidysf\\IdnArea\\Database\\Factories\\IslandFactory' => __DIR__ . '/../..' . '/database/factories/IslandFactory.php',
         'zaidysf\\IdnArea\\Database\\Factories\\ProvinceFactory' => __DIR__ . '/../..' . '/database/factories/ProvinceFactory.php',

@@ -7396,6 +7396,7 @@ return array(
     'zaidysf\\IdnArea\\Commands\\IdnAreaStatsCommand' => $baseDir . '/src/Commands/IdnAreaStatsCommand.php',
     'zaidysf\\IdnArea\\Commands\\IdnAreaSwitchModeCommand' => $baseDir . '/src/Commands/IdnAreaSwitchModeCommand.php',
     'zaidysf\\IdnArea\\Contracts\\AreaDataServiceInterface' => $baseDir . '/src/Contracts/AreaDataServiceInterface.php',
+    'zaidysf\\IdnArea\\Database\\Factories\\BaseFactory' => $baseDir . '/database/factories/BaseFactory.php',
     'zaidysf\\IdnArea\\Database\\Factories\\DistrictFactory' => $baseDir . '/database/factories/DistrictFactory.php',
     'zaidysf\\IdnArea\\Database\\Factories\\IslandFactory' => $baseDir . '/database/factories/IslandFactory.php',
     'zaidysf\\IdnArea\\Database\\Factories\\ProvinceFactory' => $baseDir . '/database/factories/ProvinceFactory.php',

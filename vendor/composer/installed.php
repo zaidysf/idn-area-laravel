@@ -3,7 +3,7 @@
         'name' => 'zaidysf/idn-area-laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'f071c870a40329af1f06d475e6045273bae7a9d3',
+        'reference' => '4b3968ed5590a5ec183e73b44318e8de09e73f51',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(
@@ -1558,7 +1558,7 @@
         'zaidysf/idn-area-laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'f071c870a40329af1f06d475e6045273bae7a9d3',
+            'reference' => '4b3968ed5590a5ec183e73b44318e8de09e73f51',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(

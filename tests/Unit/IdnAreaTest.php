@@ -84,7 +84,6 @@ it('can get villages by district', function () {
     expect($villages->first()['name'])->toBe($village->name);
 });
 
-
 it('can search areas', function () {
     Province::factory()->create(['code' => '31', 'name' => 'Jakarta']);
     Regency::factory()->create(['code' => '32.04', 'province_code' => '32', 'name' => 'Bandung']);

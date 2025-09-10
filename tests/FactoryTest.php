@@ -88,7 +88,6 @@ describe('Model Factories', function () {
         expect($village->code)->toStartWith($district->code.'.');
     });
 
-
     it('can create complete hierarchy using factories', function () {
         $province = Province::factory()->jakarta()->create();
         $regency = Regency::factory()->jakartaCentral()->create();

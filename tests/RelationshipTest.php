@@ -47,7 +47,6 @@ describe('Model Relationships', function () {
         expect($districts->first()->name)->toBe('SUKASARI');
     });
 
-
     it('district belongs to regency', function () {
         $district = District::find('32.04.01');
         $regency = $district->regency;

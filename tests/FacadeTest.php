@@ -51,7 +51,6 @@ describe('IdnArea Facade', function () {
         expect($stats['regencies'])->toBe(2);
     });
 
-
     it('returns null for non-existent areas', function () {
         $province = IdnArea::province('99');
         $regency = IdnArea::regency('99.99');

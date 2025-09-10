@@ -82,7 +82,6 @@ it('village model has correct configuration', function () {
     expect($village->getIncrementing())->toBeFalse();
 });
 
-
 // Test facade
 it('can use facade', function () {
     $provinces = IdnAreaFacade::provinces();
@@ -126,7 +125,6 @@ it('can create regency with province relationship', function () {
     expect($relatedProvince)->toBeInstanceOf(Province::class);
     expect($relatedProvince->code)->toBe('32');
 });
-
 
 it('can test search with sample data', function () {
     Province::create(['code' => '31', 'name' => 'DKI JAKARTA']);

@@ -254,6 +254,7 @@ final class IdnAreaManager
         try {
             // Test API connectivity by attempting to get provinces
             $this->dataService->getAllProvinces();
+
             return true;
         } catch (\Exception $e) {
             return false;

@@ -1,0 +1,450 @@
+<?php
+
+declare(strict_types=1);
+
+namespace zaidysf\IdnArea\Commands;
+
+use Illuminate\Console\Command;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
+use zaidysf\IdnArea\Models\Province;
+use zaidysf\IdnArea\Models\Regency;
+use zaidysf\IdnArea\Models\District;
+use zaidysf\IdnArea\Models\Village;
+use zaidysf\IdnArea\Services\BpsApiService;
+
+class IdnAreaSyncBpsCommand extends Command
+{
+    public $signature = 'idn-area:sync-bps 
+        {--initial : Run initial complete sync}
+        {--check : Check sync status without syncing}
+        {--force : Force sync even if already synced recently}
+        {--csv : Export data to CSV files}';
+
+    public $description = 'Sync Indonesian area data from official BPS API';
+
+    private BpsApiService $bpsService;
+    private int $totalProcessed = 0;
+    private array $stats = [];
+
+    public function handle(): int
+    {
+        $this->bpsService = new BpsApiService();
+        
+        $this->displayWelcome();
+
+        if ($this->option('check')) {
+            return $this->checkSyncStatus();
+        }
+
+        if (!$this->verifyApiConnection()) {
+            return self::FAILURE;
+        }
+
+        if ($this->option('initial')) {
+            $this->info('🚀 Starting initial complete sync from BPS API...');
+            return $this->runInitialSync();
+        }
+
+        if ($this->shouldSkipSync() && !$this->option('force')) {
+            $this->info('✅ Data is already up to date. Use --force to sync anyway.');
+            return self::SUCCESS;
+        }
+
+        return $this->runRegularSync();
+    }
+
+    private function displayWelcome(): void
+    {
+        $this->info('┌─────────────────────────────────────────────────────────┐');
+        $this->info('│       🇮🇩 BPS Data Synchronization - by zaidysf        │');
+        $this->info('│              Official Government Data Source            │');
+        $this->info('└─────────────────────────────────────────────────────────┘');
+        $this->newLine();
+    }
+
+    private function verifyApiConnection(): bool
+    {
+        $this->info('🔍 Checking BPS API connectivity...');
+        
+        if (!$this->bpsService->isApiAvailable()) {
+            $this->error('❌ Cannot connect to BPS API. Please check your internet connection.');
+            $this->line('API URL: https://sig.bps.go.id/rest-drop-down/');
+            return false;
+        }
+
+        $periods = $this->bpsService->getPeriods();
+        if (empty($periods)) {
+            $this->warn('⚠️  BPS API is accessible but no periods found.');
+            return false;
+        }
+
+        $latestPeriod = end($periods);
+        $this->line("✅ Connected to BPS API. Latest period: {$latestPeriod['label']}");
+        $this->newLine();
+
+        return true;
+    }
+
+    private function runInitialSync(): int
+    {
+        $this->line('This will download and sync all Indonesian administrative data:');
+        $this->line('• 37+ Provinces');
+        $this->line('• 514+ Regencies/Cities');
+        $this->line('• 7,230+ Districts');
+        $this->line('• 83,931+ Villages');
+        $this->newLine();
+
+        if (!$this->confirm('Continue with initial sync? This may take several minutes.', true)) {
+            $this->line('Sync cancelled.');
+            return self::SUCCESS;
+        }
+
+        try {
+            DB::beginTransaction();
+
+            // Clear existing data
+            $this->info('🗑️ Clearing existing data...');
+            $this->clearExistingData();
+
+            // Sync all data levels
+            $this->syncProvinces();
+            $this->syncAllRegencies();
+            $this->syncAllDistricts();
+            $this->syncAllVillages();
+
+            DB::commit();
+
+            $this->displaySyncSummary();
+
+            if ($this->option('csv')) {
+                $this->exportToCsv();
+            }
+
+            $this->updateSyncTimestamp();
+
+            $this->newLine();
+            $this->info('✅ <bg=green;fg=white> INITIAL SYNC COMPLETED SUCCESSFULLY </bg=green;fg=white>');
+            $this->line('🎉 All Indonesian area data has been synced from BPS API!');
+
+            return self::SUCCESS;
+
+        } catch (\Exception $e) {
+            DB::rollBack();
+            $this->error('❌ Sync failed: ' . $e->getMessage());
+            return self::FAILURE;
+        }
+    }
+
+    private function runRegularSync(): int
+    {
+        $this->info('🔄 Running regular data sync...');
+
+        try {
+            DB::beginTransaction();
+
+            $this->syncProvinces();
+            $this->syncAllRegencies();
+            
+            DB::commit();
+
+            $this->info('✅ Regular sync completed successfully.');
+            $this->updateSyncTimestamp();
+
+            return self::SUCCESS;
+
+        } catch (\Exception $e) {
+            DB::rollBack();
+            $this->error('❌ Sync failed: ' . $e->getMessage());
+            return self::FAILURE;
+        }
+    }
+
+    private function syncProvinces(): void
+    {
+        $this->info('📍 Syncing provinces...');
+        $bar = $this->output->createProgressBar();
+        $bar->setFormat('  %current%/%max% [%bar%] %percent:3s%% - %message%');
+
+        try {
+            $provinces = $this->bpsService->getAllProvinces();
+            $bar->setMaxSteps($provinces->count());
+            $bar->setMessage('Loading provinces...');
+            $bar->start();
+
+            $synced = 0;
+            foreach ($provinces as $provinceData) {
+                Province::updateOrCreate(
+                    ['code' => $provinceData['code']],
+                    ['name' => $provinceData['name']]
+                );
+                $synced++;
+                $bar->setMessage("Synced: {$provinceData['name']}");
+                $bar->advance();
+            }
+
+            $bar->finish();
+            $this->stats['provinces'] = $synced;
+            $this->line("\n   ✅ Synced {$synced} provinces");
+
+        } catch (\Exception $e) {
+            $bar->finish();
+            throw new \Exception("Failed to sync provinces: " . $e->getMessage());
+        }
+    }
+
+    private function syncAllRegencies(): void
+    {
+        $this->info('🏢 Syncing regencies...');
+        $provinces = Province::all();
+        $totalSynced = 0;
+
+        $bar = $this->output->createProgressBar($provinces->count());
+        $bar->setFormat('  %current%/%max% [%bar%] %percent:3s%% - %message%');
+        $bar->start();
+
+        foreach ($provinces as $province) {
+            try {
+                $regencies = $this->bpsService->getRegenciesByProvince($province->code);
+                
+                foreach ($regencies as $regencyData) {
+                    Regency::updateOrCreate(
+                        ['code' => $regencyData['code']],
+                        [
+                            'province_code' => $regencyData['province_code'],
+                            'name' => $regencyData['name']
+                        ]
+                    );
+                    $totalSynced++;
+                }
+
+                $bar->setMessage("Province: {$province->name} ({$regencies->count()} regencies)");
+                $bar->advance();
+
+            } catch (\Exception $e) {
+                $this->warn("Failed to sync regencies for {$province->name}: " . $e->getMessage());
+                $bar->advance();
+            }
+        }
+
+        $bar->finish();
+        $this->stats['regencies'] = $totalSynced;
+        $this->line("\n   ✅ Synced {$totalSynced} regencies");
+    }
+
+    private function syncAllDistricts(): void
+    {
+        $this->info('🏘️ Syncing districts...');
+        $regencies = Regency::all();
+        $totalSynced = 0;
+
+        $bar = $this->output->createProgressBar($regencies->count());
+        $bar->setFormat('  %current%/%max% [%bar%] %percent:3s%% - %message%');
+        $bar->start();
+
+        foreach ($regencies as $regency) {
+            try {
+                $districts = $this->bpsService->getDistrictsByRegency($regency->code);
+                
+                foreach ($districts as $districtData) {
+                    District::updateOrCreate(
+                        ['code' => $districtData['code']],
+                        [
+                            'regency_code' => $districtData['regency_code'],
+                            'name' => $districtData['name']
+                        ]
+                    );
+                    $totalSynced++;
+                }
+
+                $bar->setMessage("Regency: {$regency->name} ({$districts->count()} districts)");
+                $bar->advance();
+
+            } catch (\Exception $e) {
+                $this->warn("Failed to sync districts for {$regency->name}: " . $e->getMessage());
+                $bar->advance();
+            }
+        }
+
+        $bar->finish();
+        $this->stats['districts'] = $totalSynced;
+        $this->line("\n   ✅ Synced {$totalSynced} districts");
+    }
+
+    private function syncAllVillages(): void
+    {
+        $this->info('🏡 Syncing villages...');
+        $districts = District::all();
+        $totalSynced = 0;
+
+        $bar = $this->output->createProgressBar($districts->count());
+        $bar->setFormat('  %current%/%max% [%bar%] %percent:3s%% - %message%');
+        $bar->start();
+
+        foreach ($districts as $district) {
+            try {
+                $villages = $this->bpsService->getVillagesByDistrict($district->code);
+                
+                foreach ($villages as $villageData) {
+                    Village::updateOrCreate(
+                        ['code' => $villageData['code']],
+                        [
+                            'district_code' => $villageData['district_code'],
+                            'name' => $villageData['name']
+                        ]
+                    );
+                    $totalSynced++;
+                }
+
+                $bar->setMessage("District: {$district->name} ({$villages->count()} villages)");
+                $bar->advance();
+
+            } catch (\Exception $e) {
+                $this->warn("Failed to sync villages for {$district->name}: " . $e->getMessage());
+                $bar->advance();
+            }
+        }
+
+        $bar->finish();
+        $this->stats['villages'] = $totalSynced;
+        $this->line("\n   ✅ Synced {$totalSynced} villages");
+    }
+
+    private function clearExistingData(): void
+    {
+        Village::truncate();
+        District::truncate();
+        Regency::truncate();
+        Province::truncate();
+        $this->line('   ✅ Existing data cleared');
+    }
+
+    private function displaySyncSummary(): void
+    {
+        $this->newLine();
+        $this->info('📊 Sync Summary:');
+        $this->table(
+            ['Area Type', 'Count', 'Status'],
+            [
+                ['Provinces', $this->stats['provinces'] ?? 0, '✅'],
+                ['Regencies', $this->stats['regencies'] ?? 0, '✅'],
+                ['Districts', $this->stats['districts'] ?? 0, '✅'],
+                ['Villages', $this->stats['villages'] ?? 0, '✅'],
+            ]
+        );
+
+        $total = array_sum($this->stats);
+        $this->line("Total records synced: <fg=green>{$total}</fg=green>");
+    }
+
+    private function exportToCsv(): void
+    {
+        $this->info('📄 Exporting data to CSV files...');
+        
+        $exportDir = storage_path('app/idn-area-export');
+        File::ensureDirectoryExists($exportDir);
+
+        // Export provinces
+        $this->exportProvincesCsv($exportDir);
+        $this->exportRegenciesCsv($exportDir);
+        $this->exportDistrictsCsv($exportDir);
+        $this->exportVillagesCsv($exportDir);
+
+        $this->line("   ✅ CSV files exported to: {$exportDir}");
+    }
+
+    private function exportProvincesCsv(string $dir): void
+    {
+        $provinces = Province::orderBy('code')->get();
+        $csv = "code,name\n";
+        foreach ($provinces as $province) {
+            $csv .= "{$province->code},\"{$province->name}\"\n";
+        }
+        File::put("{$dir}/provinces.csv", $csv);
+    }
+
+    private function exportRegenciesCsv(string $dir): void
+    {
+        $regencies = Regency::orderBy('code')->get();
+        $csv = "code,province_code,name\n";
+        foreach ($regencies as $regency) {
+            $csv .= "{$regency->code},{$regency->province_code},\"{$regency->name}\"\n";
+        }
+        File::put("{$dir}/regencies.csv", $csv);
+    }
+
+    private function exportDistrictsCsv(string $dir): void
+    {
+        $districts = District::orderBy('code')->get();
+        $csv = "code,regency_code,name\n";
+        foreach ($districts as $district) {
+            $csv .= "{$district->code},{$district->regency_code},\"{$district->name}\"\n";
+        }
+        File::put("{$dir}/districts.csv", $csv);
+    }
+
+    private function exportVillagesCsv(string $dir): void
+    {
+        $villages = Village::orderBy('code')->get();
+        $csv = "code,district_code,name\n";
+        foreach ($villages as $village) {
+            $csv .= "{$village->code},{$village->district_code},\"{$village->name}\"\n";
+        }
+        File::put("{$dir}/villages.csv", $csv);
+    }
+
+    private function checkSyncStatus(): int
+    {
+        $this->info('📊 Sync Status Check:');
+        $this->newLine();
+
+        $counts = [
+            'Provinces' => Province::count(),
+            'Regencies' => Regency::count(),
+            'Districts' => District::count(),
+            'Villages' => Village::count(),
+        ];
+
+        $this->table(
+            ['Area Type', 'Count', 'Status'],
+            collect($counts)->map(function ($count, $type) {
+                $status = $count > 0 ? '✅ Available' : '❌ Empty';
+                return [$type, number_format($count), $status];
+            })->toArray()
+        );
+
+        $lastSync = $this->getLastSyncTime();
+        $this->line("Last sync: " . ($lastSync ? $lastSync->diffForHumans() : 'Never'));
+
+        return self::SUCCESS;
+    }
+
+    private function shouldSkipSync(): bool
+    {
+        $lastSync = $this->getLastSyncTime();
+        
+        if (!$lastSync) {
+            return false; // Never synced
+        }
+
+        // Skip if synced within last 24 hours
+        return $lastSync->diffInHours(now()) < 24;
+    }
+
+    private function updateSyncTimestamp(): void
+    {
+        File::put(storage_path('app/idn-area-last-sync'), now()->toISOString());
+    }
+
+    private function getLastSyncTime(): ?\Carbon\Carbon
+    {
+        $syncFile = storage_path('app/idn-area-last-sync');
+        
+        if (!File::exists($syncFile)) {
+            return null;
+        }
+
+        $timestamp = File::get($syncFile);
+        return \Carbon\Carbon::parse($timestamp);
+    }
+}

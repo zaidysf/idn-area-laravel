@@ -1,0 +1,16 @@
+includes:
+    - phpstan-baseline.neon
+
+parameters:
+    level: 6
+    paths:
+        - src
+    tmpDir: build/phpstan
+    checkOctaneCompatibility: true
+    checkModelProperties: true
+    typeAliases:
+        QueryBuilder: 'Illuminate\Database\Eloquent\Builder'
+    ignoreErrors:
+        - '#Out of .+ possible param types, only .+ actually have it#'
+        -
+            identifier: missingType.iterableValue

@@ -1,0 +1,36 @@
+<?php
+
+declare(strict_types=1);
+
+namespace App\Providers;
+
+use zaidysf\IdnArea\IdnAreaServiceProvider as BaseIdnAreaServiceProvider;
+
+/**
+ * Indonesian Area Service Provider
+ * 
+ * This service provider extends the base IDN Area service provider
+ * and can be used to customize the package behavior for your application.
+ */
+class IdnAreaServiceProvider extends BaseIdnAreaServiceProvider
+{
+    /**
+     * Register any application services.
+     */
+    public function register(): void
+    {
+        parent::register();
+        
+        // Add custom service registrations here
+    }
+
+    /**
+     * Bootstrap any application services.
+     */
+    public function boot(): void
+    {
+        parent::boot();
+        
+        // Add custom bootstrapping logic here
+    }
+}

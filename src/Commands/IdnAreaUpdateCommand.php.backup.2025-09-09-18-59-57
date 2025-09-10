@@ -1,0 +1,350 @@
+<?php
+
+declare(strict_types=1);
+
+namespace zaidysf\IdnArea\Commands;
+
+use Illuminate\Console\Command;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
+use zaidysf\IdnArea\Models\Province;
+use zaidysf\IdnArea\Models\Regency;
+use zaidysf\IdnArea\Models\District;
+use zaidysf\IdnArea\Models\Village;
+use zaidysf\IdnArea\Services\IdnAreaSeeder;
+
+class IdnAreaUpdateCommand extends Command
+{
+    public $signature = 'idn-area:update
+        {--check : Only compare data without updating}
+        {--force : Force update without confirmation}
+        {--backup : Create backup before updating}
+        {--only= : Update only specific types (provinces,regencies,districts,villages)}';
+
+    public $description = 'Update local data by comparing database with CSV files';
+
+    private array $stats = [];
+    private array $comparison = [];
+    private string $dataPath;
+
+    public function handle(): int
+    {
+        $this->dataPath = __DIR__ . '/../../database/data/';
+        
+        $this->displayWelcome();
+
+        // Check if CSV files exist
+        if (!$this->validateCsvFiles()) {
+            return self::FAILURE;
+        }
+
+        // Compare database with CSV files
+        $this->compareData();
+
+        // Display comparison results
+        $this->displayComparison();
+
+        if ($this->option('check')) {
+            $this->info('✅ Data comparison completed (check-only mode)');
+            return self::SUCCESS;
+        }
+
+        // Check if updates are needed
+        if (!$this->hasUpdates()) {
+            $this->info('✅ Local data is already up to date with CSV files');
+            return self::SUCCESS;
+        }
+
+        // Confirm update
+        if (!$this->option('force') && !$this->confirmUpdate()) {
+            $this->line('Update cancelled.');
+            return self::SUCCESS;
+        }
+
+        // Perform update
+        try {
+            DB::beginTransaction();
+
+            if ($this->option('backup')) {
+                $this->createBackup();
+            }
+
+            $this->updateData();
+
+            DB::commit();
+
+            $this->displayUpdateSummary();
+            $this->info('✅ <bg=green;fg=white> LOCAL DATA UPDATE COMPLETED </bg=green;fg=white>');
+
+            return self::SUCCESS;
+
+        } catch (\Exception $e) {
+            DB::rollBack();
+            $this->error('❌ Update failed: ' . $e->getMessage());
+            return self::FAILURE;
+        }
+    }
+
+    private function displayWelcome(): void
+    {
+        $this->info('┌─────────────────────────────────────────────────────────┐');
+        $this->info('│        📊 Local Data Updater - by zaidysf              │');
+        $this->info('│           Compare & Update from CSV Files              │');
+        $this->info('└─────────────────────────────────────────────────────────┘');
+        $this->newLine();
+    }
+
+    private function validateCsvFiles(): bool
+    {
+        $this->info('🔍 Validating CSV files...');
+
+        $requiredFiles = ['provinces.csv', 'regencies.csv', 'districts.csv', 'villages_partial.csv'];
+        $missingFiles = [];
+
+        foreach ($requiredFiles as $file) {
+            if (!File::exists($this->dataPath . $file)) {
+                $missingFiles[] = $file;
+            }
+        }
+
+        if (!empty($missingFiles)) {
+            $this->error('❌ Missing CSV files: ' . implode(', ', $missingFiles));
+            $this->line('Please ensure CSV files are generated first.');
+            return false;
+        }
+
+        $this->line('✅ All required CSV files found');
+        return true;
+    }
+
+    private function compareData(): void
+    {
+        $this->info('📊 Comparing database with CSV files...');
+
+        $types = ['provinces', 'regencies', 'districts', 'villages'];
+        
+        if ($this->option('only')) {
+            $onlyTypes = explode(',', $this->option('only'));
+            $types = array_intersect($types, $onlyTypes);
+        }
+
+        $bar = $this->output->createProgressBar(count($types));
+        $bar->setFormat('  %current%/%max% [%bar%] %percent:3s%% - %message%');
+        $bar->start();
+
+        foreach ($types as $type) {
+            $bar->setMessage("Comparing {$type}...");
+            $this->compareType($type);
+            $bar->advance();
+        }
+
+        $bar->finish();
+        $this->newLine();
+    }
+
+    private function compareType(string $type): void
+    {
+        $filename = $type === 'villages' ? 'villages_partial.csv' : $type . '.csv';
+        $csvFile = $this->dataPath . $filename;
+        $csvData = $this->readCsvFile($csvFile);
+        $dbCount = $this->getDbCount($type);
+
+        $this->comparison[$type] = [
+            'csv_count' => count($csvData),
+            'db_count' => $dbCount,
+            'difference' => count($csvData) - $dbCount,
+            'csv_data' => $csvData,
+        ];
+    }
+
+    private function readCsvFile(string $filePath): array
+    {
+        $data = [];
+        $handle = fopen($filePath, 'r');
+        
+        if ($handle === false) {
+            return [];
+        }
+
+        // Skip header row
+        fgetcsv($handle);
+
+        while (($row = fgetcsv($handle)) !== false) {
+            $data[] = $row;
+        }
+
+        fclose($handle);
+        return $data;
+    }
+
+    private function getDbCount(string $type): int
+    {
+        return match ($type) {
+            'provinces' => Province::count(),
+            'regencies' => Regency::count(),
+            'districts' => District::count(),
+            'villages' => Village::count(),
+            default => 0,
+        };
+    }
+
+    private function displayComparison(): void
+    {
+        $this->newLine();
+        $this->info('📈 Data Comparison Results:');
+        $this->newLine();
+
+        $headers = ['Type', 'CSV Records', 'DB Records', 'Difference', 'Status'];
+        $rows = [];
+
+        foreach ($this->comparison as $type => $data) {
+            $difference = $data['difference'];
+            $status = $difference === 0 ? '✅ In Sync' : 
+                     ($difference > 0 ? "⬆️ +{$difference}" : "⬇️ {$difference}");
+
+            $rows[] = [
+                ucfirst($type),
+                number_format($data['csv_count']),
+                number_format($data['db_count']),
+                $difference === 0 ? '-' : ($difference > 0 ? "+{$difference}" : (string)$difference),
+                $status,
+            ];
+        }
+
+        $this->table($headers, $rows);
+    }
+
+    private function hasUpdates(): bool
+    {
+        foreach ($this->comparison as $data) {
+            if ($data['difference'] !== 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private function confirmUpdate(): bool
+    {
+        $this->newLine();
+        $this->warn('⚠️  This will update your local database to match the CSV files.');
+        $this->line('Changes will be made to bring the database in sync with CSV data.');
+        $this->newLine();
+
+        foreach ($this->comparison as $type => $data) {
+            if ($data['difference'] !== 0) {
+                $action = $data['difference'] > 0 ? 'add' : 'remove';
+                $count = abs($data['difference']);
+                $this->line("• Will {$action} {$count} " . ucfirst($type));
+            }
+        }
+
+        $this->newLine();
+        return $this->confirm('Continue with the update?', true);
+    }
+
+    private function createBackup(): void
+    {
+        $this->info('💾 Creating database backup...');
+        
+        $backupDir = storage_path('app/idn-area-backups');
+        File::ensureDirectoryExists($backupDir);
+        
+        $timestamp = now()->format('Y-m-d_H-i-s');
+        
+        // Export current data to backup CSV files
+        $this->exportTableToCsv(Province::class, "{$backupDir}/provinces_backup_{$timestamp}.csv");
+        $this->exportTableToCsv(Regency::class, "{$backupDir}/regencies_backup_{$timestamp}.csv");
+        $this->exportTableToCsv(District::class, "{$backupDir}/districts_backup_{$timestamp}.csv");
+        $this->exportTableToCsv(Village::class, "{$backupDir}/villages_backup_{$timestamp}.csv");
+
+        $this->line("✅ Backup created in: {$backupDir}");
+    }
+
+    private function exportTableToCsv(string $modelClass, string $filePath): void
+    {
+        $model = new $modelClass;
+        $records = $model::all();
+        
+        if ($records->isEmpty()) {
+            return;
+        }
+
+        $headers = array_keys($records->first()->getAttributes());
+        $csv = implode(',', $headers) . "\n";
+        
+        foreach ($records as $record) {
+            $row = [];
+            foreach ($headers as $header) {
+                $value = $record->{$header};
+                $row[] = '"' . str_replace('"', '""', (string)$value) . '"';
+            }
+            $csv .= implode(',', $row) . "\n";
+        }
+        
+        File::put($filePath, $csv);
+    }
+
+    private function updateData(): void
+    {
+        $this->info('🔄 Updating database from CSV files...');
+
+        $seeder = new IdnAreaSeeder();
+        
+        $types = array_keys($this->comparison);
+        $bar = $this->output->createProgressBar(count($types));
+        $bar->setFormat('  %current%/%max% [%bar%] %percent:3s%% - %message%');
+        $bar->start();
+
+        foreach ($types as $type) {
+            if ($this->comparison[$type]['difference'] !== 0) {
+                $bar->setMessage("Updating {$type}...");
+                $this->updateType($type, $seeder);
+                $this->stats[$type] = $this->comparison[$type]['csv_count'];
+            }
+            $bar->advance();
+        }
+
+        $bar->finish();
+        $this->newLine();
+    }
+
+    private function updateType(string $type, IdnAreaSeeder $seeder): void
+    {
+        // Clear existing data for this type
+        match ($type) {
+            'provinces' => Province::truncate(),
+            'regencies' => Regency::truncate(),
+            'districts' => District::truncate(),
+            'villages' => Village::truncate(),
+            default => throw new \InvalidArgumentException("Unknown type: {$type}"),
+        };
+
+        // Reseed from CSV
+        $options = ['only' => [$type]];
+        $seeder->seed(true, null, $options);
+    }
+
+    private function displayUpdateSummary(): void
+    {
+        $this->newLine();
+        $this->info('📊 Update Summary:');
+
+        $headers = ['Type', 'Records Updated', 'Status'];
+        $rows = [];
+
+        foreach ($this->stats as $type => $count) {
+            $rows[] = [
+                ucfirst($type),
+                number_format($count),
+                '✅ Updated',
+            ];
+        }
+
+        if (!empty($rows)) {
+            $this->table($headers, $rows);
+            $total = array_sum($this->stats);
+            $this->line("Total records updated: <fg=green>" . number_format($total) . "</fg=green>");
+        }
+    }
+}

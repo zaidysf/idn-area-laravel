@@ -49,8 +49,10 @@ class IdnAreaSetupCommandTest extends TestCase
 
     public function test_command_shows_welcome_header(): void
     {
-        $this->artisan('idn-area:setup --force --mode=local --skip-seeding')
-            ->run(); // Just ensure it doesn't crash
+        $this->artisan('idn-area:setup --force --mode=local')
+            ->expectsOutput('🇮🇩 Indonesian Area Data Package Setup')
+            ->expectsOutput('Version 2.0')
+            ->assertExitCode(0);
     }
 
     public function test_command_with_invalid_mode_fails(): void
@@ -64,19 +66,22 @@ class IdnAreaSetupCommandTest extends TestCase
     {
         $this->artisan('idn-area:setup --force --mode=local --skip-seeding')
             ->expectsOutput('🚀 Setting up Indonesian Area Data in local mode...')
-            ->run(); // Just ensure it doesn't crash
+            ->expectsOutput('✅ LOCAL MODE SETUP COMPLETE')
+            ->assertExitCode(0);
     }
 
     public function test_command_api_mode_requires_credentials(): void
     {
         $this->artisan('idn-area:setup --force --mode=api --access-key= --secret-key=')
-            ->run(); // Just ensure it doesn't crash
+            ->expectsOutput('Access key is required for API mode')
+            ->assertExitCode(1);
     }
 
     public function test_command_api_mode_with_credentials(): void
     {
         $this->artisan('idn-area:setup --force --mode=api --access-key=test --secret-key=test --skip-connectivity')
-            ->run(); // Just ensure it doesn't crash
+            ->expectsOutput('✅ API MODE SETUP COMPLETE')
+            ->assertExitCode(0);
     }
 
     public function test_command_api_mode_with_invalid_token_storage(): void
@@ -99,7 +104,9 @@ class IdnAreaSetupCommandTest extends TestCase
         config(['idn-area.setup_completed' => true]);
 
         $this->artisan('idn-area:setup')
-            ->run(); // Just ensure it doesn't crash
+            ->expectsOutput('✅ Package is already configured!')
+            ->expectsOutput('Use --force to reconfigure')
+            ->assertExitCode(0);
     }
 
     public function test_command_can_force_reconfigure(): void
@@ -107,7 +114,8 @@ class IdnAreaSetupCommandTest extends TestCase
         config(['idn-area.setup_completed' => true]);
 
         $this->artisan('idn-area:setup --force --mode=local --skip-seeding')
-            ->run(); // Just ensure it doesn't crash
+            ->expectsOutput('✅ LOCAL MODE SETUP COMPLETE')
+            ->assertExitCode(0);
     }
 
     public function test_command_publishes_migrations(): void
@@ -121,7 +129,8 @@ class IdnAreaSetupCommandTest extends TestCase
     {
         // In testing environment, migration publishing is skipped
         $this->artisan('idn-area:setup --force --mode=local --skip-seeding')
-            ->run(); // Just ensure it doesn't crash
+            ->expectsOutput('⚠️  Migration publishing skipped in testing environment')
+            ->assertExitCode(0);
     }
 
     public function test_command_skips_migrations_when_requested(): void
@@ -155,19 +164,25 @@ class IdnAreaSetupCommandTest extends TestCase
     public function test_command_api_mode_shows_credential_setup(): void
     {
         $this->artisan('idn-area:setup --force --mode=api --access-key=test --secret-key=test --skip-connectivity')
-            ->run(); // Just ensure it doesn't crash
+            ->expectsOutput('🔐 Setting up DataToko API credentials...')
+            ->assertExitCode(0);
     }
 
     public function test_command_api_mode_skips_connectivity_test(): void
     {
         $this->artisan('idn-area:setup --force --mode=api --access-key=test --secret-key=test --skip-connectivity')
-            ->run(); // Just ensure it doesn't crash
+            ->expectsOutput('⏭️ Skipping API connectivity test')
+            ->assertExitCode(0);
     }
 
     public function test_command_handles_setup_exception(): void
     {
-        $this->artisan('idn-area:setup --force --mode=local --skip-seeding')
-            ->run(); // Just ensure it doesn't crash
+        // Mock File::exists to throw exception
+        File::shouldReceive('exists')->andThrow(new Exception('File system error'));
+
+        $this->artisan('idn-area:setup --force --mode=local')
+            ->expectsOutput('Setup failed: File system error')
+            ->assertExitCode(1);
     }
 
     public function test_command_shows_appropriate_welcome_messages(): void
@@ -195,7 +210,8 @@ class IdnAreaSetupCommandTest extends TestCase
     public function test_command_api_mode_shows_warnings(): void
     {
         $this->artisan('idn-area:setup --force --mode=api --access-key=test --secret-key=test --skip-connectivity')
-            ->run(); // Just ensure it doesn't crash
+            ->expectsOutput('⚠️  Remember: API calls may be slower and have limits')
+            ->assertExitCode(0);
     }
 
     public function test_command_local_mode_shows_csv_info(): void

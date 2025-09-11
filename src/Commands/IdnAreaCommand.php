@@ -196,7 +196,7 @@ class IdnAreaCommand extends Command
             'idn_villages' => "idn_villages_backup_{$timestamp}",
         ];
 
-        $this->withProgressBar($backupTables, function (string $backupTable, string $originalTable): void {
+        $this->withProgressBar($backupTables, function (string $backupTable, $progressBar, string $originalTable): void {
             if (DB::getSchemaBuilder()->hasTable($originalTable)) {
                 $count = DB::table($originalTable)->count();
                 if ($count > 0) {

@@ -85,7 +85,14 @@ class IdnAreaStatsCommandTest extends TestCase
     public function test_command_shows_general_statistics(): void
     {
         $this->artisan('idn-area:stats')
-            ->run(); // Just ensure it doesn't crash
+            ->expectsOutput('📊 General Statistics:')
+            ->expectsOutput('Type')
+            ->expectsOutput('Count')
+            ->expectsOutput('Provinces')
+            ->expectsOutput('Regencies/Cities')
+            ->expectsOutput('Districts')
+            ->expectsOutput('Villages')
+            ->assertExitCode(0);
     }
 
     public function test_command_shows_largest_province_info(): void
@@ -96,13 +103,19 @@ class IdnAreaStatsCommandTest extends TestCase
         Regency::create(['code' => '3202', 'province_code' => '32', 'name' => 'BEKASI']);
 
         $this->artisan('idn-area:stats')
-            ->run(); // Just ensure it doesn't crash
+            ->expectsOutput('🏆 Largest Province:')
+            ->expectsOutput('regencies')
+            ->assertExitCode(0);
     }
 
     public function test_command_shows_province_specific_statistics(): void
     {
         $this->artisan('idn-area:stats --province=31')
-            ->run(); // Just ensure it doesn't crash
+            ->expectsOutput('📍 Statistics for DKI JAKARTA (31):')
+            ->expectsOutput('Regencies/Cities')
+            ->expectsOutput('Districts')
+            ->expectsOutput('Villages')
+            ->assertExitCode(0);
     }
 
     public function test_command_handles_non_existent_province(): void
@@ -121,19 +134,29 @@ class IdnAreaStatsCommandTest extends TestCase
         District::create(['code' => '317202', 'regency_code' => '3172', 'name' => 'TANJUNG PRIOK']);
 
         $this->artisan('idn-area:stats --province=31 --detailed')
-            ->run(); // Just ensure it doesn't crash
+            ->expectsOutput('🏢 Top 10 Regencies by District Count:')
+            ->expectsOutput('Regency')
+            ->expectsOutput('Districts')
+            ->expectsOutput('Code')
+            ->assertExitCode(0);
     }
 
     public function test_command_shows_detailed_general_analysis(): void
     {
         $this->artisan('idn-area:stats --detailed')
-            ->run(); // Just ensure it doesn't crash
+            ->expectsOutput('🔍 Detailed Analysis:')
+            ->expectsOutput('📊 Distribution Analysis:')
+            ->expectsOutput('🔍 Data Quality Analysis:')
+            ->assertExitCode(0);
     }
 
     public function test_command_shows_distribution_analysis(): void
     {
         $this->artisan('idn-area:stats --detailed')
-            ->run(); // Just ensure it doesn't crash
+            ->expectsOutput('Top 5 Provinces by Regency Count:')
+            ->expectsOutput('DKI JAKARTA:')
+            ->expectsOutput('regencies')
+            ->assertExitCode(0);
     }
 
     public function test_command_detects_data_quality_issues(): void
@@ -142,13 +165,16 @@ class IdnAreaStatsCommandTest extends TestCase
         Province::create(['code' => '99', 'name' => '']);
 
         $this->artisan('idn-area:stats --detailed')
-            ->run(); // Just ensure it doesn't crash
+            ->expectsOutput('⚠️  Issues found:')
+            ->expectsOutput('provinces with empty names')
+            ->assertExitCode(0);
     }
 
     public function test_command_shows_no_quality_issues_when_clean(): void
     {
         $this->artisan('idn-area:stats --detailed')
-            ->run(); // Just ensure it doesn't crash
+            ->expectsOutput('✅ No data quality issues detected')
+            ->assertExitCode(0);
     }
 
     public function test_command_detects_empty_regency_names(): void
@@ -156,7 +182,8 @@ class IdnAreaStatsCommandTest extends TestCase
         Regency::create(['code' => '9999', 'province_code' => '31', 'name' => '']);
 
         $this->artisan('idn-area:stats --detailed')
-            ->run(); // Just ensure it doesn't crash
+            ->expectsOutput('regencies with empty names')
+            ->assertExitCode(0);
     }
 
     public function test_command_handles_exception_gracefully(): void
@@ -165,7 +192,8 @@ class IdnAreaStatsCommandTest extends TestCase
         DB::shouldReceive('table')->andThrow(new Exception('Database error'));
 
         $this->artisan('idn-area:stats')
-            ->run(); // Just ensure it doesn't crash
+            ->expectsOutput('Error generating statistics: Database error')
+            ->assertExitCode(1);
     }
 
     public function test_command_shows_statistics_with_averages(): void
@@ -201,7 +229,8 @@ class IdnAreaStatsCommandTest extends TestCase
     public function test_command_shows_numbered_statistics_correctly(): void
     {
         $this->artisan('idn-area:stats')
-            ->run(); // Just ensure it doesn't crash
+            ->expectsOutput('1') // Should show count of 1 for each category
+            ->assertExitCode(0);
     }
 
     public function test_command_handles_province_with_zero_counts(): void
@@ -209,6 +238,8 @@ class IdnAreaStatsCommandTest extends TestCase
         $emptyProvince = Province::create(['code' => '97', 'name' => 'ZERO PROVINCE']);
 
         $this->artisan('idn-area:stats --province=97')
-            ->run(); // Just ensure it doesn't crash
+            ->expectsOutput('📍 Statistics for ZERO PROVINCE (97):')
+            ->expectsOutput('0') // Should show 0 counts
+            ->assertExitCode(0);
     }
 }

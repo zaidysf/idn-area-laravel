@@ -104,7 +104,7 @@ class IdnAreaCacheCommand extends Command
                 fn () => IdnArea::hierarchy($provinceCode, true);
         }
 
-        $this->withProgressBar($operations, function (callable $operation, string $description): void {
+        $this->withProgressBar($operations, function (callable $operation, $progressBar, string $description): void {
             try {
                 $operation();
             } catch (\Exception $e) {

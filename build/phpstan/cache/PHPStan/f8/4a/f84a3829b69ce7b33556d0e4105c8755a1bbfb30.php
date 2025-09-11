@@ -7,7 +7,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
   array (
     '/Users/zaid/codes/idn-area-laravel-12/src/IdnArea.php' => 
     array (
-      0 => 'fb89b690d44ffd00ee98f9cab39880f29ca39ac8',
+      0 => '19b91be310493b6bb1ff22ef48e58610f731962b',
       1 => 
       array (
         0 => 'zaidysf\\idnarea\\idnarea',
@@ -42,7 +42,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/zaid/codes/idn-area-laravel-12/src/Models/Province.php' => 
     array (
-      0 => 'c49292d4095ed883b2b86b3a4a9f13ebce816e29',
+      0 => '098c70bb31985a648af9238bdaac8605ae616855',
       1 => 
       array (
         0 => 'zaidysf\\idnarea\\models\\province',
@@ -70,7 +70,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/zaid/codes/idn-area-laravel-12/src/Models/Regency.php' => 
     array (
-      0 => 'a3b569c525b4ea671920a6d2f2b625fe7cd89281',
+      0 => '2771fe1633b4b31f275c498f5800c50debbad7c1',
       1 => 
       array (
         0 => 'zaidysf\\idnarea\\models\\regency',
@@ -101,7 +101,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/zaid/codes/idn-area-laravel-12/src/Models/Village.php' => 
     array (
-      0 => 'e2866fa94707cf0c2f29a9c40237e6bb9e8a3dd9',
+      0 => 'b8f33a702ce168cb318dda69941c73d515598753',
       1 => 
       array (
         0 => 'zaidysf\\idnarea\\models\\village',
@@ -138,7 +138,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/zaid/codes/idn-area-laravel-12/src/Models/District.php' => 
     array (
-      0 => '325b5bfdbe76804e1e052037618cc42c0c259084',
+      0 => 'e4edf47d06c949c74c23f4db27f35ce7deb61dee',
       1 => 
       array (
         0 => 'zaidysf\\idnarea\\models\\district',
@@ -436,7 +436,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/Users/zaid/codes/idn-area-laravel-12/src/Services/LocalDataService.php' => 
     array (
-      0 => '88a0d23e8ba2155acb23b691cdb82e7b7b939d8c',
+      0 => 'e2e95287c2f6e8b1322d1c9d90d5f0782c459617',
       1 => 
       array (
         0 => 'zaidysf\\idnarea\\services\\localdataservice',

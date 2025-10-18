@@ -1,0 +1,61 @@
+name: Validate CSV Data
+
+on:
+  push:
+    branches: [main, develop]
+    paths:
+      - 'database/seeders/data/*.csv'
+      - 'scripts/validate-csv-data.php'
+      - '.github/workflows/validate-csv.yml'
+  pull_request:
+    branches: [main, develop]
+    paths:
+      - 'database/seeders/data/*.csv'
+      - 'scripts/validate-csv-data.php'
+      - '.github/workflows/validate-csv.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    name: CSV Data Integrity Check
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          coverage: none
+
+      - name: Make validation script executable
+        run: chmod +x scripts/validate-csv-data.php
+
+      - name: Run CSV validation
+        run: php scripts/validate-csv-data.php
+
+      - name: Check for data quality issues
+        run: |
+          echo "Checking CSV file statistics..."
+
+          # Count records in each file
+          echo "📊 CSV File Statistics:"
+          echo "  Provinces: $(tail -n +2 database/seeders/data/provinces.csv | wc -l) records"
+          echo "  Regencies: $(tail -n +2 database/seeders/data/regencies.csv | wc -l) records"
+          echo "  Districts: $(tail -n +2 database/seeders/data/districts.csv | wc -l) records"
+          echo "  Villages: $(tail -n +2 database/seeders/data/villages.csv | wc -l) records"
+
+          # Check file sizes
+          echo ""
+          echo "📁 File Sizes:"
+          ls -lh database/seeders/data/*.csv | awk '{print "  "$9": "$5}'
+
+      - name: Upload validation report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: csv-validation-report
+          path: |
+            database/seeders/data/*.csv
+          retention-days: 7

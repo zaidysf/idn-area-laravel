@@ -75,10 +75,12 @@
         "test-type-coverage": "vendor/bin/pest --type-coverage --min=80",
         "format": "vendor/bin/pint",
         "format-check": "vendor/bin/pint --test",
+        "validate-csv": "@php scripts/validate-csv-data.php",
         "ci": [
             "@composer run format-check",
             "@composer run analyse",
-            "@composer run test-coverage"
+            "@composer run test-coverage",
+            "@composer run validate-csv"
         ]
     },
     "config": {

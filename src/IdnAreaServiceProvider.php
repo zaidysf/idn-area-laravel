@@ -24,7 +24,6 @@ class IdnAreaServiceProvider extends PackageServiceProvider
         $package
             ->name('idn-area')
             ->hasConfigFile('idn-area')
-            ->hasViews('idn-area')
             ->hasMigrations([
                 'create_idn_area_table',
                 'create_idn_provinces_table',
